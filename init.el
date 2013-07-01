@@ -30,6 +30,7 @@
                         smex
                         dired+
                         ido-ubiquitous
+                        ido-vertical-mode
                         expand-region
                         multiple-cursors
 

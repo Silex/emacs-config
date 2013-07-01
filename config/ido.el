@@ -1,6 +1,8 @@
 (ido-mode t)
 (ido-everywhere t)
 (ido-ubiquitous)
+(ido-vertical-mode)
+
 (setq ido-enable-flex-matching t)
 (setq ido-create-new-buffer 'always)
 
@@ -20,11 +22,6 @@
 ;; Always propose old buffers as well
 (setq ido-use-virtual-buffers t)
 
-;; Display ido results vertically, rather than horizontally
-(setq ido-decorations (quote ("\n ->" "" "\n   " "\n   ..." "\n ->" "" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
-(defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
-(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
-
 ;; Helper for recentf
 (defun recentf-ido-find-file ()
   "Find a recent file using Ido."
@@ -32,6 +29,11 @@
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file
       (find-file file))))
+
+;;; Display ido results vertically, rather than horizontally
+;(setq ido-decorations (quote ("\n ->" "" "\n   " "\n   ..." "\n ->" "" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+;(defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
+;(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
 ; '(ido-create-new-buffer (quote never))
 ; '(ido-enable-flex-matching t)
