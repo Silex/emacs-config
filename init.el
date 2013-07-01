@@ -28,6 +28,7 @@
 
                         ;; GUI
                         tabbar                ; Display a tab bar in the header line
+                        powerline             ; Like the powerline plugin for vim
                         color-theme           ; An Emacs-Lisp package with more than 50 color themes for your use.
                         color-theme-monokai   ; Monokai Color Theme for Emacs.
                         rainbow-mode          ; Colorize color names in buffers
