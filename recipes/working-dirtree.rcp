@@ -1,0 +1,5 @@
+(:name working-dirtree
+       :description "working-dirtree"
+       :type git
+       ;; :depends (tree-mode windata)
+       :url "git://github.com/zkim/emacs-dirtree.git")

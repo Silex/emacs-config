@@ -1,0 +1,4 @@
+(:name erc-znc
+       :description "erc-znc"
+       :type git
+       :url "git://github.com/sshirokov/ZNC.el.git")
