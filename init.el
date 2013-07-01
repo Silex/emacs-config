@@ -33,6 +33,7 @@
                         ido-vertical-mode
                         expand-region
                         multiple-cursors
+                        switch-window
 
                         ;; Snippets
                         yasnippet
