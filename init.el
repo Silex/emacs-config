@@ -42,6 +42,7 @@
                         expand-region         ; Expand region increases the selected region by semantic units.
                         multiple-cursors      ; Multiple cursors in emacs
                         switch-window         ; A *visual* way to choose a window to switch to
+                        minimap               ; Minimap sidebar for Emacs
 
                         ;; Snippets
                         yasnippet             ; YASnippet is a template system for Emacs.
