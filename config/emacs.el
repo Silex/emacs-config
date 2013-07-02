@@ -4,6 +4,10 @@
 ;; Right alt is not meta
 (setq ns-right-alternate-modifier nil)
 
+;; Stop prompting for local variables when opening files
+(setq enable-local-variables :safe)
+(setq enable-local-eval nil)
+
 ;; Hide emacs when we quit, that way it loads faster
 (defun quit-by-hiding()
   (interactive)
