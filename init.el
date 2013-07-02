@@ -34,6 +34,7 @@
                         rainbow-mode          ; Colorize color names in buffers
 
                         ;; Naviguation
+                        fiplr                 ; Fuzzy finder for files in a project.
                         helm                  ; Emacs incremental and narrowing framework
                         smex                  ; M-x interface with Ido-style fuzzy matching.
                         dired+                ; Extensions to Dired

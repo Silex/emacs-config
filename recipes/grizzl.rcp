@@ -1,0 +1,4 @@
+(:name grizzl
+       :description "grizzl"
+       :type github
+       :pkgname "d11wtq/grizzl")
