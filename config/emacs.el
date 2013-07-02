@@ -8,6 +8,9 @@
 (setq enable-local-variables :safe)
 (setq enable-local-eval nil)
 
+;; Only run the GC every time 20Mb is allocated
+(setq gc-cons-threshold 20000000)
+
 ;; Hide emacs when we quit, that way it loads faster
 (defun quit-by-hiding()
   (interactive)
