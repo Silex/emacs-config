@@ -1,15 +1,4 @@
-;; Install el-get and build recipes if necessary
-(add-to-list 'load-path (concat el-get-dir "/el-get"))
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-    (url-retrieve-synchronously "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (el-get-elpa-build-local-recipes))
-
-;; Local recipes
-(add-to-list 'el-get-recipe-path (concat config-directory "/recipes"))
+(require 'config)
 
 ;; Fix broken recipes
 (push '(:name evil
@@ -82,7 +71,7 @@
                         textile-mode          ; Textile mode
 
                         ;; org-mode
-                        org-mode              ; Org-mode is for keeping notes, maintaining ToDo lists, doing project planning, and authoring with a fast and effective plain-text system.
+                        org-mode              ; Org-mode is for keeping notes, maintaining ToDo lists, doing project planning
                         org-impress-js        ; impress.js export for Org-mode
                         ;ess                   ; Emacs Speaks Statistics: statistical programming within Emacs
 
@@ -96,12 +85,11 @@
                         evil-numbers          ; Increment/decrement numbers
                         evil-rails))          ; Rails specific commands for evil
 
-
-;; Fetch packages
+;; Install or load packages
 (el-get 'sync el-get-packages)
 
-;; Load customizations
-(defun load-directory (dir)
-  "Loads every .el file in a directory in sorted order"
-  (mapcar 'load-file (directory-files dir t "\\.el\\'")))
-(load-directory (concat config-directory "/config"))
+;; Configure packages
+(configure-packages)
+
+;; Load key bindings
+(load-key-bindings)

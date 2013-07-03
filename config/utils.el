@@ -1,14 +1,3 @@
-;; Helper to open emacs config
-(defun edit-config-file ()
-  (interactive)
-  ;;(ido-buffer-internal ido-default-buffer-method nil nil nil "#")
-  (find-file (concat config-directory "/init.el")))
-
-;; Helper to reload emacs config
-(defun reload-config ()
-  (interactive)
-  (load-file (concat config-directory "/init.el")))
-
 ;; Makes all lines unique
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
