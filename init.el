@@ -14,6 +14,7 @@
                         goto-last-change      ; Move point through buffer-undo-list positions
                         exec-path-from-shell  ; Make Emacs use the $PATH set up by the user's shell
                         fullscreen-mode       ; fullscreen window support for Emacs
+                        multi-term            ; A mode based on term.el, for managing multiple terminal buffers in Emacs.
 
                         ;; GUI
                         tabbar                ; Display a tab bar in the header line
