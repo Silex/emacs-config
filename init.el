@@ -13,7 +13,7 @@
                         work-timer            ; A timer so you know when telax, and when to work
                         goto-last-change      ; Move point through buffer-undo-list positions
                         exec-path-from-shell  ; Make Emacs use the $PATH set up by the user's shell
-                        maxframe              ; Maxframe provides the ability to maximize the emacs frame and stay within the display resolution.
+                        fullscreen-mode       ; fullscreen window support for Emacs
 
                         ;; GUI
                         tabbar                ; Display a tab bar in the header line
