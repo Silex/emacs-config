@@ -15,6 +15,7 @@
                         exec-path-from-shell  ; Make Emacs use the $PATH set up by the user's shell
                         fullscreen-mode       ; fullscreen window support for Emacs
                         multi-term            ; A mode based on term.el, for managing multiple terminal buffers in Emacs.
+                        shell-pop             ; Helps you pop up and pop out shell buffer easily.
 
                         ;; GUI
                         tabbar                ; Display a tab bar in the header line
