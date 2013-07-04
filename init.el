@@ -16,6 +16,7 @@
                         fullscreen-mode       ; fullscreen window support for Emacs
                         multi-term            ; A mode based on term.el, for managing multiple terminal buffers in Emacs.
                         shell-pop             ; Helps you pop up and pop out shell buffer easily.
+                        htmlr                 ; HTML rendering in Elisp
 
                         ;; GUI
                         tabbar                ; Display a tab bar in the header line
