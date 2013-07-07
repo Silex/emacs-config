@@ -32,6 +32,7 @@
                         dired+                ; Extensions to Dired
                         ido-ubiquitous        ; Use ido (nearly) everywhere
                         ido-vertical-mode     ; Makes ido-mode display vertically
+                        flx                   ; Fuzzy matching for Emacs ... a la Sublime Text.
                         expand-region         ; Expand region increases the selected region by semantic units.
                         multiple-cursors      ; Multiple cursors in emacs
                         switch-window         ; A *visual* way to choose a window to switch to

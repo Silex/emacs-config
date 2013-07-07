@@ -1,0 +1,4 @@
+(:name flx
+       :description "Fuzzy matching for Emacs ... a la Sublime Text."
+       :type github
+       :pkgname "lewang/flx")

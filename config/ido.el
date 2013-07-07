@@ -35,8 +35,6 @@
 ;(defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 ;(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
-; '(ido-create-new-buffer (quote never))
-; '(ido-enable-flex-matching t)
 ; '(ido-enable-last-directory-history nil)
 ; '(ido-enable-regexp nil)
 ; '(ido-max-file-prompt-width 0.1)
