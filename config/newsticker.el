@@ -11,8 +11,5 @@
 (setq newsticker-url-list-defaults nil)
 (setq newsticker-url-list (google-reader-to-newsticker "/Users/silex/Downloads/philippe.vaucher@gmail.com-takeout/Reader/subscriptions.xml"))
 
-;; Optionally bind a shortcut for your new RSS reader.
-;(global-set-key (kbd "C-c r") 'newsticker-treeview)
-
 ;; Don't forget to start it!
 ;(newsticker-start)
