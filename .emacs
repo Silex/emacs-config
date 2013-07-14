@@ -1,16 +1,8 @@
 (require 'cl)
 
-(defun buffer-file-directory ()
-  "Returns the buffer's file directory"
-  (interactive)
-  (file-name-directory
-    (file-truename
-      (or (buffer-file-name)
-          load-file-name))))
-
 ;; Initialize variables
-(setq config-directory (substring (buffer-file-directory) 0 -1))
-(setq el-get-dir (concat config-directory "/packages/"))
+(setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
+(setq el-get-dir (concat config-directory "packages/"))
 
 ;; Setup load-path
 (add-to-list 'load-path config-directory)
@@ -28,7 +20,7 @@
   (el-get-elpa-build-local-recipes))
 
 ;; Set up el-get local recipes path
-(add-to-list 'el-get-recipe-path (concat config-directory "/recipes"))
+(add-to-list 'el-get-recipe-path (concat config-directory "recipes"))
 
 ;; Benchmark
 (require 'performance)
