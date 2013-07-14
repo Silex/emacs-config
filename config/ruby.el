@@ -17,5 +17,5 @@
      (ignore-errors (require 'evil-rails))
 
      (setq ruby-use-encoding-map nil)
-     (add-hook 'ruby-mode-hook 'inf-ruby-keys)
+     (add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings)
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
