@@ -30,6 +30,13 @@
 ;; Set up el-get local recipes path
 (add-to-list 'el-get-recipe-path (concat config-directory "/recipes"))
 
+;; Benchmark
+(require 'performance)
+;(performance/record-require-times)
+
 ;; Load config
 (require 'config)
 (load-config)
+
+;; Display how much time it took to load the config
+(message "Init completed in %.2fms" (performance/time-subtract-millis (current-time) before-init-time))
