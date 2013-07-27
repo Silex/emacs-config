@@ -22,6 +22,9 @@
 ;; Set up el-get local recipes path
 (add-to-list 'el-get-recipe-path (concat config-directory "recipes"))
 
+;; Apply visual effects as early as possible
+(require 'visual)
+
 ;; Benchmark
 (require 'performance)
 ;(performance/record-require-times)
