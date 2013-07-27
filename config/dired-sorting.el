@@ -1,16 +1,6 @@
-;; Taken from http://www.emacswiki.org/emacs/DiredSortBySizeAndExtension
-
-;;; dired-fixups.el --- fixups for dired mode
-
-;; Author: Dino Chiesa
-;; Created: Sat, 31 Mar 2012  10:31
-;; Version: 0.1
-;;
+;; Inspired from http://www.emacswiki.org/emacs/DiredSortBySizeAndExtension
 
 (require 'ls-lisp)
-
-;; (defun ls-lisp-format-time (file-attr time-index now)
-;;   "################")
 
 (defun ls-lisp-format-file-size (file-size human-readable)
   "This is a redefinition of the function from `dired.el'. This
@@ -115,6 +105,4 @@ search modes defined in the new `dired-sort-toggle'.
     (force-mode-line-update)))
 
 
-(provide 'dired-fixups)
-
-;;; dired-fixups.el ends here
+(provide 'dired-sorting)

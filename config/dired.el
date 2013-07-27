@@ -1,4 +1,4 @@
-(require 'dired-fixups)
+(require 'dired-sorting)
 
 (defun enter-dired()
   (interactive)
