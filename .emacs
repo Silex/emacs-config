@@ -2,7 +2,7 @@
 
 ;; Initialize variables
 (setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
-(setq el-get-dir (concat config-directory "packages/"))
+(setq el-get-dir (expand-file-name "packages/" config-directory))
 
 ;; Setup load-path
 (add-to-list 'load-path config-directory)
