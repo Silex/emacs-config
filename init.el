@@ -36,6 +36,7 @@
                         flx                   ; Fuzzy matching for Emacs ... a la Sublime Text.
                         expand-region         ; Expand region increases the selected region by semantic units.
                         multiple-cursors      ; Multiple cursors in emacs
+                        smooth-scrolling      ; Make emacs scroll smoothly
                         switch-window         ; A *visual* way to choose a window to switch to
                         minimap               ; Minimap sidebar for Emacs
 
