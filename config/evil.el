@@ -2,6 +2,7 @@
 (setq evil-magic 'very-magic)
 
 (evil-mode)
+(global-evil-leader-mode)
 
 ;(defun my-move-key (keymap-from keymap-to key)
 ;     "Moves key binding from one keymap to another, deleting from the old location. "
