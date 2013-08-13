@@ -69,3 +69,19 @@
 ;; instead.
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; Helper to describe macros
+(autoload 'apropos-macrop "apropos"
+  "Return t if SYMBOL is a Lisp macro.
+
+\(fn symbol)")
+
+(defun describe-macro (macro)
+  "Display documentation for MACRO."
+  (interactive
+   (list
+    (intern
+     (completing-read "Macro: " obarray
+                      'apropos-macrop
+                      'require-match))))
+  (describe-function macro))
