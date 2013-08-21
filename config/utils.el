@@ -37,7 +37,7 @@
   (interactive)
   (set-buffer-file-coding-system 'undecided-dos))
 
-(defun open-in-desktop  ()
+(defun open-in-desktop ()
   "Open the current file in desktop. Works in Microsoft Windows, Mac OS X, Linux."
   (interactive)
   (cond
@@ -46,7 +46,7 @@
     ((string-equal system-type "gnu/linux") (shell-command "xdg-open ."))
   ))
 
-(defun purge-obsolete-buffers()
+(defun purge-obsolete-buffers ()
   (interactive)
   "Kill all buffers that are visiting a file, but whose file no longer exists."
   (let (victims)
