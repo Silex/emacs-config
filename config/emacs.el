@@ -57,7 +57,7 @@
 
 ;; Zone-mode
 (require 'zone)
-(zone-when-idle (* 10 60))
+(zone-when-idle (* 15 60))
 
 ;; whenever an external process changes a file underneath emacs, and there
 ;; was no unsaved changes in the corresponding buffer, just revert its
