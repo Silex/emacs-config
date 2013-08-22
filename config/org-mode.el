@@ -10,7 +10,7 @@
 
 ;(setq org-todo-keywords '((sequence "TODO" "PLANNED" "|" "DONE")))
 
-(eval-after-load "org"
+(eval-after-load 'org
   '(let ((languages '(emacs-lisp sh ruby python R gnuplot))
          (helper (lambda (token) `(,token . t))))
      (org-babel-do-load-languages 'org-babel-load-languages (mapcar helper languages))))

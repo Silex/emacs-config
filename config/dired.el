@@ -15,7 +15,7 @@
          (with-current-buffer buf (eval form lexical-binding)(save-buffer))
        (kill-buffer buf))) nil))
 
-(eval-after-load "dired"
+(eval-after-load 'dired
   '(progn
      (toggle-diredp-find-file-reuse-dir 1)
      ))
