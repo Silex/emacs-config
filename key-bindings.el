@@ -20,6 +20,7 @@
 
 ;(define-key dired-mode-map (kbd "<backspace>") (lambda()(interactive)(find-alternate-file "..")))
 (define-key dired-mode-map (kbd "<backspace>") 'dired-jump)
+(define-key dired-mode-map (kbd "E") 'dired-do-eval)
 
 ;(define-key magit-mode-map (kbd "1") 'magit-jump-to-unstaged)
 ;(define-key magit-mode-map (kbd "2") 'magit-jump-to-staged)
