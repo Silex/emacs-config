@@ -4,6 +4,7 @@
 ;; Dired
 (eval-after-load 'dired
   '(progn
+     (define-key dired-mode-map (kbd "* n") 'dired-mark-files-regexp)
      (define-key dired-mode-map (kbd "<backspace>") 'dired-jump)
      (define-key dired-mode-map (kbd "E") 'dired-do-eval)))
 
@@ -17,6 +18,14 @@
 
 ;; recentf
 (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+
+;; Git
+(eval-after-load 'magit
+  '(progn
+     (define-key magit-status-mode-map (kbd "q") 'magit-status-quit)))
+
+(eval-after-load 'vc-annotate
+  '(progn (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 
 ;; evil
 (eval-after-load 'evil
