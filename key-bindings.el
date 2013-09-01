@@ -6,7 +6,8 @@
   '(progn
      (define-key dired-mode-map (kbd "* n") 'dired-mark-files-regexp)
      (define-key dired-mode-map (kbd "<backspace>") 'dired-jump)
-     (define-key dired-mode-map (kbd "E") 'dired-do-eval)))
+     (define-key dired-mode-map (kbd "E") 'dired-do-eval)
+     (define-key dired-mode-map (kbd "s") 'dired-sort)))
 
 ;; IBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)

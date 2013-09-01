@@ -1,5 +1,3 @@
-(require 'dired-sorting)
-
 (defun enter-dired()
   (interactive)
   (dired ""))
@@ -25,8 +23,8 @@
           (set (make-local-variable 'dired-dotfiles-show-p) nil)
           (dired-mark-files-regexp "^\\\.")
           (dired-do-kill-lines))
-      (progn (revert-buffer) ; otherwise just revert to re-show
-             (set (make-local-variable 'dired-dotfiles-show-p) t)))))
+      (revert-buffer) ; otherwise just revert to re-show
+      (set (make-local-variable 'dired-dotfiles-show-p) t))))
 
 (eval-after-load 'dired
   '(progn
