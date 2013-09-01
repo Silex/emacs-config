@@ -1,10 +1,10 @@
 ;; Rake
-(setq auto-mode-alist (cons '("\\.rake" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("Rakefile" . ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 
 ;; Gemfile
-(setq auto-mode-alist (cons '("Gemfile" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.gemspec" . ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
 
 ;; Don't automatically insert encoding
 (setq ruby-insert-encoding-magic-comment nil)

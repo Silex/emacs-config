@@ -1,4 +1,4 @@
-(setq auto-mode-alist (cons '("\\.org$" . org-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 (setq org-confirm-babel-evaluate nil)
 

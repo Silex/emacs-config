@@ -23,7 +23,7 @@
 (setq scroll-conservatively 50)
 
 ;; Emacs
-(setq auto-mode-alist (cons `("\\.?emacs" . lisp-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.?emacs\\'" . emacs-lisp-mode))
 
 ;; don't create silly foo~ files
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
