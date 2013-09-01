@@ -68,6 +68,7 @@
 
                         ;; Git
                         magit                 ; It's Magit! An Emacs mode for Git.
+                        git-messenger         ; Pops up commit messages at current line
                         gist                  ; Emacs integration for gist.github.com
 
                         ;; File formats
