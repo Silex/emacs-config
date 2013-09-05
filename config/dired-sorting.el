@@ -182,16 +182,6 @@ If REVERSE is set, sort in reverse.  See also `dired-toggle-sorting-reverse'."
         (dired-switches-add-flag "r")
       (dired-switches-remove-flag "r"))))
 
-;; Generate dired-sort-by-* helpers
-(dolist (symbol '(name size extension modification creation access ctime))
-  (let* ((name (symbol-name symbol))
-         (funcname (intern (concat "dired-sort-by-" name))))
-    (eval `(defun ,funcname (&optional reverse)
-             "Sort dired listing by ,name FIXME
-If REVERSE is set, sort in reverse. See also `dired-toggle-sorting-reverse'."
-             (interactive "P")
-             (dired-sort ,name reverse)))))
-
 (defun dired-sort-quickly (criteria &optional reverse)
   "Like `dired-sort' but only ask for one key.
 CRITERIA must be one of these letter: n/s/x/m/c/a/t.
@@ -243,6 +233,17 @@ Also output in the *Messages* buffer the line to copy into your .emacs file for 
   (setq dired-listing-switches dired-actual-switches)
   (message "(setq dired-listing-switches \"%s\")" dired-listing-switches)
   (message "Dired listing switches set to \"%s\"" dired-listing-switches))
+
+(defun dired-sort-generate-helper (name)
+  (let ((funcname (intern (concat "dired-sort-by-" name))))
+    (fset funcname `(lambda (&optional reverse)
+                      ,(format "Sort dired listing by %s.
+If REVERSE is set, sort in reverse. See also `dired-toggle-sorting-reverse'." name)
+                      (interactive "P")
+                      (dired-sort ,name reverse)))))
+
+(dolist (symbol '(name size extension modification creation access ctime))
+  (dired-sort-generate-helper (symbol-name symbol)))
 
 (provide 'dired-sorting)
 
