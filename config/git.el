@@ -24,6 +24,13 @@
   (kill-buffer)
   (jump-to-register :vc-annotate-fullscreen))
 
+;; Open a new line on a new commit (looks prettier)
+(defun magit-commit-mode-init ()
+  (when (looking-at "\n")
+    (open-line 1)))
+
+(add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
+
 ;; Close popup when commiting
 (defadvice git-commit-commit (after delete-window activate)
   (delete-window))
