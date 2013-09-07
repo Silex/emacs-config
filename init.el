@@ -50,6 +50,7 @@
                         js2-mode              ; Javascript mode
                         haml-mode             ; Haml mode
                         sass-mode             ; Sass mode
+                        less-css-mode         ; LESS CSS mode
                         coffee-mode           ; CoffeeScript mode
 
                         ;; C++
