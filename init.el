@@ -11,6 +11,7 @@
                         google-maps           ; Naviguate google maps inside emacs
                         emacschrome           ; Edit chrome textareas inside emacs
                         work-timer            ; A timer so you know when telax, and when to work
+                        kill-ring-ido         ; Command for kill-ring browsing with ido
                         goto-last-change      ; Move point through buffer-undo-list positions
                         exec-path-from-shell  ; Make Emacs use the $PATH set up by the user's shell
                         fill-column-indicator ; Graphically indicates the fill column.
