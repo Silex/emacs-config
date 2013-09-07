@@ -13,6 +13,7 @@
                         work-timer            ; A timer so you know when telax, and when to work
                         goto-last-change      ; Move point through buffer-undo-list positions
                         exec-path-from-shell  ; Make Emacs use the $PATH set up by the user's shell
+                        fill-column-indicator ; Graphically indicates the fill column.
                         fullscreen-mode       ; fullscreen window support for Emacs
                         multi-term            ; A mode based on term.el, for managing multiple terminal buffers in Emacs.
                         shell-pop             ; Helps you pop up and pop out shell buffer easily.
