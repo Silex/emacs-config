@@ -47,6 +47,9 @@
 ;; Never use real tabs
 (setq-default indent-tabs-mode nil)
 
+;; On the fly reindentation
+(electric-indent-mode)
+
 ;; Store where we edited files
 (setq-default save-place t)
 (require 'saveplace)
