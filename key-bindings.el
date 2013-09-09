@@ -25,6 +25,11 @@
   '(progn
      (define-key magit-status-mode-map (kbd "q") 'magit-status-quit)))
 
+(eval-after-load 'git-rebase-mode
+  '(progn
+     (define-key git-rebase-mode-map (kbd "M-<up>") 'git-rebase-move-line-up)
+     (define-key git-rebase-mode-map (kbd "M-<down>") 'git-rebase-move-line-down)))
+
 (eval-after-load 'vc-annotate
   '(progn (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 
