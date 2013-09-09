@@ -1,15 +1,9 @@
 ;; For TRAMP to work with ssh-key, install the programm ssh-askpass (https://github.com/markcarver/mac-ssh-askpass)
 
-;(add-to-list 'tramp-default-proxies-alist '(".*" "\`root\'" "/ssh:%h:"))
+;;(add-to-list 'tramp-default-proxies-alist '(".*" "\`root\'" "/ssh:%h:"))
 
 (defun find-alternative-file-with-sudo ()
   (interactive)
-  (let ((fname (or buffer-file-name
-		   dired-directory)))
-    (when fname
-      (if (string-match "^/sudo:root@localhost:" fname)
-	  (setq fname (replace-regexp-in-string
-		       "^/sudo:root@localhost:" ""
-		       fname))
-	(setq fname (concat "/sudo:root@localhost:" fname)))
-      (find-alternate-file fname))))
+  (let* ((file-name (or buffer-file-name dired-directory))
+         (new-name (concat "/sudo::" file-name)))
+    (find-alternate-file new-name)))
