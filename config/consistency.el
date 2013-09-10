@@ -10,3 +10,6 @@
 (substitute-key-definition 'describe-function 'electric-describe-function help-map)
 (substitute-key-definition 'describe-variable 'electric-describe-variable help-map)
 (substitute-key-definition 'describe-bindings 'electric-describe-bindings help-map)
+
+;; Make it so man pages have focus when I request them
+(setq Man-notify-method 'aggressive)
