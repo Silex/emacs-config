@@ -88,3 +88,6 @@
                       'apropos-macrop
                       'require-match))))
   (describe-function macro))
+
+;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
+(setq disabled-command-function nil)
