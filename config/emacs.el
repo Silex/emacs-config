@@ -91,3 +91,6 @@
 
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)
+
+;; Make it so man pages have focus when I request them
+(setq Man-notify-method 'aggressive)
