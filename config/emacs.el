@@ -91,3 +91,6 @@
 
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)
+
+;; Don't wait for eldoc-mode to give help
+(setq eldoc-idle-delay 0)

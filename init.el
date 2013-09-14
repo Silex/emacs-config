@@ -54,10 +54,13 @@
                         sass-mode             ; Sass mode
                         less-css-mode         ; LESS CSS mode
                         coffee-mode           ; CoffeeScript mode
+                        css-eldoc
+                        php-eldoc
 
                         ;; C++
                         cmake-mode            ; Provides syntax highlighting and indentation for CMakeLists.txt and *.cmake source files.
                         auto-complete-clang   ; Auto-complete sources for Clang. Combine the power of AC, Clang and Yasnippet.
+                        c-eldoc
 
                         ;; ELISP
                         dash                  ; A modern list api for Emacs. No 'cl required.
