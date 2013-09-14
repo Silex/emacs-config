@@ -82,6 +82,7 @@
                         yaml-mode             ; YAML mode
                         markdown-mode         ; Markdown mode
                         textile-mode          ; Textile mode
+                        vimrc-mode            ; .vim syntax files
 
                         ;; org-mode
                         org-mode              ; Org-mode is for keeping notes, maintaining ToDo lists, doing project planning
