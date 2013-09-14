@@ -1,3 +1,26 @@
+;; Inspired from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
+(defun tabify-buffer ()
+  "Tabify the whole buffer."
+  (interactive)
+  (tabify (point-min) (point-max)))
+
+(defun untabify-buffer ()
+  "Untabify the whole buffer."
+  (interactive)
+  (untabify (point-min) (point-max)))
+
+(defun indent-buffer ()
+  "Reindent the whole buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun cleanup-buffer ()
+  "Untabify, reindent and delete trailing whitespace."
+  (interactive)
+  (untabify-buffer)
+  (indent-buffer)
+  (delete-trailing-whitespace))
+
 ;; Makes all lines unique
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
