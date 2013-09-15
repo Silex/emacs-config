@@ -8,6 +8,7 @@
 
 ;; Desired packages
 (setq el-get-packages '(;; Misc
+                        use-package           ; A use-package declaration for simplifying your .emacs
                         google-maps           ; Naviguate google maps inside emacs
                         emacschrome           ; Edit chrome textareas inside emacs
                         work-timer            ; A timer so you know when telax, and when to work
