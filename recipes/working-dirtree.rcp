@@ -1,5 +1,0 @@
-(:name working-dirtree
-       :description "working-dirtree"
-       ;; :depends (tree-mode windata)
-       :type github
-       :pkgname "zkim/emacs-dirtree")
