@@ -26,7 +26,16 @@
       (revert-buffer) ; otherwise just revert to re-show
       (set (make-local-variable 'dired-dotfiles-show-p) t))))
 
-(eval-after-load 'dired
-  '(progn
-     (toggle-diredp-find-file-reuse-dir 1)
-     ))
+(use-package dired+
+  :commands toggle-diredp-find-file-reuse-dir)
+
+(use-package dired
+  :commands (dired
+             dired-jump
+             find-name-dired
+             find-dired)
+  :config
+  (progn
+    (toggle-diredp-find-file-reuse-dir 1)
+    ;; Enable R key in dired to use ido
+    (put 'dired-do-rename 'ido 'find-file)))

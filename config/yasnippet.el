@@ -1,5 +1,9 @@
-;; YASnippet
-(yas/global-mode t)
-(add-to-list 'yas-snippet-dirs (concat config-directory "snippets"))
-(add-to-list 'auto-mode-alist '("\\.yasnippet\\'" . snippet-mode))
-(yas-reload-all)
+(use-package yasnippet
+  :commands yas-global-mode
+  :mode ("\\.yasnippet\\'" . snippet-mode)
+  :config
+  (add-to-list 'yas-snippet-dirs (concat config-directory "snippets"))
+  :idle
+  (progn
+    (yas-global-mode t)
+    (yas-reload-all)))

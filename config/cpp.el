@@ -1,8 +1,10 @@
-;; Use the GDB visual debugging mode
-(setq gdb-many-windows t)
+(use-package c++-mode
+  :mode ("\\.h\\'" . c++-mode)
 
-;; Treat .h files as C++ files (instead of C)
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  :init
+  (progn
+    ;; Use the GDB visual debugging mode
+    (setq gdb-many-windows t)
 
-;; Use the indentation style of "The C++ Programming Language"
-(setq c-default-style "stroustrup")
+    ;; Use the indentation style of "The C++ Programming Language"
+    (setq c-default-style "stroustrup")))

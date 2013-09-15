@@ -1,2 +1,2 @@
-(require 'vimrc-mode)
-(add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))
+(use-package vimrc-mode
+  :mode ("\\.vim\\(rc\\)?\\'" . vimrc-mode))

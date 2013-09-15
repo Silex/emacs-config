@@ -1,1 +1,2 @@
-(autoload 'ibuffer "ibuffer" "List buffers." t)
+(use-package ibuffer
+  :commands ibuffer)

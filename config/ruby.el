@@ -1,21 +1,24 @@
-;; Rake
-(add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(use-package ruby-mode
+  :mode (;; Rake
+         ("\\.rake\\'" . ruby-mode)
+         ("Rakefile" . ruby-mode)
 
-;; Gemfile
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
+         ;; Gemfile
+         ("Gemfile" . ruby-mode)
+         ("\\.gemspec\\'" . ruby-mode))
 
-;; Don't automatically insert encoding
-(setq ruby-insert-encoding-magic-comment nil)
+  :init
+  (progn
+    ;; Don't automatically insert encoding
+    (setq ruby-insert-encoding-magic-comment nil)
 
-(eval-after-load 'ruby-mode
-  '(progn
-     (ignore-errors (require 'ruby-compilation))
-     (ignore-errors (require 'rcodetools))
-     (ignore-errors (require 'rinari))
-     (ignore-errors (require 'evil-rails))
+    (setq ruby-use-encoding-map nil))
 
-     (setq ruby-use-encoding-map nil)
-     (add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings)
-     (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
+  :config
+  (progn
+    (use-package ruby-compilation)
+    (use-package rcodetools)
+    (use-package rinari)
+    (use-package evil-rails)
+
+    (add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings)))

@@ -1,3 +1,3 @@
-;; CMake
-(add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))
-(add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
+(use-package cmake-mode
+  :mode (("\\.cmake\\'" . cmake-mode)
+         ("CMakeLists.txt" . cmake-mode)))
