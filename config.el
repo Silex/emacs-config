@@ -1,15 +1,12 @@
 (defvar config-directory "")
 
-(defun load-file-ignore-errors (file)
-  "Load the Lisp file named FILE ignoring errors"
-  (interactive (list (let ((completion-ignored-extensions
-			    (remove ".elc" completion-ignored-extensions)))
-		       (read-file-name "Load file: "))))
-  (with-demoted-errors (load-file file)))
-
 (defun load-directory (dir)
   "Loads every .el file in a directory in sorted order"
-  (mapc 'load-file-ignore-errors (directory-files dir t "\\.el\\'"))
+  (let* ((files (directory-files dir t "\\.el\\'"))
+         (names (mapcar 'file-name-sans-extension files)))
+    (mapc (lambda(file)
+            (with-demoted-errors (load file nil t)))
+          names))
   t)
 
 (defun edit-config ()
