@@ -1,3 +1,14 @@
+(use-package magit
+  :commands magit-status)
+
+(use-package git-messenger
+  :commands git-messenger:popup-message)
+
+(use-package gist
+  :commands (gist-buffer
+             gist-region
+             gist-list))
+
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
 ;; Fullscreen magit-status
@@ -62,4 +73,3 @@
 ;  (magit-visit-item)
 ;  (delete-current-buffer-file)
 ;  (magit-refresh))
-

@@ -1,3 +1,7 @@
+(use-package tabbar
+  :commands (tabbar-mode
+             tabbar-local-mode))
+
 ;(set-face-attribute
 ; 'tabbar-default-face nil
 ; :background "gray60")

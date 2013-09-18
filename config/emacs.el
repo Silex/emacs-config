@@ -8,6 +8,9 @@
 ;; Only run the GC every time 20Mb is allocated
 (setq gc-cons-threshold 20000000)
 
+;; Allow *Messages* to log a lot of stuffs
+(setq message-log-max 16384)
+
 ;; Hide emacs when we quit, that way it loads faster
 (defun quit-by-hiding()
   (interactive)

@@ -12,4 +12,4 @@
         (delete-file file))))
   (message "Old backups deleted."))
 
-(delete-old-backups)
+(run-with-idle-timer 3 nil 'delete-old-backups)
