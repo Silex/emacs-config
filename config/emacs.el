@@ -11,13 +11,6 @@
 ;; Allow *Messages* to log a lot of stuffs
 (setq message-log-max 16384)
 
-;; Hide emacs when we quit, that way it loads faster
-(defun quit-by-hiding()
-  (interactive)
-  (server-edit)
-  (make-frame-invisible nil t))
-(load "server")
-
 ;; Always require a newline at end of files
 (setq require-final-newline t)
 
@@ -75,22 +68,6 @@
 ;; instead.
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; Helper to describe macros
-(autoload 'apropos-macrop "apropos"
-  "Return t if SYMBOL is a Lisp macro.
-
-\(fn symbol)")
-
-(defun describe-macro (macro)
-  "Display documentation for MACRO."
-  (interactive
-   (list
-    (intern
-     (completing-read "Macro: " obarray
-                      'apropos-macrop
-                      'require-match))))
-  (describe-function macro))
 
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)

@@ -125,3 +125,25 @@
       (write-file
        url)
       (browse-url url))))
+
+;; Hide emacs when we quit, that way it loads faster
+(defun quit-by-hiding()
+  (interactive)
+  (server-edit)
+  (make-frame-invisible nil t))
+
+;; Helper to describe macros
+(autoload 'apropos-macrop "apropos"
+  "Return t if SYMBOL is a Lisp macro.
+
+\(fn symbol)")
+
+(defun describe-macro (macro)
+  "Display documentation for MACRO."
+  (interactive
+   (list
+    (intern
+     (completing-read "Macro: " obarray
+                      'apropos-macrop
+                      'require-match))))
+  (describe-function macro))
