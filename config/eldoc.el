@@ -1,3 +1,6 @@
+;; Wait one second before giving help
+(setq eldoc-idle-delay 1)
+
 (use-package php-eldoc
   :commands php-eldoc-function
   :init

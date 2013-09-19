@@ -1,3 +1,8 @@
+(use-package lisp-mode
+  :commands emacs-lisp-mode
+  :mode ("\\.?emacs\\'" . emacs-lisp-mode))
+
+;; Enable eldoc and check-parens
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (eldoc-mode)
