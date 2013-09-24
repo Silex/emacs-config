@@ -1,2 +1,3 @@
 (use-package markdown-mode
-  :mode ("\\.markdown\\'" . markdown-mode))
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
