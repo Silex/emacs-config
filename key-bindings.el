@@ -1,6 +1,9 @@
 ;; Smex
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 
+;; Switch-window
+(global-set-key (kbd "C-x o") 'switch-window)
+
 ;; Dired
 (eval-after-load 'dired
   '(progn
