@@ -2,6 +2,28 @@
   (interactive)
   (dired ""))
 
+(defun dired-do-find-marked-files-and-select-in-ibuffer ()
+  "Open marked files in ibuffer and select them."
+  (interactive)
+  (let ((current (current-buffer)))
+    (dired-map-over-marks
+     (let* ((filename (dired-get-file-for-visit))
+            (buffer (find-file-noselect filename)))
+       (message "YEAH %s" filename)
+       ;; Select buffer in ibuffer
+       (ibuffer)
+       (ibuffer-mark-on-buffer #'(lambda (buf)
+                                   (eq buf buffer)))
+       ;; Go back to dired
+       (switch-to-buffer current))
+     nil)
+
+    ;; Remove other buffers from ibuffer listing
+    (ibuffer)
+    (ibuffer-toggle-marks)
+    (ibuffer-do-kill-lines)
+    (ibuffer-toggle-marks)))
+
 (defun dired-do-eval (form)
   "Evaluate FORM in each of the buffers."
   (interactive (list (read-from-minibuffer "Eval in files (form): " nil read-expression-map t 'read-expression-history)))

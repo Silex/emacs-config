@@ -8,11 +8,12 @@
 (global-set-key (kbd "C-x o") 'switch-window)
 
 ;; Dired
-(eval-after-load 'dired
+(eval-after-load 'dired+
   '(progn
      (define-key dired-mode-map (kbd "* n") 'dired-mark-files-regexp)
      (define-key dired-mode-map (kbd "<backspace>") 'dired-jump)
      (define-key dired-mode-map (kbd "E") 'dired-do-eval)
+     (define-key dired-mode-map (kbd "F") 'dired-do-find-marked-files-and-select-in-ibuffer)
      (define-key dired-mode-map (kbd "s") 'dired-sort)))
 
 ;; IBuffer
