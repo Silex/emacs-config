@@ -1,3 +1,6 @@
+;; Switch windows using Ctrl + Arrow
+(windmove-default-keybindings 'ctrl)
+
 ;; Smex
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 

@@ -56,9 +56,6 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Switch windows using Shift + Arrow
-;(windmove-default-keybindings 'shift)
-
 ;; Disable VC
 ;(setq vc-handled-backends nil)
 
