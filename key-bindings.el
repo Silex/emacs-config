@@ -21,7 +21,7 @@
 (eval-after-load 'ibuffer
   '(progn
      (define-key ibuffer-mode-map (kbd "U") (lambda()(interactive)(ibuffer-unmark-all ?\n)))
-     (define-key ibuffer-mode-map (kbd "* .") 'ibuffer-mark-by-name-regexp) ; TODO create ibuffer-mark-by-extension
+     (define-key ibuffer-mode-map (kbd "* .") 'ibuffer-mark-by-extension)
      (define-key ibuffer-mode-map (kbd "* *") 'ibuffer-mark-special-buffers)))
 
 ;; recentf
