@@ -2,6 +2,9 @@
 
 ;; C-x C-f /ssh:you@remotehost|sudo:remotehost:/path/to/file
 
+;; Never expire passwords
+(setq password-cache-expiry nil)
+
 (defun find-alternative-file-with-sudo ()
   (interactive)
   (let* ((file-name (or buffer-file-name dired-directory))
