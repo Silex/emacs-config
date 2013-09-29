@@ -1,13 +1,34 @@
-;; Switch windows using Ctrl + Arrow
-(windmove-default-keybindings 'ctrl)
+;; Switch windows using Super + Arrow
+(windmove-default-keybindings 'super)
 
 ;; Smex
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 
+;; expand-region
+(global-set-key (kbd "C-e") 'er/expand-region)
+(eval-after-load 'evil
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
+     (define-key evil-visual-state-map (kbd "C-e") 'er/expand-region)))
+
 ;; Switch-window
 (global-set-key (kbd "C-x o") 'switch-window)
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; Grep/Occur/Compile
+(global-set-key (kbd "C-S-<up>") 'previous-error)
+(global-set-key (kbd "C-S-<down>") 'next-error)
+
+;; phi-search is multiple cursors friendly
+(global-set-key (kbd "C-s") 'phi-search)
+(global-set-key (kbd "C-r") 'phi-search-backward)
+
 ;; Dired
+(global-set-key (kbd "C-d") 'dired-jump)
+(eval-after-load 'evil
+  '(define-key evil-normal-state-map (kbd "C-d") 'dired-jump))
 (eval-after-load 'dired+
   '(progn
      (define-key dired-mode-map (kbd "* n") 'dired-mark-files-regexp)
@@ -15,6 +36,17 @@
      (define-key dired-mode-map (kbd "E") 'dired-do-eval)
      (define-key dired-mode-map (kbd "F") 'dired-do-find-marked-files-and-select-in-ibuffer)
      (define-key dired-mode-map (kbd "s") 'dired-sort)))
+
+;; recentf
+(global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+
+;; Buffers
+(global-set-key (kbd "C-w") 'kill-this-buffer)
+(global-set-key (kbd "C-b") 'ido-switch-buffer)
+(eval-after-load 'evil
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-w") 'kill-this-buffer)
+     (define-key evil-normal-state-map (kbd "C-b") 'ido-switch-buffer)))
 
 ;; IBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -24,8 +56,11 @@
      (define-key ibuffer-mode-map (kbd "* .") 'ibuffer-mark-by-extension)
      (define-key ibuffer-mode-map (kbd "* *") 'ibuffer-mark-special-buffers)))
 
-;; recentf
-(global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+;; Comint
+(eval-after-load 'comint
+  '(progn
+     (define-key comint-mode-map (kbd "C-<up>") nil)
+     (define-key comint-mode-map (kbd "C-<down>") nil)))
 
 ;; Git
 (eval-after-load 'magit
@@ -43,7 +78,6 @@
 ;; evil
 (eval-after-load 'evil
   '(progn
-     (define-key evil-normal-state-map (kbd "C-d") 'dired-jump)
      (define-key evil-normal-state-map "Y" "y$")))
 
 ;; evil-leader
