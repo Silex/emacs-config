@@ -1,0 +1,4 @@
+(:name phi-search
+       :description "phi-search"
+       :type github
+       :pkgname "zk-phi/phi-search")
