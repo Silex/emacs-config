@@ -30,7 +30,13 @@
   :commands kill-ring-ido)
 
 (use-package ido-ubiquitous
-  :commands ido-ubiquitous-mode)
+  :commands ido-ubiquitous-mode
+  :init
+  (setq ido-ubiquitous-command-overrides '((disable exact "execute-extended-command")
+                                           (enable prefix "wl-")
+                                           (enable-old prefix "Info-")
+                                           (enable exact "webjump")
+                                           (enable regexp "\\`\\(find\\|load\\|locate\\)-library\\'"))))
 
 (use-package ido-vertical-mode
   :commands ido-vertical-mode)
