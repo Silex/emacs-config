@@ -11,6 +11,9 @@
      (define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
      (define-key evil-visual-state-map (kbd "C-e") 'er/expand-region)))
 
+;; Undo kill buffer (like in chrome/firefox for tabs)
+(global-set-key (kbd "C-S-t") 'undo-kill-buffer)
+
 ;; Switch-window
 (global-set-key (kbd "C-x o") 'switch-window)
 
