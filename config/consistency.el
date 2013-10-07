@@ -13,3 +13,8 @@
 
 ;; Make it so man pages have focus when I request them
 (setq Man-notify-method 'aggressive)
+
+;; Give focus to describe-file
+(defadvice describe-file (around focus activate)
+  ad-do-it
+  (other-window 1))
