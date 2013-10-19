@@ -43,6 +43,9 @@
 ;; make all "yes or no" prompts show "y or n" instead
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Allow find-file to open ftp/http/etc links
+(url-handler-mode)
+
 ;; Right alt is not meta
 (setq ns-right-alternate-modifier nil)
 
@@ -51,6 +54,9 @@
 
 ;; Don't limit *Messages* to 1000 lines only
 (setq message-log-max 16384)
+
+;; Don't limit mark-ring to 16 places only
+(setq mark-ring-max 999)
 
 ;; don't create silly foo~ files
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
