@@ -1,5 +1,5 @@
 (use-package exec-path-from-shell
   :commands exec-path-from-shell-initialize)
 
-(when (memq window-system '(mac ns))
+(when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
