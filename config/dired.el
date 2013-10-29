@@ -35,18 +35,15 @@
          (with-current-buffer buf (eval form lexical-binding)(save-buffer))
        (kill-buffer buf))) nil))
 
-;; Taken from http://www.emacswiki.org/emacs/DiredOmitMode
-(defun dired-toggle-dotfiles ()
-  "Show/hide dot-files"
+;; Inspired from http://www.emacswiki.org/emacs/DiredOmitMode
+(defun dired-hide-dotfiles ()
+  "Hide dotfiles"
   (interactive)
   (when (equal major-mode 'dired-mode)
-    (if (or (not (boundp 'dired-dotfiles-show-p)) dired-dotfiles-show-p) ; if currently showing
-        (progn
-          (set (make-local-variable 'dired-dotfiles-show-p) nil)
-          (dired-mark-files-regexp "^\\\.")
-          (dired-do-kill-lines))
-      (revert-buffer) ; otherwise just revert to re-show
-      (set (make-local-variable 'dired-dotfiles-show-p) t))))
+    (progn
+      (set (make-local-variable 'dired-dotfiles-show-p) nil)
+      (dired-mark-files-regexp "^\\\.")
+      (dired-do-kill-lines))))
 
 (use-package dired+
   :commands toggle-diredp-find-file-reuse-dir)
