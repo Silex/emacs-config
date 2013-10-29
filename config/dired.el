@@ -50,9 +50,10 @@
 
 (use-package dired
   :commands (dired
-             dired-jump
-             find-name-dired
-             find-dired)
+             dired-jump)
+  :init
+  (progn
+    (setq dired-clean-up-buffers-too nil))
   :config
   (progn
     (toggle-diredp-find-file-reuse-dir 1)
