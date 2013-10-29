@@ -4,3 +4,7 @@
   ;; argument causes later arguments to be looked for in that directory,
   ;; not the starting directory
   (mapc #'find-file (mapcar #'expand-file-name (eshell-flatten-list (reverse args)))))
+
+(defun kill-eshell ()
+  "Kill eshell buffer when it says \"Text is read only\""
+  (let ((inhibit-read-only t)) (kill-this-buffer)))
