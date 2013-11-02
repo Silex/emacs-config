@@ -48,11 +48,3 @@
 
 (defadvice git-commit-abort (after delete-window activate)
   (delete-window))
-
-;; C-x C-k to kill file on line
-;(defun magit-kill-file-on-line ()
-;  "Show file on current magit line and prompt for deletion."
-;  (interactive)
-;  (magit-visit-item)
-;  (delete-current-buffer-file)
-;  (magit-refresh))
