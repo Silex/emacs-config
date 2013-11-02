@@ -1,1 +1,6 @@
-/packages/
+# Ignore OS annoying files
+.DS_Store
+Thumbs.db
+
+# Ignore byte compiled files
+*.elc
