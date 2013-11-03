@@ -8,9 +8,10 @@
 (add-to-list 'load-path config-directory)
 
 ;; Add all packages to load-path
-(dolist (dir (reverse (directory-files packages-directory)))
-  (unless (member dir '("." ".."))
-    (add-to-list 'load-path (expand-file-name dir packages-directory))))
+(dolist (dir (reverse (directory-files packages-directory t)))
+  (when (and (file-directory-p dir)
+             (not (member dir '("." ".."))))
+    (add-to-list 'load-path dir)))
 
 ;; Apply visual effects as early as possible
 (require 'visual)
