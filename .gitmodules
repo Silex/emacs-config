@@ -178,11 +178,6 @@
   url = git://jblevins.org/git/markdown-mode.git
   ignore = dirty
 
-[submodule "packages/minimap"]
-  path = packages/minimap
-  url = git://randomsample.de/minimap.git
-  ignore = dirty
-
 [submodule "packages/multiple-cursors"]
   path = packages/multiple-cursors
   url = http://github.com/magnars/multiple-cursors.el.git
