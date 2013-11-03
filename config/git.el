@@ -1,6 +1,9 @@
 (use-package magit
   :commands magit-status)
 
+(use-package gitconfig-mode
+  :mode ("\\.gitignore\\'" . gitconfig-mode))
+
 (use-package git-messenger
   :commands git-messenger:popup-message)
 
