@@ -1,4 +1,4 @@
-(use-package c++-mode
+(use-package cc-mode
   :mode ("\\.h\\'" . c++-mode)
 
   :init
