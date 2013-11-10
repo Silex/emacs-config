@@ -178,6 +178,11 @@
   url = git://jblevins.org/git/markdown-mode.git
   ignore = dirty
 
+[submodule "packages/multi-web-mode"]
+  path = packages/multi-web-mode
+  url = http://github.com/fgallina/multi-web-mode.git
+  ignore = dirty
+
 [submodule "packages/multiple-cursors"]
   path = packages/multiple-cursors
   url = http://github.com/magnars/multiple-cursors.el.git
