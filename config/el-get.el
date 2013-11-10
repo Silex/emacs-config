@@ -1,6 +1,5 @@
 (use-package el-get
-  :commands (el-get
-             el-get-install
+  :commands (el-get-install
              el-get-update
              el-get-self-update
              el-get-cd
@@ -13,7 +12,7 @@
   :init
   (progn
     ;; Setup el-get-dir
-    (setq el-get-dir (expand-file-name "packages/" config-directory))
+    (setq el-get-dir packages-directory)
 
     ;; Disable autoloads
     (setq el-get-generate-autoloads nil))
@@ -26,7 +25,8 @@
     (defun el-get-read-status-file-force ()
       "Reimplementation that generates the same structure as `el-get-status-file' from the installed packages."
       (let* ((files (reverse (directory-files packages-directory t)))
-             (is-directory (lambda (file) (and (file-directory-p file) (not (member file '("." ".."))))))
+             (is-directory (lambda (file) (and (file-directory-p file)
+                                               (not (member file '("." ".."))))))
              (directories (remove-if-not is-directory files))
              (packages (mapcar 'file-name-base directories))
              (packages (mapcar 'intern packages)))
