@@ -1,41 +1,41 @@
 [submodule "packages/ace-jump-mode"]
   path = packages/ace-jump-mode
-  url = http://github.com/winterTTr/ace-jump-mode.git
+  url = git://github.com/winterTTr/ace-jump-mode.git
   ignore = dirty
 
 [submodule "packages/auto-complete"]
   path = packages/auto-complete
-  url = http://github.com/auto-complete/auto-complete.git
+  url = git://github.com/auto-complete/auto-complete.git
   ignore = dirty
 
 [submodule "packages/auto-complete-clang"]
   path = packages/auto-complete-clang
-  url = http://github.com/brianjcj/auto-complete-clang.git
+  url = git://github.com/brianjcj/auto-complete-clang.git
   ignore = dirty
 
 [submodule "packages/bm"]
   path = packages/bm
-  url = http://github.com/joodland/bm.git
+  url = git://github.com/joodland/bm.git
   ignore = dirty
 
 [submodule "packages/coffee-mode"]
   path = packages/coffee-mode
-  url = http://github.com/defunkt/coffee-mode.git
+  url = git://github.com/defunkt/coffee-mode.git
   ignore = dirty
 
 [submodule "packages/css-eldoc"]
   path = packages/css-eldoc
-  url = http://github.com/zenozeng/css-eldoc.git
+  url = git://github.com/zenozeng/css-eldoc.git
   ignore = dirty
 
 [submodule "packages/dash"]
   path = packages/dash
-  url = http://github.com/magnars/dash.el.git
+  url = git://github.com/magnars/dash.el.git
   ignore = dirty
 
 [submodule "packages/el-get"]
   path = packages/el-get
-  url = http://github.com/dimitri/el-get.git
+  url = git://github.com/dimitri/el-get.git
   ignore = dirty
 
 [submodule "packages/emacs-powerline"]
@@ -45,7 +45,7 @@
 
 [submodule "packages/emacschrome"]
   path = packages/emacschrome
-  url = http://github.com/cbbrowne/emacs_chrome.git
+  url = git://github.com/cbbrowne/emacs_chrome.git
   ignore = dirty
 
 [submodule "packages/evil"]
@@ -55,77 +55,77 @@
 
 [submodule "packages/evil-leader"]
   path = packages/evil-leader
-  url = http://github.com/cofi/evil-leader.git
+  url = git://github.com/cofi/evil-leader.git
   ignore = dirty
 
 [submodule "packages/evil-numbers"]
   path = packages/evil-numbers
-  url = http://github.com/cofi/evil-numbers.git
+  url = git://github.com/cofi/evil-numbers.git
   ignore = dirty
 
 [submodule "packages/evil-rails"]
   path = packages/evil-rails
-  url = http://github.com/antono/evil-rails.git
+  url = git://github.com/antono/evil-rails.git
   ignore = dirty
 
 [submodule "packages/evil-surround"]
   path = packages/evil-surround
-  url = http://github.com/timcharper/evil-surround.git
+  url = git://github.com/timcharper/evil-surround.git
   ignore = dirty
 
 [submodule "packages/exec-path-from-shell"]
   path = packages/exec-path-from-shell
-  url = http://github.com/purcell/exec-path-from-shell.git
+  url = git://github.com/purcell/exec-path-from-shell.git
   ignore = dirty
 
 [submodule "packages/expand-region"]
   path = packages/expand-region
-  url = http://github.com/magnars/expand-region.el.git
+  url = git://github.com/magnars/expand-region.el.git
   ignore = dirty
 
 [submodule "packages/fic-mode"]
   path = packages/fic-mode
-  url = http://github.com/lewang/fic-mode.git
+  url = git://github.com/lewang/fic-mode.git
   ignore = dirty
 
 [submodule "packages/fill-column-indicator"]
   path = packages/fill-column-indicator
-  url = http://github.com/alpaker/Fill-Column-Indicator.git
+  url = git://github.com/alpaker/Fill-Column-Indicator.git
   ignore = dirty
 
 [submodule "packages/fiplr"]
   path = packages/fiplr
-  url = http://github.com/d11wtq/fiplr.git
+  url = git://github.com/d11wtq/fiplr.git
   ignore = dirty
 
 [submodule "packages/flx"]
   path = packages/flx
-  url = http://github.com/lewang/flx.git
+  url = git://github.com/lewang/flx.git
   ignore = dirty
 
 [submodule "packages/fuzzy"]
   path = packages/fuzzy
-  url = http://github.com/auto-complete/fuzzy-el.git
+  url = git://github.com/auto-complete/fuzzy-el.git
   ignore = dirty
 
 [submodule "packages/gh"]
   path = packages/gh
-  url = http://github.com/sigma/gh.el.git
+  url = git://github.com/sigma/gh.el.git
   ignore = dirty
 
 [submodule "packages/gist"]
   path = packages/gist
-  url = http://github.com/defunkt/gist.el.git
+  url = git://github.com/defunkt/gist.el.git
   ignore = dirty
 
 [submodule "packages/git-messenger"]
   path = packages/git-messenger
-  url = http://github.com/syohex/emacs-git-messenger.git
+  url = git://github.com/syohex/emacs-git-messenger.git
   ignore = dirty
 
 [submodule "packages/git-modes"]
   path = packages/git-modes
-  url = http://github.com/lunaryorn/git-modes.git
+  url = git://github.com/lunaryorn/git-modes.git
   ignore = dirty
 
 [submodule "packages/google-maps"]
@@ -135,22 +135,22 @@
 
 [submodule "packages/grizzl"]
   path = packages/grizzl
-  url = http://github.com/d11wtq/grizzl.git
+  url = git://github.com/d11wtq/grizzl.git
   ignore = dirty
 
 [submodule "packages/haml-mode"]
   path = packages/haml-mode
-  url = http://github.com/nex3/haml-mode.git
+  url = git://github.com/nex3/haml-mode.git
   ignore = dirty
 
 [submodule "packages/helm"]
   path = packages/helm
-  url = http://github.com/emacs-helm/helm.git
+  url = git://github.com/emacs-helm/helm.git
   ignore = dirty
 
 [submodule "packages/ido-vertical-mode"]
   path = packages/ido-vertical-mode
-  url = http://github.com/rson/ido-vertical-mode.el.git
+  url = git://github.com/rson/ido-vertical-mode.el.git
   ignore = dirty
 
 [submodule "packages/irony-mode"]
@@ -160,17 +160,17 @@
 
 [submodule "packages/js2-mode"]
   path = packages/js2-mode
-  url = http://github.com/mooz/js2-mode.git
+  url = git://github.com/mooz/js2-mode.git
   ignore = dirty
 
 [submodule "packages/logito"]
   path = packages/logito
-  url = http://github.com/sigma/logito.git
+  url = git://github.com/sigma/logito.git
   ignore = dirty
 
 [submodule "packages/magit"]
   path = packages/magit
-  url = http://github.com/magit/magit.git
+  url = git://github.com/magit/magit.git
   ignore = dirty
 
 [submodule "packages/markdown-mode"]
@@ -180,17 +180,17 @@
 
 [submodule "packages/multi-web-mode"]
   path = packages/multi-web-mode
-  url = http://github.com/fgallina/multi-web-mode.git
+  url = git://github.com/fgallina/multi-web-mode.git
   ignore = dirty
 
 [submodule "packages/multiple-cursors"]
   path = packages/multiple-cursors
-  url = http://github.com/magnars/multiple-cursors.el.git
+  url = git://github.com/magnars/multiple-cursors.el.git
   ignore = dirty
 
 [submodule "packages/org-impress-js"]
   path = packages/org-impress-js
-  url = http://github.com/kinjo/org-impress-js.el.git
+  url = git://github.com/kinjo/org-impress-js.el.git
   ignore = dirty
 
 [submodule "packages/org-mode"]
@@ -200,92 +200,92 @@
 
 [submodule "packages/pcache"]
   path = packages/pcache
-  url = http://github.com/sigma/pcache.git
+  url = git://github.com/sigma/pcache.git
   ignore = dirty
 
 [submodule "packages/phi-search"]
   path = packages/phi-search
-  url = http://github.com/zk-phi/phi-search.git
+  url = git://github.com/zk-phi/phi-search.git
   ignore = dirty
 
 [submodule "packages/php-eldoc"]
   path = packages/php-eldoc
-  url = http://github.com/zenozeng/php-eldoc.git
+  url = git://github.com/zenozeng/php-eldoc.git
   ignore = dirty
 
 [submodule "packages/php-mode"]
   path = packages/php-mode
-  url = http://github.com/ejmr/php-mode.git
+  url = git://github.com/ejmr/php-mode.git
   ignore = dirty
 
 [submodule "packages/popup"]
   path = packages/popup
-  url = http://github.com/auto-complete/popup-el.git
+  url = git://github.com/auto-complete/popup-el.git
   ignore = dirty
 
 [submodule "packages/powerline"]
   path = packages/powerline
-  url = http://github.com/milkypostman/powerline.git
+  url = git://github.com/milkypostman/powerline.git
   ignore = dirty
 
 [submodule "packages/rcodetools"]
   path = packages/rcodetools
-  url = http://github.com/tnoda/rcodetools.git
+  url = git://github.com/tnoda/rcodetools.git
   ignore = dirty
 
 [submodule "packages/request"]
   path = packages/request
-  url = http://github.com/tkf/emacs-request.git
+  url = git://github.com/tkf/emacs-request.git
   ignore = dirty
 
 [submodule "packages/rinari"]
   path = packages/rinari
-  url = http://github.com/eschulte/rinari.git
+  url = git://github.com/eschulte/rinari.git
   ignore = dirty
 
 [submodule "packages/rsense"]
   path = packages/rsense
-  url = http://github.com/m2ym/rsense.git
+  url = git://github.com/m2ym/rsense.git
   ignore = dirty
 
 [submodule "packages/rvm"]
   path = packages/rvm
-  url = http://github.com/senny/rvm.el.git
+  url = git://github.com/senny/rvm.el.git
   ignore = dirty
 
 [submodule "packages/sass-mode"]
   path = packages/sass-mode
-  url = http://github.com/nex3/sass-mode.git
+  url = git://github.com/nex3/sass-mode.git
   ignore = dirty
 
 [submodule "packages/scss-mode"]
   path = packages/scss-mode
-  url = http://github.com/antonj/scss-mode.git
+  url = git://github.com/antonj/scss-mode.git
   ignore = dirty
 
 [submodule "packages/smex"]
   path = packages/smex
-  url = http://github.com/nonsequitur/smex.git
+  url = git://github.com/nonsequitur/smex.git
   ignore = dirty
 
 [submodule "packages/smooth-scrolling"]
   path = packages/smooth-scrolling
-  url = http://github.com/aspiers/smooth-scrolling.git
+  url = git://github.com/aspiers/smooth-scrolling.git
   ignore = dirty
 
 [submodule "packages/switch-window"]
   path = packages/switch-window
-  url = http://github.com/dimitri/switch-window.git
+  url = git://github.com/dimitri/switch-window.git
   ignore = dirty
 
 [submodule "packages/tabulated-list"]
   path = packages/tabulated-list
-  url = http://github.com/sigma/tabulated-list.el.git
+  url = git://github.com/sigma/tabulated-list.el.git
   ignore = dirty
 
 [submodule "packages/undo-tree"]
   path = packages/undo-tree
-  url = http://www.dr-qubit.org/git/undo-tree.git/
+  url = http://www.dr-qubit.org/git/undo-tree.git
   ignore = dirty
 
 [submodule "packages/use-package"]
@@ -295,10 +295,10 @@
 
 [submodule "packages/yaml-mode"]
   path = packages/yaml-mode
-  url = http://github.com/yoshiki/yaml-mode.git
+  url = git://github.com/yoshiki/yaml-mode.git
   ignore = dirty
 
 [submodule "packages/yasnippet"]
   path = packages/yasnippet
-  url = http://github.com/capitaomorte/yasnippet.git
+  url = git://github.com/capitaomorte/yasnippet.git
   ignore = dirty
