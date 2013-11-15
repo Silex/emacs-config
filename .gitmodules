@@ -258,6 +258,11 @@
   url = http://github.com/nex3/sass-mode.git
   ignore = dirty
 
+[submodule "packages/scss-mode"]
+  path = packages/scss-mode
+  url = http://github.com/antonj/scss-mode.git
+  ignore = dirty
+
 [submodule "packages/smex"]
   path = packages/smex
   url = http://github.com/nonsequitur/smex.git
