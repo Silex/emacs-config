@@ -1,6 +1,12 @@
 (use-package magit
   :commands magit-status)
 
+(use-package git-commit-mode
+  :commands git-commit-mode
+  :init
+  (progn
+    (setq git-commit-mode-hook '(turn-on-auto-fill))))
+
 (use-package gitconfig-mode
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
