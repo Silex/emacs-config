@@ -1,5 +1,13 @@
 (use-package magit
-  :commands magit-status)
+  :commands (magit-status
+             magit-grep
+             magit-log
+             magit-file-log
+             magit-reflog)
+  :init
+  (progn
+    (setq magit-completing-read-function 'magit-ido-completing-read)
+    (setq magit-item-highlight-face 'nil)))
 
 (use-package git-commit-mode
   :commands git-commit-mode
