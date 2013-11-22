@@ -9,7 +9,6 @@
     (dired-map-over-marks
      (let* ((filename (dired-get-file-for-visit))
             (buffer (find-file-noselect filename)))
-       (message "YEAH %s" filename)
        ;; Select buffer in ibuffer
        (ibuffer)
        (ibuffer-mark-on-buffer #'(lambda (buf)
@@ -35,6 +34,12 @@
          (with-current-buffer buf (eval form lexical-binding)(save-buffer))
        (kill-buffer buf))) nil))
 
+(defun dired-toggle-dwim-target ()
+  (interactive)
+  "Toggles `dired-dwim-target'."
+  (setq dired-dwim-target (not dired-dwim-target))
+  (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
+
 ;; Inspired from http://www.emacswiki.org/emacs/DiredOmitMode
 (defun dired-hide-dotfiles ()
   "Hide dotfiles"
@@ -57,5 +62,6 @@
   :config
   (progn
     (toggle-diredp-find-file-reuse-dir 1)
+
     ;; Enable R key in dired to use ido
     (put 'dired-do-rename 'ido 'find-file)))
