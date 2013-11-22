@@ -1,9 +1,6 @@
 ;; Default file encoding
 (prefer-coding-system 'utf-8-unix)
 
-;; Never use real tabs
-(setq-default indent-tabs-mode nil)
-
 ;; disable word wrap
 (setq-default truncate-lines t)
 
