@@ -24,9 +24,14 @@
 (global-set-key (kbd "C-S-<up>") 'previous-error)
 (global-set-key (kbd "C-S-<down>") 'next-error)
 
+;; Save with one key
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-x C-s") (lambda () (interactive) (message "Use C-s instead!")))
+
 ;; phi-search is multiple cursors friendly
-(global-set-key (kbd "C-s") 'phi-search)
-(global-set-key (kbd "C-r") 'phi-search-backward)
+(global-set-key (kbd "C-f") 'phi-search)
+(eval-after-load 'evil
+  '(define-key evil-normal-state-map (kbd "C-f") 'phi-search))
 
 ;; Dired
 (global-set-key (kbd "C-d") 'dired-jump)
