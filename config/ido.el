@@ -31,12 +31,10 @@
 
 (use-package ido-ubiquitous
   :commands ido-ubiquitous-mode
-  :init
-  (setq ido-ubiquitous-command-overrides '((disable exact "execute-extended-command")
-                                           (enable prefix "wl-")
-                                           (enable-old prefix "Info-")
-                                           (enable exact "webjump")
-                                           (enable regexp "\\`\\(find\\|load\\|locate\\)-library\\'"))))
+  :config
+  (progn
+    (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
+    (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))))
 
 (use-package ido-vertical-mode
   :commands ido-vertical-mode)
