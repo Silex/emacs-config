@@ -4,6 +4,7 @@
   (progn
     ;;(setq org-log-done t)
     ;;(setq org-todo-keywords '((sequence "TODO" "PLANNED" "|" "DONE")))
+    (setq org-completion-use-ido t)
     (setq org-confirm-babel-evaluate nil)
     (setq org-src-fontify-natively t)
     (setq org-startup-folded nil)
