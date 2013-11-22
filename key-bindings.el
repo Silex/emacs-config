@@ -5,11 +5,11 @@
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 
 ;; expand-region
-(global-set-key (kbd "C-e") 'er/expand-region)
-(eval-after-load 'evil
-  '(progn
-     (define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
-     (define-key evil-visual-state-map (kbd "C-e") 'er/expand-region)))
+;;(global-set-key (kbd "C-e") 'er/expand-region)
+;;(eval-after-load 'evil
+;;  '(progn
+;;     (define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
+;;     (define-key evil-visual-state-map (kbd "C-e") 'er/expand-region)))
 
 ;; Undo kill buffer (like in chrome/firefox for tabs)
 (global-set-key (kbd "C-S-t") 'undo-kill-buffer)
@@ -32,6 +32,16 @@
 (global-set-key (kbd "C-f") 'phi-search)
 (eval-after-load 'evil
   '(define-key evil-normal-state-map (kbd "C-f") 'phi-search))
+
+;; FIXME recentf?
+;(eval-after-load 'ido
+;  '(progn
+;     (let ((lexical-binding))
+;       (dolist (map '(ido-completion-map ido-common-completion-map ido-file-completion-map ido-file-dir-completion-map ido-buffer-completion-map))
+;         (define-key (symbol-value map) (kbd "<up>") 'ido-prev-match)
+;         (define-key (symbol-value map) (kbd "<down>") 'ido-next-match)
+;         (define-key (symbol-value map) (kbd "<left>") 'ido-prev-match-dir)
+;         (define-key (symbol-value map) (kbd "<right>") 'ido-next-match-dir)))))
 
 ;; Dired
 (global-set-key (kbd "C-d") 'dired-jump)

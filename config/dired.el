@@ -40,6 +40,26 @@
   (setq dired-dwim-target (not dired-dwim-target))
   (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
 
+(defun dired-zip (filename &optional arg file-list)
+  (interactive
+   (let ((files (dired-get-marked-files t current-prefix-arg)))
+     (list
+      (read-string "zip filename: ")
+      current-prefix-arg
+      files)))
+  (dired-do-async-shell-command (concat "zip " filename " *") arg file-list))
+
+(defun dired-unzip (&optional doit arg file-list)
+  (interactive
+   (let ((files (dired-get-marked-files t current-prefix-arg)))
+     (list
+      ;; Want to give feedback whether this file or marked files are used:
+                                        ;(y-or-n-p (format "unzip on %s: " current-prefix-arg files))
+      (y-or-n-p "unzip files?") ;; FIXME
+      current-prefix-arg
+      files)))
+  (dired-do-async-shell-command "unzip" arg file-list))
+
 ;; Inspired from http://www.emacswiki.org/emacs/DiredOmitMode
 (defun dired-hide-dotfiles ()
   "Hide dotfiles"

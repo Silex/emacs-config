@@ -1,0 +1,45 @@
+YaSnippets
+
+Learn about marks & C-o vim equivalent
+
+https://github.com/sabof/project-explorer
+
+http://www.emacswiki.org/emacs/QuickRun
+
+https://github.com/jwiegley/dot-emacs/blob/master/override/ediff-util.el
+
+https://github.com/jwiegley/dot-emacs/blob/master/init.el <-- recentf
+http://www.emacswiki.org/emacs/recentf-ext.el
+
+emacs-slime-nav
+workgroups/escreen
+info-lookmore
+compare-windows
+idomenu https://gist.github.com/magnars/2350388
+
+https://github.com/jwiegley/emacs-async
+
+https://github.com/jwiegley/erc-yank
+
+https://github.com/jwiegley/eval-expr
+
+https://gist.github.com/jwiegley/5277578
+
+https://github.com/kbkbkbkb1/guide-key
+
+http://stackoverflow.com/questions/4471835/emacs-dired-mode-and-isearch
+
+(defun Silex-visit-temp-file (name)
+  (interactive "MBuffer name: ") (find-file (format "/tmp/%s" (make-temp-name name))))
+
+you might be interested in this: a set of (correct) regexes for *actually* making ctags work with js:
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
+--regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
+--regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
+--exclude=*.min.js
+--exclude=.git

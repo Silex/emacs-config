@@ -22,9 +22,8 @@
   :config
   (progn
     ;; List of modes where evil should not be enabled
-    (dolist (mode '(grep-mode dired-mode git-rebase-mode process-menu-mode))
-      (add-to-list 'evil-emacs-state-modes mode))
-    ))
+    (mapc (lambda (mode) (add-to-list 'evil-emacs-state-modes mode))
+          '(grep-mode dired-mode git-rebase-mode process-menu-mode phi-search-mode))))
 
 (evil-mode)
 (global-surround-mode)

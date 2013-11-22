@@ -38,10 +38,11 @@
   (interactive "*")
   (uniquify-all-lines-region (point-min) (point-max)))
 
-;; Download & display an url
 (defun open-url-in-buffer(url)
+  "Don't forget to M-x url-handler-mode"
   (interactive "sUrl? ")
-  (switch-to-buffer (url-retrieve-synchronously url)))
+  (find-file url)
+  (set-visited-file-name "FIXME"))
 
 ;; Simpler way to quit with M-x quit
 (defun quit ()

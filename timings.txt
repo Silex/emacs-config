@@ -1,0 +1,8 @@
+colortheme 100ms
+dired-sorting 40ms
+emacs 100ms
+exex_path_from_shell 700ms
+smooth scrolling 20ms
+powerline 100ms
+utils 100ms
+evil 80ms
