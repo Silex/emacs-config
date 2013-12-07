@@ -163,6 +163,11 @@
   url = git://github.com/mooz/js2-mode.git
   ignore = dirty
 
+[submodule "packages/litable"]
+  path = packages/litable
+  url = git://github.com/Fuco1/litable.git
+  ignore = dirty
+
 [submodule "packages/logito"]
   path = packages/logito
   url = git://github.com/sigma/logito.git
