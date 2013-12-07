@@ -48,6 +48,11 @@
   url = git://github.com/cbbrowne/emacs_chrome.git
   ignore = dirty
 
+[submodule "packages/epl"]
+  path = packages/epl
+  url = git://github.com/cask/epl.git
+  ignore = dirty
+
 [submodule "packages/evil"]
   path = packages/evil
   url = git://gitorious.org/evil/evil.git
@@ -223,6 +228,11 @@
   url = git://github.com/ejmr/php-mode.git
   ignore = dirty
 
+[submodule "packages/pkg-info.el"]
+  path = packages/pkg-info.el
+  url = git://github.com/lunaryorn/pkg-info.el.git
+  ignore = dirty
+
 [submodule "packages/popup"]
   path = packages/popup
   url = git://github.com/auto-complete/popup-el.git
@@ -231,6 +241,11 @@
 [submodule "packages/powerline"]
   path = packages/powerline
   url = git://github.com/milkypostman/powerline.git
+  ignore = dirty
+
+[submodule "packages/projectile"]
+  path = packages/projectile
+  url = git://github.com/bbatsov/projectile.git
   ignore = dirty
 
 [submodule "packages/rcodetools"]
@@ -256,6 +271,11 @@
 [submodule "packages/rvm"]
   path = packages/rvm
   url = git://github.com/senny/rvm.el.git
+  ignore = dirty
+
+[submodule "packages/s.el"]
+  path = packages/s.el
+  url = git://github.com/magnars/s.el.git
   ignore = dirty
 
 [submodule "packages/sass-mode"]
