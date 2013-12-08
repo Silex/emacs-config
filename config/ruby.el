@@ -3,6 +3,9 @@
          ("\\.rake\\'" . ruby-mode)
          ("Rakefile" . ruby-mode)
 
+         ;; Thor
+         ("\\.thor\\'" . ruby-mode)
+
          ;; Gemfile
          ("Gemfile" . ruby-mode)
          ("\\.gemspec\\'" . ruby-mode))
