@@ -4,5 +4,5 @@
 ;; Display tabs as two spaces
 (setq-default tab-width 2)
 
-(setq css-indent-offset 2)
-(setq sh-basic-offset 2)
+;; Configure other modes tab-width
+(mapc (lambda(sym)(set-default sym tab-width)) '(css-indent-offset sh-basic-offset coffee-tab-width standard-indent))
