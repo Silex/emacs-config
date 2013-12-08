@@ -1,6 +1,7 @@
 (require 'config)
 
 ;; Configure packages
+(setq use-package-verbose t)
 (require 'use-package)
 (configure-packages)
 
