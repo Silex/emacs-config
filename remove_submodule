@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git submodule deinit -f $*
+git rm -rf $*
