@@ -148,11 +148,6 @@
   url = git://github.com/nex3/haml-mode.git
   ignore = dirty
 
-[submodule "packages/helm"]
-  path = packages/helm
-  url = git://github.com/emacs-helm/helm.git
-  ignore = dirty
-
 [submodule "packages/ido-vertical-mode"]
   path = packages/ido-vertical-mode
   url = git://github.com/rson/ido-vertical-mode.el.git
