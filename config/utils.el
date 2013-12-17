@@ -28,20 +28,26 @@
   (save-excursion
     (let ((end (copy-marker end)))
       (while
-	  (progn
-	    (goto-char start)
-	    (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
-	(replace-match "\\1\n\\2")))))
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
 
 (defun uniquify-all-lines-buffer ()
   "Delete duplicate lines in buffer and keep first occurrence."
   (interactive "*")
   (uniquify-all-lines-region (point-min) (point-max)))
 
-;; Download & display an url
-(defun open-url-in-buffer(url)
+(defun open-url-in-buffer (url)
+  "Downloads and displays an url in a buffer"
   (interactive "sUrl? ")
-  (switch-to-buffer (url-retrieve-synchronously url)))
+  (unless url-handler-mode
+    (url-handler-mode))
+  (let ((current-directory default-directory))
+    (find-file url)
+    (setq default-directory current-directory)
+    (set-visited-file-name (file-name-nondirectory (buffer-file-name)))
+    (setq buffer-read-only nil)))
 
 ;; Simpler way to quit with M-x quit
 (defun quit ()
