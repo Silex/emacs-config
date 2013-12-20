@@ -5,4 +5,5 @@
 (setq-default tab-width 2)
 
 ;; Configure other modes tab-width
-(mapc (lambda(sym)(set-default sym tab-width)) '(css-indent-offset sh-basic-offset coffee-tab-width standard-indent))
+(mapc (lambda(sym)(set-default sym tab-width))
+      '(css-indent-offset sh-basic-offset coffee-tab-width js2-basic-offset standard-indent))
