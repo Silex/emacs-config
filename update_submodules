@@ -1,3 +1,4 @@
 #!/bin/bash
 
-git submodule foreach "git checkout master; git pull origin master"
+git submodule foreach "git reset --hard; git checkout master"
+git pull --recurse-submodules
