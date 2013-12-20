@@ -63,5 +63,7 @@
   (progn
     (toggle-diredp-find-file-reuse-dir 1)
 
+    (setq dired-listing-switches "-alh")
+
     ;; Enable R key in dired to use ido
     (put 'dired-do-rename 'ido 'find-file)))
