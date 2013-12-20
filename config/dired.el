@@ -65,5 +65,7 @@
 
     (setq dired-listing-switches "-alh")
 
+    (setq dired-dwim-target t)
+
     ;; Enable R key in dired to use ido
     (put 'dired-do-rename 'ido 'find-file)))
