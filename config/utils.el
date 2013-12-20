@@ -14,12 +14,17 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun cleanup-region (start end)
+  "Untabify, reindent and delete trailing whitespace for the selected region."
+  (interactive "r")
+  (untabify start end)
+  (indent-region start end)
+  (delete-trailing-whitespace start end))
+
 (defun cleanup-buffer ()
-  "Untabify, reindent and delete trailing whitespace."
+  "Untabify, reindent and delete trailing whitespace for the whole buffer."
   (interactive)
-  (untabify-buffer)
-  (indent-buffer)
-  (delete-trailing-whitespace))
+  (cleanup-region (point-min) (point-max)))
 
 ;; Makes all lines unique
 (defun uniquify-all-lines-region (start end)
