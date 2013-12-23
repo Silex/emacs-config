@@ -203,6 +203,11 @@
   url = git://github.com/sigma/pcache.git
   ignore = dirty
 
+[submodule "packages/pcre2el"]
+  path = packages/pcre2el
+  url = git://github.com/joddie/pcre2el.git
+  ignore = dirty
+
 [submodule "packages/phi-search"]
   path = packages/phi-search
   url = git://github.com/zk-phi/phi-search.git
