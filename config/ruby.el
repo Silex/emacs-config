@@ -1,3 +1,8 @@
+;; M-x xmp for the win!
+
+(use-package rinari
+  :commands inf-ruby)
+
 (use-package ruby-mode
   :mode (;; Rake
          ("\\.rake\\'" . ruby-mode)
@@ -22,6 +27,4 @@
     (use-package ruby-compilation)
     (use-package rcodetools)
     (use-package rinari)
-    (use-package evil-rails)
-
-    (add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings)))
+    (use-package evil-rails)))
