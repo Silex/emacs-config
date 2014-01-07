@@ -118,21 +118,6 @@
 
       (message "No obsolete buffers; did nothing."))))
 
-(defvar bfy-html-document-path "~/.emacs.d/")
-
-(defvar bfy-html-document-name "document.html")
-
-(defun browserify (&optional buffer)
-  "Instantly opens the content of a buffer in the system's default browser"
-  (interactive "bBuffer: ")
-  (message (format "BUFFER: %s" buffer))  ; DEBUG
-  (let ((url (expand-file-name (concat bfy-html-document-path
-                                       bfy-html-document-name))))
-    (with-current-buffer (htmlize-buffer buffer)
-      (write-file
-       url)
-      (browse-url url))))
-
 ;; Hide emacs when we quit, that way it loads faster
 (defun quit-by-hiding()
   (interactive)

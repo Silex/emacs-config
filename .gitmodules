@@ -143,6 +143,11 @@
   url = git://github.com/nex3/haml-mode.git
   ignore = dirty
 
+[submodule "packages/htmlize"]
+  path = packages/htmlize
+  url = git://github.com/emacsmirror/htmlize.git
+  ignore = dirty
+
 [submodule "packages/ido-vertical-mode"]
   path = packages/ido-vertical-mode
   url = git://github.com/rson/ido-vertical-mode.el.git
