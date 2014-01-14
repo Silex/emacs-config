@@ -11,6 +11,9 @@
          ;; Thor
          ("\\.thor\\'" . ruby-mode)
 
+         ;; ERB
+         ("\\.erb\\'" . ruby-mode)
+
          ;; Gemfile
          ("Gemfile" . ruby-mode)
          ("\\.gemspec\\'" . ruby-mode))
