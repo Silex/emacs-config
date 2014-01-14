@@ -5,7 +5,7 @@
 
 ;; Author: Alex Bennée <alex@bennee.com>
 ;; Maintainer: Alex Bennée <alex@bennee.com>
-;; Version: 1.10
+;; Version: 1.14
 ;; Homepage: https://github.com/stsquad/emacs_chrome
 
 ;; This file is not part of GNU Emacs.
@@ -102,6 +102,15 @@ Current buffer holds the text that is about to be sent back to the client."
   "Hook run when starting a editing buffer.  Current buffer is
 the fully prepared editing buffer.  Use this hook to enable
 buffer-specific modes or add key bindings."
+  :group 'edit-server
+  :type 'hook)
+
+(defcustom edit-server-edit-mode-hook nil
+  "Hook run when we enter edit-server-edit-mode.  This is the final step of
+an edit session and is called when all frames and displays have been
+set-up.  You should not set any additional major modes here though as they
+may conflict with the edit-server-edit-mode, use the
+edit-server-start-hook instead."
   :group 'edit-server
   :type 'hook)
 
@@ -252,7 +261,11 @@ send a response back to the client."
   :group 'edit-server
   :lighter " EditSrv"
   :init-value nil
-  :keymap edit-server-edit-mode-map)
+  :keymap edit-server-edit-mode-map
+  (when (and
+         (numberp arg)
+         (> arg 0))
+    (run-hooks 'edit-server-edit-mode-hook)))
 
 (defun turn-on-edit-server-edit-mode-if-server ()
   "Turn on `edit-server-edit-mode' if in an edit-server buffer."
@@ -403,12 +416,14 @@ non-nil, then STRING is also echoed to the message line."
       ;; look for "x-url" header
       (save-excursion
 	(goto-char (point-min))
-	(when (re-search-forward "^x-url: .*/\\{2,3\\}\\([^?\r\n]+\\)" nil t)
+	(when (re-search-forward "^x-url: .*/\\{2,3\\}\\([^?\r\n
+]+\\)" nil t)
 	  (setq edit-server-url (match-string 1))))
       ;; look for "x-file" header
       (save-excursion
 	(goto-char (point-min))
-	(when (re-search-forward "^x-file: \\([^?\r\n]+\\)" nil t)
+	(when (re-search-forward "^x-file: \\([^?\r\n
+]+\\)" nil t)
 	  (edit-server-log proc "Found x-file: %s" (match-string 1))
 	  (setq edit-server-file (match-string 1))))
       ;; look for head/body separator
@@ -467,30 +482,28 @@ The new frame will have a specific frame parameter of
      'edit-server-forground-frame 't)))
 
 (defun edit-server-show-edit-buffer (buffer)
-  "Show edit buffer by creating a frame or raising the selected
-frame."
-  (if edit-server-new-frame
-      (let ((new-frame
-	     (if (memq window-system '(ns mac))
-		 ;; Aquamacs, Emacs NS, Emacs (experimental) Mac port
-		 (make-frame edit-server-new-frame-alist)
-	       (make-frame-on-display (getenv "DISPLAY")
-				      edit-server-new-frame-alist))))
-	(unless edit-server-new-frame-mode-line
-	  (setq mode-line-format nil))
-	(select-frame new-frame)
-	(when (and (eq window-system 'x)
-		   (fboundp 'x-send-client-message))
-	  (x-send-client-message nil 0 nil
-				 "_NET_ACTIVE_WINDOW" 32
-				 '(1 0 0)))
-	(raise-frame new-frame)
-	(set-window-buffer (frame-selected-window new-frame) buffer)
-	new-frame)
-    (select-frame-set-input-focus (window-frame (selected-window)))
+  "Show edit `BUFFER' by creating a frame or raising the selected
+frame. If a frame was created it returns `FRAME'."
+  (let ((edit-frame nil))
+    (when edit-server-new-frame
+      (setq edit-frame
+            (if (memq window-system '(ns mac))
+                ;; Aquamacs, Emacs NS, Emacs (experimental) Mac port
+                (make-frame edit-server-new-frame-alist)
+              (make-frame-on-display (getenv "DISPLAY")
+                                     edit-server-new-frame-alist)))
+      (unless edit-server-new-frame-mode-line
+        (setq mode-line-format nil))
+      (select-frame edit-frame)
+      (when (and (eq window-system 'x)
+                 (fboundp 'x-send-client-message))
+        (x-send-client-message nil 0 nil
+                               "_NET_ACTIVE_WINDOW" 32
+                               '(1 0 0))))
     (pop-to-buffer buffer)
-    (raise-frame)
-    nil))
+    (raise-frame edit-frame)
+    (select-frame-set-input-focus (window-frame (selected-window)))
+    edit-frame))
 
 (defun edit-server-choose-major-mode ()
   "Use `edit-server-url-major-mode-alist' to choose a major mode
