@@ -54,6 +54,29 @@
     (set-visited-file-name (file-name-nondirectory (buffer-file-name)))
     (setq buffer-read-only nil)))
 
+(defun show-string-as-c (string)
+  "Generate C program printing obfuscated string."
+  (interactive "sString? ")
+  (require 'bindat)
+  (let* ((vector (string-to-vector string))
+         (vector (vconcat vector (make-vector (- 4 (mod (length vector) 4)) 0)))
+         (len (/ (length vector) 4))
+         (unpack (bindat-unpack `((test vec ,len u32r)) vector))
+         (integers (cdr (car unpack)))
+         (buffer (get-buffer-create "fun.c")))
+    (set-buffer buffer)
+    (erase-buffer)
+    (insert "#include <stdio.h>\n\n")
+    (insert "int main()\n{\n")
+    (insert "unsigned arr[] = { ")
+    (insert (mapconcat 'number-to-string integers ", "))
+    (insert " };\n")
+    (insert "puts(arr);\nreturn 0;\n}");
+    (c-mode)
+    (indent-region (point-min) (point-max))
+    (pop-to-buffer buffer)
+    (goto-line 1)))
+
 ;; Simpler way to quit with M-x quit
 (defun quit ()
   (interactive)
