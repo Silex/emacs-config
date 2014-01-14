@@ -238,11 +238,6 @@
   url = git://github.com/auto-complete/popup-el.git
   ignore = dirty
 
-[submodule "packages/powerline"]
-  path = packages/powerline
-  url = git://github.com/milkypostman/powerline.git
-  ignore = dirty
-
 [submodule "packages/projectile"]
   path = packages/projectile
   url = git://github.com/bbatsov/projectile.git
