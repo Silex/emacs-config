@@ -15,8 +15,11 @@
   :idle
   (global-auto-complete-mode))
 
-(use-package auto-complete-clang
-  :disabled t)
+(use-package robe-ac
+  :commands robe-ac-setup)
 
-(use-package auto-complete-ruby
-  :disabled t)
+(use-package robe
+  :command robe-mode
+  :config
+  (add-hook 'robe-mode-hook 'robe-ac-setup))
+

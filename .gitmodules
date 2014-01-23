@@ -258,6 +258,11 @@
   url = git://github.com/eschulte/rinari.git
   ignore = dirty
 
+[submodule "packages/robe"]
+  path = packages/robe
+  url = git://github.com/dgutov/robe.git
+  ignore = dirty
+
 [submodule "packages/rsense"]
   path = packages/rsense
   url = git://github.com/m2ym/rsense.git
