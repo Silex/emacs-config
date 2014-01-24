@@ -97,7 +97,7 @@
 (defun explore-current-directory ()
   "Open the current buffer's directory in nautilus/finder/explorer."
   (interactive)
-  (browse-url (concat "file://" (file-name-directory (buffer-file-name)))))
+  (browse-url (concat "file://" (file-name-directory (or buffer-file-name dired-directory)))))
 
 (defun purge-obsolete-buffers ()
   (interactive)
