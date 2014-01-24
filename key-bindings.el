@@ -5,11 +5,7 @@
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 
 ;; expand-region
-(global-set-key (kbd "C-e") 'er/expand-region)
-(eval-after-load 'evil
-  '(progn
-     (define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
-     (define-key evil-visual-state-map (kbd "C-e") 'er/expand-region)))
+(global-set-key (kbd "C-c e") 'er/expand-region)
 
 ;; Undo kill buffer (like in chrome/firefox for tabs)
 (global-set-key (kbd "C-S-t") 'undo-kill-buffer)
@@ -18,7 +14,7 @@
 (global-set-key (kbd "C-x o") 'switch-window)
 
 ;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c g") 'magit-status)
 
 ;; Grep/Occur/Compile
 (global-set-key (kbd "C-S-<up>") 'previous-error)
@@ -26,7 +22,6 @@
 
 ;; Save with one key
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-x C-s") (lambda () (interactive) (message "Use C-s instead!")))
 
 ;; phi-search is multiple cursors friendly
 (global-set-key (kbd "C-f") 'phi-search)
@@ -46,7 +41,7 @@
      (define-key dired-mode-map (kbd "s") 'dired-sort)))
 
 ;; recentf
-(global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+(global-set-key (kbd "S-C-r") 'recentf-ido-find-file)
 
 ;; Buffers
 (global-set-key (kbd "C-w") 'kill-this-buffer)
@@ -57,7 +52,7 @@
      (define-key evil-normal-state-map (kbd "C-b") 'ido-switch-buffer)))
 
 ;; IBuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "S-C-b") 'ibuffer)
 (eval-after-load 'ibuffer
   '(progn
      (define-key ibuffer-mode-map (kbd "U") (lambda()(interactive)(ibuffer-unmark-all ?\n)))
