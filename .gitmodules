@@ -28,11 +28,6 @@
   url = git://github.com/kinjo/org-impress-js.el.git
   ignore = dirty
 
-[submodule "packages/org-mode"]
-  path = packages/org-mode
-  url = git://orgmode.org/org-mode.git
-  ignore = dirty
-
 [submodule "packages/pkg-info.el"]
   path = packages/pkg-info.el
   url = git://github.com/lunaryorn/pkg-info.el.git
