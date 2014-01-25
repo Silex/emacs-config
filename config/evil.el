@@ -21,6 +21,8 @@
 
   :config
   (progn
+    (use-package evil-visualstar)
+
     ;; List of modes where evil should not be enabled
     (dolist (mode '(grep-mode dired-mode git-rebase-mode process-menu-mode))
       (add-to-list 'evil-emacs-state-modes mode))

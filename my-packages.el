@@ -26,6 +26,7 @@
                     evil
                     evil-leader
                     evil-numbers
+                    evil-visualstar
                     exec-path-from-shell
                     expand-region
                     fic-mode
