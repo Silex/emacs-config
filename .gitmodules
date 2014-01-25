@@ -1,38 +1,3 @@
-[submodule "packages/ace-jump-mode"]
-  path = packages/ace-jump-mode
-  url = git://github.com/winterTTr/ace-jump-mode.git
-  ignore = dirty
-
-[submodule "packages/auto-complete"]
-  path = packages/auto-complete
-  url = git://github.com/auto-complete/auto-complete.git
-  ignore = dirty
-
-[submodule "packages/auto-complete-clang"]
-  path = packages/auto-complete-clang
-  url = git://github.com/brianjcj/auto-complete-clang.git
-  ignore = dirty
-
-[submodule "packages/bm"]
-  path = packages/bm
-  url = git://github.com/joodland/bm.git
-  ignore = dirty
-
-[submodule "packages/coffee-mode"]
-  path = packages/coffee-mode
-  url = git://github.com/defunkt/coffee-mode.git
-  ignore = dirty
-
-[submodule "packages/css-eldoc"]
-  path = packages/css-eldoc
-  url = git://github.com/zenozeng/css-eldoc.git
-  ignore = dirty
-
-[submodule "packages/dash"]
-  path = packages/dash
-  url = git://github.com/magnars/dash.el.git
-  ignore = dirty
-
 [submodule "packages/emacs-powerline"]
   path = packages/emacs-powerline
   url = git@github.com:jonathanchu/emacs-powerline.git
@@ -41,26 +6,6 @@
 [submodule "packages/emacschrome"]
   path = packages/emacschrome
   url = git://github.com/cbbrowne/emacs_chrome.git
-  ignore = dirty
-
-[submodule "packages/epl"]
-  path = packages/epl
-  url = git://github.com/cask/epl.git
-  ignore = dirty
-
-[submodule "packages/evil"]
-  path = packages/evil
-  url = git://gitorious.org/evil/evil.git
-  ignore = dirty
-
-[submodule "packages/evil-leader"]
-  path = packages/evil-leader
-  url = git://github.com/cofi/evil-leader.git
-  ignore = dirty
-
-[submodule "packages/evil-numbers"]
-  path = packages/evil-numbers
-  url = git://github.com/cofi/evil-numbers.git
   ignore = dirty
 
 [submodule "packages/evil-rails"]
@@ -73,124 +18,9 @@
   url = git://github.com/timcharper/evil-surround.git
   ignore = dirty
 
-[submodule "packages/exec-path-from-shell"]
-  path = packages/exec-path-from-shell
-  url = git://github.com/purcell/exec-path-from-shell.git
-  ignore = dirty
-
-[submodule "packages/expand-region"]
-  path = packages/expand-region
-  url = git://github.com/magnars/expand-region.el.git
-  ignore = dirty
-
-[submodule "packages/fic-mode"]
-  path = packages/fic-mode
-  url = git://github.com/lewang/fic-mode.git
-  ignore = dirty
-
-[submodule "packages/fill-column-indicator"]
-  path = packages/fill-column-indicator
-  url = git://github.com/alpaker/Fill-Column-Indicator.git
-  ignore = dirty
-
-[submodule "packages/fiplr"]
-  path = packages/fiplr
-  url = git://github.com/d11wtq/fiplr.git
-  ignore = dirty
-
-[submodule "packages/flx"]
-  path = packages/flx
-  url = git://github.com/lewang/flx.git
-  ignore = dirty
-
-[submodule "packages/fuzzy"]
-  path = packages/fuzzy
-  url = git://github.com/auto-complete/fuzzy-el.git
-  ignore = dirty
-
-[submodule "packages/gh"]
-  path = packages/gh
-  url = git://github.com/sigma/gh.el.git
-  ignore = dirty
-
-[submodule "packages/gist"]
-  path = packages/gist
-  url = git://github.com/defunkt/gist.el.git
-  ignore = dirty
-
-[submodule "packages/git-messenger"]
-  path = packages/git-messenger
-  url = git://github.com/syohex/emacs-git-messenger.git
-  ignore = dirty
-
-[submodule "packages/git-modes"]
-  path = packages/git-modes
-  url = git://github.com/lunaryorn/git-modes.git
-  ignore = dirty
-
-[submodule "packages/google-maps"]
-  path = packages/google-maps
-  url = git://git.naquadah.org/google-maps.git
-  ignore = dirty
-
-[submodule "packages/grizzl"]
-  path = packages/grizzl
-  url = git://github.com/d11wtq/grizzl.git
-  ignore = dirty
-
-[submodule "packages/haml-mode"]
-  path = packages/haml-mode
-  url = git://github.com/nex3/haml-mode.git
-  ignore = dirty
-
-[submodule "packages/htmlize"]
-  path = packages/htmlize
-  url = git://github.com/emacsmirror/htmlize.git
-  ignore = dirty
-
-[submodule "packages/ido-vertical-mode"]
-  path = packages/ido-vertical-mode
-  url = git://github.com/rson/ido-vertical-mode.el.git
-  ignore = dirty
-
 [submodule "packages/irony-mode"]
   path = packages/irony-mode
   url = git@github.com:Sarcasm/irony-mode.git
-  ignore = dirty
-
-[submodule "packages/js2-mode"]
-  path = packages/js2-mode
-  url = git://github.com/mooz/js2-mode.git
-  ignore = dirty
-
-[submodule "packages/litable"]
-  path = packages/litable
-  url = git://github.com/Fuco1/litable.git
-  ignore = dirty
-
-[submodule "packages/logito"]
-  path = packages/logito
-  url = git://github.com/sigma/logito.git
-  ignore = dirty
-
-[submodule "packages/magit"]
-  path = packages/magit
-  url = git://github.com/magit/magit.git
-  ignore = dirty
-
-[submodule "packages/markdown-mode"]
-  path = packages/markdown-mode
-  url = git://jblevins.org/git/markdown-mode.git
-  ignore = dirty
-
-[submodule "packages/multi-web-mode"]
-  path = packages/multi-web-mode
-  url = git://github.com/fgallina/multi-web-mode.git
-  ignore = dirty
-
-[submodule "packages/multiple-cursors"]
-  path = packages/multiple-cursors
-  url = git://github.com/magnars/multiple-cursors.el.git
   ignore = dirty
 
 [submodule "packages/org-impress-js"]
@@ -198,132 +28,12 @@
   url = git://github.com/kinjo/org-impress-js.el.git
   ignore = dirty
 
-[submodule "packages/org-mode"]
-  path = packages/org-mode
-  url = git://orgmode.org/org-mode.git
-  ignore = dirty
-
-[submodule "packages/pcache"]
-  path = packages/pcache
-  url = git://github.com/sigma/pcache.git
-  ignore = dirty
-
-[submodule "packages/pcre2el"]
-  path = packages/pcre2el
-  url = git://github.com/joddie/pcre2el.git
-  ignore = dirty
-
-[submodule "packages/phi-search"]
-  path = packages/phi-search
-  url = git://github.com/zk-phi/phi-search.git
-  ignore = dirty
-
-[submodule "packages/php-eldoc"]
-  path = packages/php-eldoc
-  url = git://github.com/zenozeng/php-eldoc.git
-  ignore = dirty
-
-[submodule "packages/php-mode"]
-  path = packages/php-mode
-  url = git://github.com/ejmr/php-mode.git
-  ignore = dirty
-
 [submodule "packages/pkg-info.el"]
   path = packages/pkg-info.el
   url = git://github.com/lunaryorn/pkg-info.el.git
   ignore = dirty
 
-[submodule "packages/popup"]
-  path = packages/popup
-  url = git://github.com/auto-complete/popup-el.git
-  ignore = dirty
-
-[submodule "packages/projectile"]
-  path = packages/projectile
-  url = git://github.com/bbatsov/projectile.git
-  ignore = dirty
-
 [submodule "packages/rcodetools"]
   path = packages/rcodetools
   url = git://github.com/tnoda/rcodetools.git
-  ignore = dirty
-
-[submodule "packages/request"]
-  path = packages/request
-  url = git://github.com/tkf/emacs-request.git
-  ignore = dirty
-
-[submodule "packages/rinari"]
-  path = packages/rinari
-  url = git://github.com/eschulte/rinari.git
-  ignore = dirty
-
-[submodule "packages/robe"]
-  path = packages/robe
-  url = git://github.com/dgutov/robe.git
-  ignore = dirty
-
-[submodule "packages/rsense"]
-  path = packages/rsense
-  url = git://github.com/m2ym/rsense.git
-  ignore = dirty
-
-[submodule "packages/rvm"]
-  path = packages/rvm
-  url = git://github.com/senny/rvm.el.git
-  ignore = dirty
-
-[submodule "packages/s.el"]
-  path = packages/s.el
-  url = git://github.com/magnars/s.el.git
-  ignore = dirty
-
-[submodule "packages/sass-mode"]
-  path = packages/sass-mode
-  url = git://github.com/nex3/sass-mode.git
-  ignore = dirty
-
-[submodule "packages/scss-mode"]
-  path = packages/scss-mode
-  url = git://github.com/antonj/scss-mode.git
-  ignore = dirty
-
-[submodule "packages/smex"]
-  path = packages/smex
-  url = git://github.com/nonsequitur/smex.git
-  ignore = dirty
-
-[submodule "packages/smooth-scrolling"]
-  path = packages/smooth-scrolling
-  url = git://github.com/aspiers/smooth-scrolling.git
-  ignore = dirty
-
-[submodule "packages/switch-window"]
-  path = packages/switch-window
-  url = git://github.com/dimitri/switch-window.git
-  ignore = dirty
-
-[submodule "packages/tabulated-list"]
-  path = packages/tabulated-list
-  url = git://github.com/sigma/tabulated-list.el.git
-  ignore = dirty
-
-[submodule "packages/undo-tree"]
-  path = packages/undo-tree
-  url = http://www.dr-qubit.org/git/undo-tree.git
-  ignore = dirty
-
-[submodule "packages/use-package"]
-  path = packages/use-package
-  url = git@github.com:jwiegley/use-package.git
-  ignore = dirty
-
-[submodule "packages/yaml-mode"]
-  path = packages/yaml-mode
-  url = git://github.com/yoshiki/yaml-mode.git
-  ignore = dirty
-
-[submodule "packages/yasnippet"]
-  path = packages/yasnippet
-  url = git://github.com/capitaomorte/yasnippet.git
   ignore = dirty
