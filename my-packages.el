@@ -66,6 +66,7 @@
                     popup
                     projectile
                     rainbow-mode
+                    readline-complete
                     request
                     robe
                     rinari
