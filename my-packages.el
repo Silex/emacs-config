@@ -87,7 +87,8 @@
                     use-package
                     vimrc-mode
                     yaml-mode
-                    yasnippet))
+                    yasnippet
+                    ztree))
 
 (when (member nil (mapcar 'package-installed-p my-packages))
   (package-refresh-contents)
