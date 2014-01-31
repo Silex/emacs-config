@@ -1,13 +1,9 @@
 ;; Setup variables
 (setq package-enable-at-startup nil)
-(setq package-user-dir (expand-file-name "elpa" config-directory))
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
-
-;; Make sure directory exists and initialize package.el
-(make-directory package-user-dir t)
 (package-initialize)
 
 ;; Install package if needed
