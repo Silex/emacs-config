@@ -33,6 +33,7 @@
                     fuzzy
                     gh
                     gist
+                    gitconfig-mode
                     git-messenger
                     google-maps
                     goto-last-change
