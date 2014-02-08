@@ -10,5 +10,4 @@
                       (css-mode "<style[^>]*>" "</style>")))
     (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "erb"))))
 
-(dolist (mode '(html-mode css-mode php-mode ruby-mode))
-  (add-hook (intern (concat (symbol-name mode) "-hook")) 'multi-web-mode))
+(multi-web-global-mode)
