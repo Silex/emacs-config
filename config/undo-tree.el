@@ -1,5 +1,5 @@
 (use-package undo-tree
-  :commands undo-tree-mode
+  :defer t
   :init
   (progn
     ;; Undo

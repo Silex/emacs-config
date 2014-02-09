@@ -1,6 +1,3 @@
-(use-package ibuffer
-  :commands ibuffer)
-
 (defun ibuffer-mark-by-extension (extension)
   "Mark all buffers whoese extension matches EXTENSION."
   (interactive "sMark by extension: ")

@@ -7,7 +7,7 @@
       (find-file file))))
 
 (use-package ido
-  :commands ido-mode
+  :defer t
   :init
   (progn
     (setq ido-enable-flex-matching t)
@@ -30,14 +30,11 @@
   :commands kill-ring-ido)
 
 (use-package ido-ubiquitous
-  :commands ido-ubiquitous-mode
+  :defer t
   :config
   (progn
     (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
     (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))))
-
-(use-package ido-vertical-mode
-  :commands ido-vertical-mode)
 
 (ido-mode t)
 (ido-everywhere t)

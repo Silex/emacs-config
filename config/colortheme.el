@@ -1,12 +1,6 @@
 ;; Colortheme
 ;(color-theme-zenburn)
 
-(use-package color-theme
-  :commands color-theme-install)
-
-(use-package color-theme-monokai
-  :commands color-theme-monokai)
-
 (color-theme-monokai)
 
 ;; Sweyla themes

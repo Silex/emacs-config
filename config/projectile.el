@@ -1,6 +1,5 @@
 (use-package projectile
-  :commands (projectile-mode
-             projectile-global-mode)
+  :defer t
   :init
   (progn
     (setq projectile-remember-window-configs t)

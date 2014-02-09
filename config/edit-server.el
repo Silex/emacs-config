@@ -1,4 +1,6 @@
-(use-package edit-server
-  :commands edit-server-start
-  :idle (edit-server-start))
+(defun emacs-chrome-start()
+  (edit-server-start))
 
+(use-package edit-server
+  :defer t
+  :idle (edit-server-start))

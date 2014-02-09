@@ -1,5 +1,5 @@
 (use-package hippie-exp
-  :commands hippie-expand
+  :defer t
   :config
   (setq hippie-expand-try-functions-list
         '(try-expand-dabbrev

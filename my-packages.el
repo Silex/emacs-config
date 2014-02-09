@@ -50,6 +50,7 @@
                     litable
                     magit
                     markdown-mode
+                    minimap
                     multi-term
                     multi-web-mode
                     multiple-cursors

@@ -1,8 +1,5 @@
 ;; M-x xmp for the win!
 
-(use-package rinari
-  :commands inf-ruby)
-
 (use-package ruby-mode
   :mode (;; Rake
          ("\\.rake\\'" . ruby-mode)

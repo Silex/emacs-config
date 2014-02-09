@@ -1,6 +1,3 @@
-(use-package xml
-  :commands xml-parse-region)
-
 (defun assoc-or-error (what where &optional err-string)
   (or (assoc what where)
       (error (or err-string "Suddenly errors! Thousands of them!"))))

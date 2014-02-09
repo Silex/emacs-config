@@ -1,7 +1,5 @@
 (use-package sr-speedbar
-  :commands (sr-speedbar-open
-             sr-speedbar-close
-             sr-speedbar-toggle)
+  :defer t
   :init
   (progn
     ;; Show tree on the left side

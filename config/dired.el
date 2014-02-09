@@ -70,12 +70,8 @@
       (dired-mark-files-regexp "^\\\.")
       (dired-do-kill-lines))))
 
-(use-package dired+
-  :commands toggle-diredp-find-file-reuse-dir)
-
 (use-package dired
-  :commands (dired
-             dired-jump)
+  :defer t
   :init
   (progn
     (setq dired-clean-up-buffers-too nil))

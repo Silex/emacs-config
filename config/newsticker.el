@@ -1,6 +1,5 @@
 (use-package newsticker
-  :commands (newsticker-start
-             newsticker-treeview)
+  :defer t
   :config
   (progn
     ;; W3M HTML renderer isn't essential, but it's pretty useful.

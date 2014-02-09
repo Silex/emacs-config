@@ -1,5 +1,5 @@
 (use-package yasnippet
-  :commands yas-global-mode
+  :defer t
   :mode ("\\.yasnippet\\'" . snippet-mode)
   :config
   (add-to-list 'yas-snippet-dirs (concat config-directory "snippets"))

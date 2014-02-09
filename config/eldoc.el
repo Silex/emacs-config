@@ -18,9 +18,3 @@
                   (make-local-variable 'eldoc-documentation-function)
                   'php-eldoc-function)
                  (eldoc-mode)))))
-
-(use-package css-eldoc
-  :commands turn-on-css-eldoc)
-
-(use-package c-eldoc
-  :commands c-turn-on-eldoc-mode)

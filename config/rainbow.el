@@ -1,5 +1,5 @@
 (use-package rainbow-mode
-  :commands rainbow-mode
+  :defer t
   :init
   (progn
     (setq rainbow-html-colors-major-mode-list

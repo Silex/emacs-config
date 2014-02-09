@@ -1,3 +1,1 @@
-(use-package powerline
-  :config
-  (scroll-bar-mode))
+(use-package powerline)

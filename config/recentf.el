@@ -1,6 +1,5 @@
 (use-package recentf
-  :commands (recentf-mode
-             recentf-open-files)
+  :defer t
   :init
   (progn
     (setq recentf-auto-cleanup 'never)

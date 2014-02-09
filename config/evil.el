@@ -1,15 +1,8 @@
 (use-package surround
   :commands global-surround-mode)
 
-(use-package evil-numbers
-  :commands (evil-numbers/inc-at-pt
-             evil-number/dec-at-pt))
-
-(use-package evil-leader
-  :commands global-evil-leader-mode)
-
 (use-package evil
-  :commands evil-mode
+  :defer t
 
   :init
   (progn

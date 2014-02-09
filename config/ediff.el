@@ -1,8 +1,5 @@
 (use-package ediff
-  :commands (ediff
-             ediff-buffers
-             ediff-files
-             ediff-directories)
+  :defer t
   :init
   (progn
     ;; Split window horizontally by default

@@ -1,6 +1,5 @@
 (use-package multi-web-mode
-  :commands (multi-web-mode
-             multi-web-global-mode)
+  :defer t
   :init
   (progn
     (setq mweb-default-major-mode 'html-mode)
