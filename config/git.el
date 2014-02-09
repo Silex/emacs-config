@@ -1,31 +1,19 @@
 (use-package magit
-  :commands (magit-status
-             magit-grep
-             magit-log
-             magit-file-log
-             magit-reflog)
+  :defer t
   :init
   (progn
     (setq magit-completing-read-function 'magit-ido-completing-read)
-    (setq magit-item-highlight-face 'nil)))
-
-(use-package git-commit-mode
-  :commands git-commit-mode
-  :init
+    (setq magit-item-highlight-face 'nil)
+    (setq git-commit-mode-hook '(turn-on-auto-fill)))
+  :config
   (progn
-    (setq git-commit-mode-hook '(turn-on-auto-fill))))
+    (when (memq window-system '(mac ns x))
+      (exec-path-from-shell-initialize))
+    (setq magit-emacsclient-executable (eval (car (get 'magit-emacsclient-executable 'standard-value))))))
 
 (use-package gitconfig-mode
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
-
-(use-package git-messenger
-  :commands git-messenger:popup-message)
-
-(use-package gist
-  :commands (gist-buffer
-             gist-region
-             gist-list))
 
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
