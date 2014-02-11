@@ -9,8 +9,8 @@
     (require 'auto-complete-config)
     (ac-config-default)
     (add-to-list 'ac-modes 'coffee-mode)
-    (add-to-list 'ac-modes 'haml-mode))
-    (add-to-list 'ac-modes 'shell-mode)
+    (add-to-list 'ac-modes 'haml-mode)
+    (add-to-list 'ac-modes 'shell-mode))
   :idle
   (global-auto-complete-mode))
 
@@ -25,6 +25,11 @@
 
 (use-package robe
   :defer t
-  :config
-  (add-hook 'robe-mode-hook 'robe-ac-setup))
+  :init
+  (progn
+    (add-hook 'robe-mode-hook 'robe-ac-setup)
+    (add-hook 'ruby-mode-hook 'robe-mode)
+    (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+      (rvm-activate-corresponding-ruby))))
+
 

@@ -1,4 +1,5 @@
 ;; M-x xmp for the win!
+;; rvm rvmrc create ruby@gemset --ruby-version
 
 (use-package ruby-mode
   :mode (;; Rake
@@ -27,5 +28,4 @@
     (use-package ruby-compilation)
     (use-package rcodetools)
     (use-package rinari)
-    (use-package robe)
     (use-package evil-rails)))
