@@ -17,15 +17,12 @@
          ("\\.gemspec\\'" . ruby-mode))
 
   :init
-  (progn
-    ;; Don't automatically insert encoding
-    (setq ruby-insert-encoding-magic-comment nil)
-
-    (setq ruby-use-encoding-map nil))
+  ;; Don't automatically insert encoding
+  (setq ruby-insert-encoding-magic-comment nil)
+  (setq ruby-use-encoding-map nil)
 
   :config
-  (progn
-    (use-package ruby-compilation)
-    (use-package rcodetools)
-    (use-package rinari)
-    (use-package evil-rails)))
+  (use-package ruby-compilation)
+  (use-package rcodetools)
+  (use-package rinari)
+  (use-package evil-rails))

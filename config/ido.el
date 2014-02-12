@@ -9,22 +9,21 @@
 (use-package ido
   :defer t
   :init
-  (progn
-    (setq ido-enable-flex-matching t)
-    (setq ido-create-new-buffer 'always)
+  (setq ido-enable-flex-matching t)
+  (setq ido-create-new-buffer 'always)
 
-    ;(setq ido-show-dot-for-dired t)
-    (setq ido-use-url-at-point nil)
-    (setq ido-use-filename-at-point nil)
+  ;(setq ido-show-dot-for-dired t)
+  (setq ido-use-url-at-point nil)
+  (setq ido-use-filename-at-point nil)
 
-    ;; Disable auto searching for files unless called explicitly
-    (setq ido-auto-merge-delay-time 99999)
+  ;; Disable auto searching for files unless called explicitly
+  (setq ido-auto-merge-delay-time 99999)
 
-    ;; Avoid "size too big" errors
-    (setq ido-max-directory-size 300000)
+  ;; Avoid "size too big" errors
+  (setq ido-max-directory-size 300000)
 
-    ;; Always propose old buffers as well
-    (setq ido-use-virtual-buffers t)))
+  ;; Always propose old buffers as well
+  (setq ido-use-virtual-buffers t))
 
 (use-package kill-ring-ido
   :commands kill-ring-ido)
@@ -32,9 +31,8 @@
 (use-package ido-ubiquitous
   :defer t
   :config
-  (progn
-    (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
-    (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))))
+  (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
+  (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man")))
 
 (ido-mode t)
 (ido-everywhere t)

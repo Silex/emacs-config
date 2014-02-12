@@ -70,18 +70,18 @@
       (dired-mark-files-regexp "^\\\.")
       (dired-do-kill-lines))))
 
+(use-package dired-x
+  :commands dired-jump)
+
 (use-package dired
   :defer t
+
   :init
-  (progn
-    (setq dired-clean-up-buffers-too nil))
+  (setq dired-clean-up-buffers-too nil)
+
   :config
-  (progn
-    (toggle-diredp-find-file-reuse-dir 1)
-
-    (setq dired-listing-switches "-alh")
-
-    (setq dired-dwim-target t)
-
-    ;; Enable R key in dired to use ido
-    (put 'dired-do-rename 'ido 'find-file)))
+  (toggle-diredp-find-file-reuse-dir 1)
+  (setq dired-listing-switches "-alh")
+  (setq dired-dwim-target t)
+  ;; Enable R key in dired to use ido
+  (put 'dired-do-rename 'ido 'find-file))

@@ -1,10 +1,9 @@
 (use-package recentf
   :defer t
   :init
-  (progn
-    (setq recentf-auto-cleanup 'never)
-    (setq recentf-max-menu-items 10000)
-    (setq recentf-max-saved-items nil)))
+  (setq recentf-auto-cleanup 'never)
+  (setq recentf-max-menu-items 10000)
+  (setq recentf-max-saved-items nil))
 
 (recentf-mode t)
 

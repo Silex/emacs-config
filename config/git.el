@@ -1,15 +1,13 @@
 (use-package magit
   :defer t
   :init
-  (progn
-    (setq magit-completing-read-function 'magit-ido-completing-read)
-    (setq magit-item-highlight-face 'nil)
-    (setq git-commit-mode-hook '(turn-on-auto-fill)))
+  (setq magit-completing-read-function 'magit-ido-completing-read)
+  (setq magit-item-highlight-face 'nil)
+  (setq git-commit-mode-hook '(turn-on-auto-fill))
   :config
-  (progn
-    (when (memq window-system '(mac ns x))
-      (exec-path-from-shell-initialize))
-    (setq magit-emacsclient-executable (eval (car (get 'magit-emacsclient-executable 'standard-value))))))
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+  (setq magit-emacsclient-executable (eval (car (get 'magit-emacsclient-executable 'standard-value)))))
 
 (use-package gitconfig-mode
   :mode (("\\.gitignore\\'" . gitconfig-mode)

@@ -53,8 +53,10 @@
 ;; Show line/column numbers
 (line-number-mode 1)
 (column-number-mode 1)
+
 ;; update the mode line to have line number and column number
 (setq mode-line-position '("%p (%l," (:eval (format "%d)" (1+ (current-column))))))
+
 ;; force the update of the mode line so the column gets updated
 ;(add-hook 'post-command-hook 'force-mode-line-update)
 

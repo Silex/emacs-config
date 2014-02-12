@@ -1,10 +1,9 @@
 (use-package undo-tree
   :defer t
   :init
-  (progn
-    ;; Undo
-    (setq undo-tree-auto-save-history t)
-    (setq undo-tree-history-directory-alist `((".*" . ,temporary-file-directory)))))
+  ;; Undo
+  (setq undo-tree-auto-save-history t)
+  (setq undo-tree-history-directory-alist `((".*" . ,temporary-file-directory))))
 
 (undo-tree-mode)
 
