@@ -69,6 +69,7 @@
                     robe
                     rinari
                     rsense
+                    rubocop
                     rvm
                     s
                     sass-mode
