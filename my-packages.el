@@ -13,6 +13,7 @@
                     bm
                     cmake-mode
                     coffee-mode
+                    company
                     color-theme-monokai
                     css-eldoc
                     dash
