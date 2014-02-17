@@ -1,6 +1,6 @@
 (use-package fic-mode
   :defer t
-  :init
+  :config
   (setq fic-background-color "Orange")
   (setq fic-foreground-color "Black")
   (modify-face 'font-lock-fic-face fic-foreground-color
