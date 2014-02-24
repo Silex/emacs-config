@@ -1,7 +1,8 @@
 (require 'config)
 
 ;; Install packages
-(require 'my-packages)
+(require 'packages)
+(install-user-packages)
 
 ;; Configure packages
 (setq use-package-verbose t)
