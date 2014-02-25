@@ -1,4 +1,5 @@
 (use-package auto-complete
+  :disabled t
   :defer t
   :init
   (setq ac-delay 0.1)
@@ -11,21 +12,3 @@
   (add-to-list 'ac-modes 'shell-mode)
   :idle
   (global-auto-complete-mode))
-
-(use-package readline-complete
-  :defer t
-  :init
-  (setq explicit-shell-file-name "bash")
-  (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-  (setq comint-process-echoes t)
-  (add-hook 'shell-mode-hook 'ac-rlc-setup-sources))
-
-(use-package robe
-  :defer t
-  :init
-  (add-hook 'robe-mode-hook 'robe-ac-setup)
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-    (rvm-activate-corresponding-ruby)))
-
-

@@ -21,8 +21,17 @@
   (setq ruby-insert-encoding-magic-comment nil)
   (setq ruby-use-encoding-map nil)
 
+  ;; robe-mode
+  (add-hook 'ruby-mode-hook 'robe-mode)
+
   :config
   (use-package ruby-compilation)
   (use-package rcodetools)
   (use-package rinari)
   (use-package evil-rails))
+
+(use-package robe
+  :defer t
+  :init
+  (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+    (rvm-activate-corresponding-ruby)))
