@@ -7,3 +7,5 @@
   (push 'company-robe company-backends)
   (push 'company-readline company-backends)
   (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1))))
+
+(global-company-mode)
