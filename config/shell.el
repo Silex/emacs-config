@@ -10,7 +10,8 @@
   :init
 
   (defun buffer-killer-sentinel (process event)
-    (kill-buffer))
+    (when (equal event "finished\n")
+      (kill-buffer)))
 
   (defun kill-process-on-exit ()
     (set-process-sentinel (get-buffer-process (current-buffer)) 'buffer-killer-sentinel))
