@@ -82,9 +82,12 @@
   (interactive)
   (save-buffers-kill-terminal))
 
-(defun insert-file-name (f)
-  (interactive "fFile? ")
-  (insert f))
+(defun insert-file-name (filename &optional args)
+  "Insert name of file FILENAME into buffer after point."
+  (interactive "*fInsert file name: \nP")
+  (if (null args)
+      (insert (file-relative-name filename))
+    (insert (expand-file-name filename))))
 
 (defun dos2unix ()
   (interactive)
