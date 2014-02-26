@@ -28,6 +28,11 @@
 (use-package kill-ring-ido
   :commands kill-ring-ido)
 
+(use-package ido-vertical-mode
+  :defer t
+  :init
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+
 (use-package ido-ubiquitous
   :defer t
   :config
