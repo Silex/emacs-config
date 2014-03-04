@@ -17,6 +17,7 @@
                       css-eldoc
                       dash
                       dired+
+                      dired-filter
                       edit-server
                       eimp
                       evil

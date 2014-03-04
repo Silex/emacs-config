@@ -60,16 +60,6 @@
       files)))
   (dired-do-async-shell-command "unzip" arg file-list))
 
-;; Inspired from http://www.emacswiki.org/emacs/DiredOmitMode
-(defun dired-hide-dotfiles ()
-  "Hide dotfiles"
-  (interactive)
-  (when (equal major-mode 'dired-mode)
-    (progn
-      (set (make-local-variable 'dired-dotfiles-show-p) nil)
-      (dired-mark-files-regexp "^\\\.")
-      (dired-do-kill-lines))))
-
 (use-package dired-x
   :commands dired-jump)
 
@@ -80,8 +70,11 @@
   (setq dired-clean-up-buffers-too nil)
 
   :config
+  (use-package dired-filter)
+
   (toggle-diredp-find-file-reuse-dir 1)
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
+
   ;; Enable R key in dired to use ido
   (put 'dired-do-rename 'ido 'find-file))
