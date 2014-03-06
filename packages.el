@@ -37,6 +37,7 @@
                       gitconfig-mode
                       git-messenger
                       google-maps
+                      google-translate
                       goto-last-change
                       grizzl
                       haml-mode
