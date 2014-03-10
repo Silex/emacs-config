@@ -18,6 +18,7 @@
                       dash
                       dired+
                       dired-filter
+                      dired-subtree
                       edit-server
                       eimp
                       evil
