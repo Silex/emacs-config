@@ -1,7 +1,6 @@
 (use-package company
   :defer t
   :init
-  (setq company-idle-delay t)
   (setq company-minimum-prefix-length 1)
   :config
   (push 'company-robe company-backends)
