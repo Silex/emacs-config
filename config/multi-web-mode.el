@@ -7,5 +7,3 @@
                     (ruby-mode "<%==\\|<%=\\|<%#\\|<%" "%>")
                     (css-mode "<style[^>]*>" "</style>")))
   (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "erb")))
-
-(multi-web-global-mode)
