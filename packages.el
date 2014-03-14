@@ -19,6 +19,7 @@
                       dired+
                       dired-filter
                       dired-subtree
+                      dirtree
                       edit-server
                       eimp
                       evil
@@ -27,6 +28,7 @@
                       evil-visualstar
                       exec-path-from-shell
                       expand-region
+                      f
                       fic-mode
                       fill-column-indicator
                       fiplr
@@ -42,6 +44,7 @@
                       goto-last-change
                       grizzl
                       haml-mode
+                      helm
                       help-fns+
                       htmlize
                       ido-ubiquitous
@@ -60,11 +63,11 @@
                       org
                       package
                       package+
+                      paredit
                       pcre2el
                       phi-search
                       php-eldoc
                       php-mode
-                      popup
                       projectile
                       rainbow-mode
                       readline-complete
@@ -83,12 +86,12 @@
                       sr-speedbar
                       switch-window
                       tabbar
-                      tabulated-list
                       textile-mode
                       undo-tree
                       use-package
                       vimrc-mode
                       yaml-mode
+                      yari
                       yasnippet
                       ztree))
 
