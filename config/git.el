@@ -4,6 +4,7 @@
   (setq magit-completing-read-function 'magit-ido-completing-read)
   (setq magit-item-highlight-face 'nil)
   (setq git-commit-mode-hook '(turn-on-auto-fill))
+  (setq magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
   :config
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
