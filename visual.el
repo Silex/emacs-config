@@ -11,6 +11,9 @@
 ;; Disable startup screen
 (setq inhibit-startup-screen t)
 
+;; No *scratch* message
+(setq initial-scratch-message nil)
+
 ;; Disable toolbar
 (tool-bar-mode -1)
 
