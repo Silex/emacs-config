@@ -74,7 +74,7 @@
                       request
                       robe
                       rinari
-                      rsense
+                      rtags
                       rubocop
                       rvm
                       s
