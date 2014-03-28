@@ -6,6 +6,7 @@
 
 ;; Configure packages
 (setq use-package-verbose t)
+(setq use-package-idle-interval 0.5)
 (require 'use-package)
 (configure-packages)
 
