@@ -9,6 +9,16 @@
   :defer t
   :init
 
+  (setq comint-scroll-to-bottom-on-input t)  ; always insert at the bottom
+  (setq comint-scroll-to-bottom-on-output t) ; always add output at the bottom
+  (setq comint-scroll-show-maximum-output t) ; scroll to show max possible output
+  (setq comint-completion-autolist t)        ; show completion list when ambiguous
+  (setq comint-input-ignoredups t)           ; no duplicates in command history
+  (setq comint-completion-addsuffix t)       ; insert space/slash after file completion
+
+  ;; interpret and use ansi color codes in shell output windows
+  (ansi-color-for-comint-mode-on)
+
   (defun buffer-killer-sentinel (process event)
     (when (equal event "finished\n")
       (kill-buffer)))
