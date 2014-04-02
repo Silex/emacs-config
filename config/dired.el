@@ -70,6 +70,9 @@
   (setq dired-clean-up-buffers-too nil)
 
   :config
+  (use-package dired-async)
+  (dired-async-mode)
+
   (use-package dired-filter)
 
   (toggle-diredp-find-file-reuse-dir 1)

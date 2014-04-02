@@ -8,6 +8,7 @@
 
 (setq user-packages '(ace-jump-mode
                       auto-complete
+                      async
                       backup-each-save
                       bm
                       cmake-mode
