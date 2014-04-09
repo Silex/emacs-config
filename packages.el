@@ -56,6 +56,7 @@
                       less-css-mode
                       litable
                       magit
+                      make-color
                       markdown-mode
                       minimap
                       multi-term
@@ -64,6 +65,7 @@
                       org
                       package
                       package+
+                      palette
                       paredit
                       pcre2el
                       phi-search
