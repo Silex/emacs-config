@@ -89,6 +89,7 @@
                       sr-speedbar
                       switch-window
                       tabbar
+                      tagedit
                       textile-mode
                       undo-tree
                       use-package
