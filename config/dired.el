@@ -73,6 +73,8 @@
   (setq dired-clean-up-buffers-too nil)
 
   :config
+  (setq diredp-hide-details-initially-flag nil)
+
   (use-package dired-filter)
 
   (toggle-diredp-find-file-reuse-dir 1)
