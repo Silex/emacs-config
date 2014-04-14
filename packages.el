@@ -60,7 +60,6 @@
                       markdown-mode
                       minimap
                       multi-term
-                      multi-web-mode
                       multiple-cursors
                       org
                       package
@@ -94,6 +93,7 @@
                       undo-tree
                       use-package
                       vimrc-mode
+                      web-mode
                       yaml-mode
                       yari
                       yasnippet
