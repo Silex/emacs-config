@@ -17,12 +17,9 @@
 (require 'visual)
 
 ;; Benchmark
-(require 'performance)
+;(require 'performance)
 ;(performance/record-require-times)
 
 ;; Load config
 (require 'config)
 (load-config)
-
-;; Display how much time it took to load the config
-(message "Init completed in %.2fms" (performance/time-subtract-millis (current-time) before-init-time))
