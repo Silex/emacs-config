@@ -26,12 +26,12 @@
 
   :config
   (use-package ruby-compilation)
-  (use-package rcodetools)
-  (use-package rinari)
-  (use-package evil-rails))
+  (use-package rcodetools))
 
 (use-package robe
   :defer t
   :init
   (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-    (rvm-activate-corresponding-ruby)))
+    (rvm-activate-corresponding-ruby))
+  :config
+  (push 'company-robe company-backends))

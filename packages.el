@@ -71,11 +71,12 @@
                       php-eldoc
                       php-mode
                       projectile
+                      projectile-rails
                       rainbow-mode
                       readline-complete
                       request
                       robe
-                      rinari
+                      rails-log-mode
                       rtags
                       rubocop
                       rvm
