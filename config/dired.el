@@ -71,6 +71,7 @@
 
   :init
   (setq dired-clean-up-buffers-too nil)
+  (setq dired-recursive-deletes 'always)
 
   :config
   (setq diredp-hide-details-initially-flag nil)
