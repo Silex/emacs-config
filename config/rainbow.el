@@ -8,7 +8,7 @@
                                               php-mode
                                               sass-mode
                                               scss-mode
-                                              web-mode))
-                                              xml-mode
+                                              web-mode
+                                              xml-mode))
   (dolist (mode rainbow-html-colors-major-mode-list)
     (add-hook (intern (format "%s-hook" mode)) 'rainbow-mode)))
