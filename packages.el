@@ -11,6 +11,7 @@
                       async
                       backup-each-save
                       bm
+                      browse-kill-ring
                       cmake-mode
                       coffee-mode
                       company
