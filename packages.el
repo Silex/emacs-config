@@ -31,6 +31,7 @@
                       exec-path-from-shell
                       expand-region
                       f
+                      feature-mode
                       fic-mode
                       fill-column-indicator
                       fiplr
