@@ -33,6 +33,7 @@
 
 (defun buffer-file-name-as-sudo (&optional buffer)
   "Return BUFFER filename as sudo"
+  (require 'tramp)
   (let* ((buffer (or buffer (current-buffer)))
          (file-name (or (buffer-file-name buffer) dired-directory)))
     (if (tramp-tramp-file-p file-name)
