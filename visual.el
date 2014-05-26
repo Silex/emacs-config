@@ -35,7 +35,7 @@
 (setq echo-keystrokes 0.01)
 
 ;; Whitespace
-(setq-default show-trailing-whitespace t)
+(add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
 
 (setq visible-bell t)
 (setq font-lock-maximum-decoration t)
