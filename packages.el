@@ -12,6 +12,7 @@
                       backup-each-save
                       bm
                       browse-kill-ring
+                      chess
                       cmake-mode
                       coffee-mode
                       company
