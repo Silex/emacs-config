@@ -97,6 +97,7 @@
                       undo-tree
                       use-package
                       vimrc-mode
+                      visual-regexp-steroids
                       web-mode
                       yaml-mode
                       yari
