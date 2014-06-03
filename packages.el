@@ -99,6 +99,7 @@
                       vimrc-mode
                       visual-regexp-steroids
                       web-mode
+                      weechat
                       yaml-mode
                       yari
                       yasnippet

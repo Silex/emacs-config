@@ -191,3 +191,14 @@ Assumes that the frame is only split into two."
         (split-window-horizontally)
       (split-window-vertically)) ; gives us a split with the other window twice
     (switch-to-buffer nil))) ; restore the original window in this part of the frame
+
+;; Word wrap
+(defun enable-word-wrap ()
+  (interactive)
+  (setq truncate-lines nil)
+  (setq word-wrap t))
+
+(defun disable-word-wrap ()
+  (interactive)
+  (setq truncate-lines t)
+  (setq word-wrap nil))
