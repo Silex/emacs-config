@@ -1,5 +1,0 @@
-(:name fiplr
-       :description "fiplr"
-       :type github
-       :pkgname "d11wtq/fiplr"
-       :depends (grizzl))

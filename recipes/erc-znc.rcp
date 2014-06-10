@@ -1,4 +1,0 @@
-(:name erc-znc
-       :description "erc-znc"
-       :type github
-       :pkgname "sshirokov/ZNC.el")

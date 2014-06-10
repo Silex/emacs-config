@@ -1,4 +1,0 @@
-(:name emacs-chess
-       :description "emacs-chess"
-       :type github
-       :pkgname "jwiegley/emacs-chess")

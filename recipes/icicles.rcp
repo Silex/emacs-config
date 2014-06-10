@@ -1,7 +1,0 @@
-(:name icicles
-       :type http-tar
-       :options ("xzf")
-       :url "http://www.emacswiki.org/emacs/download/Icicles.tar.gz"
-       :load-path ("./icicles")
-       :library icicles :features icicles
-       :autoloads nil :post-init (lambda () (icy-mode)))
