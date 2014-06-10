@@ -89,7 +89,6 @@
                       scss-mode
                       shell-pop
                       smex
-                      smooth-scrolling
                       sr-speedbar
                       switch-window
                       tabbar
