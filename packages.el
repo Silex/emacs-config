@@ -28,6 +28,7 @@
                       evil
                       evil-leader
                       evil-numbers
+                      evil-surround
                       evil-visualstar
                       exec-path-from-shell
                       expand-region

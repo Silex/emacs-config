@@ -1,6 +1,3 @@
-(use-package surround
-  :commands global-surround-mode)
-
 (use-package evil
   :defer t
 
@@ -18,5 +15,5 @@
     (add-to-list 'evil-emacs-state-modes mode)))
 
 (evil-mode)
-(global-surround-mode)
+(global-evil-surround-mode)
 (global-evil-leader-mode)
