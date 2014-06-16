@@ -100,6 +100,7 @@
                       visual-regexp-steroids
                       web-mode
                       weechat
+                      ws-butler
                       yaml-mode
                       yari
                       yasnippet
