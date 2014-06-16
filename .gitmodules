@@ -23,11 +23,6 @@
   url = git://github.com/kinjo/org-impress-js.el.git
   ignore = dirty
 
-[submodule "packages/pkg-info.el"]
-  path = packages/pkg-info.el
-  url = git://github.com/lunaryorn/pkg-info.el.git
-  ignore = dirty
-
 [submodule "packages/rcodetools"]
   path = packages/rcodetools
   url = git://github.com/tnoda/rcodetools.git

@@ -74,6 +74,7 @@
                       phi-search
                       php-eldoc
                       php-mode
+                      pkg-info
                       projectile
                       projectile-rails
                       rainbow-mode
