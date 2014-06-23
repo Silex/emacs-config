@@ -43,6 +43,13 @@
   (interactive "*")
   (uniquify-all-lines-region (point-min) (point-max)))
 
+(defun sort-lines-buffer (reverse)
+  "Sort lines in buffer alphabetically; REVERSE means descending order.
+The variable `sort-fold-case' determines whether alphabetic case affects
+the sort order."
+  (interactive "*P")
+  (sort-lines reverse (point-min) (point-max)))
+
 (defun open-url-in-buffer (url)
   "Downloads and displays an url in a buffer"
   (interactive "sUrl? ")
