@@ -17,10 +17,6 @@
 ;; When something is selected, replace content when you type
 (pending-delete-mode t)
 
-;; Store where we edited files
-(setq-default save-place t)
-(require 'saveplace)
-
 ;; Save history
 (savehist-mode 1)
 
