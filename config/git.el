@@ -14,6 +14,9 @@
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
+(use-package vc-git
+  :commands vc-git-grep)
+
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
 ;; Fullscreen magit-status
