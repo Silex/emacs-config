@@ -7,6 +7,7 @@
 (package-initialize)
 
 (setq user-packages '(ace-jump-mode
+                      ag
                       auto-complete
                       async
                       backup-each-save
