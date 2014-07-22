@@ -22,6 +22,7 @@
                       dash
                       dired+
                       dired-filter
+                      dired-ranger
                       dired-subtree
                       dirtree
                       edit-server
