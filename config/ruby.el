@@ -6,6 +6,9 @@
          ("\\.rake\\'" . ruby-mode)
          ("Rakefile" . ruby-mode)
 
+         ;; Capistrano
+         ("Capfile" . ruby-mode)
+
          ;; Thor
          ("\\.thor\\'" . ruby-mode)
 
