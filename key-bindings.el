@@ -98,6 +98,11 @@
      (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
      (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)))
 
+(define-key help-map (kbd "c") 'describe-char)
+(define-key help-map (kbd "C-l") 'find-library)
+(define-key help-map (kbd "C-f") 'find-function)
+(define-key help-map (kbd "C-k") 'find-function-on-key)
+
 ;(define-key inf-ruby-mode-map (kbd "<up>") 'comint-previous-input)
 ;(define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
 
