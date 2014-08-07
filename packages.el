@@ -47,6 +47,7 @@
                       gitconfig-mode
                       git-messenger
                       git-timemachine
+                      github-clone
                       google-maps
                       google-translate
                       goto-last-change
