@@ -70,6 +70,7 @@
                       minimap
                       multi-term
                       multiple-cursors
+                      neotree
                       org
                       package
                       package+
