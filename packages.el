@@ -27,6 +27,7 @@
                       dirtree
                       edit-server
                       eimp
+                      elmacro
                       evil
                       evil-leader
                       evil-numbers
@@ -74,6 +75,7 @@
                       org
                       package
                       package+
+                      package-utils
                       palette
                       paredit
                       pcre2el
