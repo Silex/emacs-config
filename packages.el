@@ -48,6 +48,7 @@
                       git-timemachine
                       github-clone
                       google-maps
+                      google-this
                       google-translate
                       goto-last-change
                       grizzl
