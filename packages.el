@@ -56,6 +56,7 @@
                       helm
                       help-fns+
                       htmlize
+                      hookify
                       ibuffer-tramp
                       ido-ubiquitous
                       ido-vertical-mode
