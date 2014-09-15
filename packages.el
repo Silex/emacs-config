@@ -52,6 +52,7 @@
                       google-translate
                       goto-last-change
                       grizzl
+                      guide-key
                       haml-mode
                       helm
                       help-fns+
