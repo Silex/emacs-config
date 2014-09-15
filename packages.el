@@ -83,6 +83,7 @@
                       php-eldoc
                       php-mode
                       pkg-info
+                      pretty-symbols
                       projectile
                       projectile-rails
                       rainbow-mode
