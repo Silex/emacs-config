@@ -32,3 +32,10 @@
   (kill-buffer)
   (jump-to-register :vc-annotate-fullscreen))
 
+;; Helpers
+(defun delete-trailing-whitespace-and-commit ()
+  "Delete trailing whitespace and commit current file"
+  (interactive)
+  (delete-trailing-whitespace)
+  (shell-command (concat "git add " (buffer-file-name)))
+  (shell-command "git commit -m'Delete trailing whitespace'"))
