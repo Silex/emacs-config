@@ -73,6 +73,7 @@
                       minimap
                       multi-term
                       multiple-cursors
+                      navorski
                       neotree
                       org
                       package
