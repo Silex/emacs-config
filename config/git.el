@@ -1,21 +1,13 @@
+;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
+
 (use-package magit
-  :defer t
+  :commands magit-status
   :init
-  (setq magit-completing-read-function 'magit-ido-completing-read)
-  (setq magit-item-highlight-face 'nil)
-  (setq git-commit-mode-hook '(turn-on-auto-fill))
-  (setq magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
-  :config
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  (setq magit-emacsclient-executable (eval (car (get 'magit-emacsclient-executable 'standard-value)))))
+  (setq magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package gitconfig-mode
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
-
-(use-package vc-git
-  :commands vc-git-grep)
 
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
@@ -25,10 +17,7 @@
   ad-do-it
   (delete-other-windows))
 
-(defun magit-status-quit ()
-  "Restores the previous window configuration and kills the magit buffer"
-  (interactive)
-  (kill-buffer)
+(defadvice magit-mode-quit-window (after magit-fullscreen activate)
   (jump-to-register :magit-fullscreen))
 
 ;; Fullscreen vc-annotate
@@ -43,9 +32,3 @@
   (kill-buffer)
   (jump-to-register :vc-annotate-fullscreen))
 
-;; Close popup when commiting
-(defadvice git-commit-commit (after delete-window activate)
-  (delete-window))
-
-(defadvice git-commit-abort (after delete-window activate)
-  (delete-window))
