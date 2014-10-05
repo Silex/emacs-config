@@ -5,8 +5,8 @@
 ;; Never expire passwords
 (setq password-cache-expiry nil)
 
-;; Use out-of-band method for files bigger than 2 megabytes
-(setq tramp-copy-size-limit (* 2 1024 1024))
+;; Use out-of-band method for big files
+(setq tramp-copy-size-limit (* 0.5 1024 1024))
 
 (use-package tramp-gvfs
   :defer t

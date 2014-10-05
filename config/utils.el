@@ -1,3 +1,12 @@
+;; M-x snake
+;; M-x tetris
+;; M-x zone
+;; M-x doctor
+;; M-x butterfly
+;; M-x yow
+;; M-x phases-of-moon
+;; M-x animate-birthday-present
+
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
 (defun tabify-buffer ()
   "Tabify the whole buffer."
@@ -69,20 +78,18 @@ the sort order."
          (vector (vconcat vector (make-vector (- 4 (mod (length vector) 4)) 0)))
          (len (/ (length vector) 4))
          (unpack (bindat-unpack `((test vec ,len u32r)) vector))
-         (integers (cdr (car unpack)))
-         (buffer (get-buffer-create "fun.c")))
-    (set-buffer buffer)
-    (erase-buffer)
-    (insert "#include <stdio.h>\n\n")
-    (insert "int main()\n{\n")
-    (insert "unsigned arr[] = { ")
-    (insert (mapconcat 'number-to-string integers ", "))
-    (insert " };\n")
-    (insert "puts(arr);\nreturn 0;\n}");
-    (c-mode)
-    (indent-region (point-min) (point-max))
-    (pop-to-buffer buffer)
-    (goto-line 1)))
+         (integers (cdr (car unpack))))
+    (with-current-buffer-window
+     "fun.c" nil nil
+     (insert "#include <stdio.h>\n\n")
+     (insert "int main()\n{\n")
+     (insert "unsigned arr[] = { ")
+     (insert (mapconcat 'number-to-string integers ", "))
+     (insert " };\n")
+     (insert "puts(arr);\nreturn 0;\n}");
+     (c-mode)
+     (indent-region (point-min) (point-max))
+     (goto-line 1))))
 
 ;; Simpler way to quit with M-x quit
 (defun quit ()

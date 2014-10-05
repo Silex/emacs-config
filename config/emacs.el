@@ -45,7 +45,7 @@
 ;; Right alt is not meta
 (setq ns-right-alternate-modifier nil)
 
-;; Only run the GC every time 20Mb is allocated
+;; Avoid running the GC all the time
 (setq gc-cons-threshold 20000000)
 
 ;; Don't limit *Messages* to 1000 lines only
