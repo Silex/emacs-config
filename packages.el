@@ -118,10 +118,12 @@
                       yasnippet
                       ztree))
 
-(defun install-user-packages ()
+(defun install-user-packages (&optional no-fetch)
   "Install packages in `user-packages' if needed."
+  (interactive "P")
   (when (member nil (mapcar 'package-installed-p user-packages))
-    (package-refresh-contents)
+    (unless no-fetch
+      (package-refresh-contents))
     (dolist (p user-packages)
       (unless (package-installed-p p)
         (package-install p)))))
