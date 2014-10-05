@@ -1,3 +1,23 @@
+(use-package region-bindings-mode)
+(region-bindings-mode-enable)
+(define-key region-bindings-mode-map (kbd "C-p") 'mc/mark-previous-like-this)
+(define-key region-bindings-mode-map (kbd "C-n") 'mc/mark-next-like-this)
+(define-key region-bindings-mode-map (kbd "C-a") 'mc/mark-all-like-this)
+(define-key region-bindings-mode-map (kbd "C-e") 'mc/edit-lines)
+(define-key region-bindings-mode-map (kbd "C-c") 'kill-ring-save)
+(define-key region-bindings-mode-map (kbd "C-x") 'kill-region)
+
+;; C-v
+(global-set-key (kbd "C-v") 'yank)
+(global-set-key (kbd "C-S-v") 'yank-pop)
+
+;; remap C-a to `smarter-move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
+
+;; Undo / Redo
+(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "C-S-z") 'undo-tree-redo)
+
 ;; Switch windows using Super + Arrow
 (windmove-default-keybindings 'super)
 
@@ -23,8 +43,12 @@
 ;; Save with one key
 (global-set-key (kbd "C-s") 'save-buffer)
 
+;; Kill buffer
+(global-set-key (kbd "C-S-k") 'kill-this-buffer)
+
 ;; phi-search is multiple cursors friendly
 (global-set-key (kbd "C-f") 'phi-search)
+(global-set-key (kbd "C-S-f") 'phi-search-backward)
 (eval-after-load 'evil
   '(define-key evil-normal-state-map (kbd "C-f") 'phi-search))
 
@@ -34,7 +58,7 @@
   '(define-key evil-normal-state-map (kbd "C-d") 'dired-jump))
 (eval-after-load 'dired+
   '(progn
-     (define-key dired-mode-map (kbd "* n") 'dired-mark-files-regexp)
+     (define-key dired-mode-map (kbd "C-c w") 'wdired-change-to-wdired-mode)
      (define-key dired-mode-map (kbd "<backspace>") 'dired-jump)
      (define-key dired-mode-map (kbd "E") 'dired-do-eval)
      (define-key dired-mode-map (kbd "F") 'dired-do-find-marked-files-and-select-in-ibuffer)
@@ -44,11 +68,9 @@
 (global-set-key (kbd "S-C-r") 'recentf-ido-find-file)
 
 ;; Buffers
-(global-set-key (kbd "C-w") 'kill-this-buffer)
 (global-set-key (kbd "C-b") 'ido-switch-buffer)
 (eval-after-load 'evil
   '(progn
-     (define-key evil-normal-state-map (kbd "C-w") 'kill-this-buffer)
      (define-key evil-normal-state-map (kbd "C-b") 'ido-switch-buffer)))
 
 ;; IBuffer
@@ -64,11 +86,6 @@
   '(progn
      (define-key comint-mode-map (kbd "C-<up>") nil)
      (define-key comint-mode-map (kbd "C-<down>") nil)))
-
-;; Git
-(eval-after-load 'magit
-  '(progn
-     (define-key magit-status-mode-map (kbd "q") 'magit-status-quit)))
 
 (eval-after-load 'git-rebase-mode
   '(progn
@@ -102,6 +119,7 @@
 (define-key help-map (kbd "C-l") 'find-library)
 (define-key help-map (kbd "C-f") 'find-function)
 (define-key help-map (kbd "C-k") 'find-function-on-key)
+(define-key help-map (kbd "C-v") 'find-variable)
 
 ;(define-key inf-ruby-mode-map (kbd "<up>") 'comint-previous-input)
 ;(define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)

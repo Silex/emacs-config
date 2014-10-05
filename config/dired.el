@@ -76,6 +76,7 @@
   :config
   (setq diredp-hide-details-initially-flag nil)
 
+  (setq dired-filter-mark-prefix "*")
   (use-package dired-filter)
 
   (toggle-diredp-find-file-reuse-dir 1)

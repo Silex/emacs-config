@@ -94,6 +94,7 @@
                       request
                       robe
                       rails-log-mode
+                      region-bindings-mode
                       rtags
                       rubocop
                       rvm
