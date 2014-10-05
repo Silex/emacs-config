@@ -14,6 +14,6 @@
   (dolist (mode '(grep-mode dired-mode git-rebase-mode process-menu-mode))
     (add-to-list 'evil-emacs-state-modes mode)))
 
-(evil-mode)
-(global-evil-surround-mode)
-(global-evil-leader-mode)
+;; (evil-mode)
+;; (global-evil-surround-mode)
+;; (global-evil-leader-mode)
