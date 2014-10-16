@@ -24,6 +24,12 @@
 ;; Smex
 (global-set-key (kbd "M-x") 'smex) ; Old m-x is execute-extended-command
 
+;; Increase/Decrease text
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+
 ;; expand-region
 (global-set-key (kbd "C-c e") 'er/expand-region)
 
