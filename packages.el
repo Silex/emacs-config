@@ -7,6 +7,7 @@
 (package-initialize)
 
 (setq user-packages '(ace-jump-mode
+                      ace-jump-zap
                       ag
                       async
                       backup-each-save
@@ -68,6 +69,7 @@
                       less-css-mode
                       litable
                       magit
+                      macrostep
                       make-color
                       markdown-mode
                       minimap
@@ -80,6 +82,7 @@
                       package+
                       package-utils
                       palette
+                      paradox
                       paredit
                       pcre2el
                       phi-search
