@@ -63,6 +63,7 @@
                       ido-ubiquitous
                       ido-vertical-mode
                       idomenu
+                      indent-guide
                       js2-mode
                       json-mode
                       key-chord

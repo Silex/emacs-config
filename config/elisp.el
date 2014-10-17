@@ -2,10 +2,9 @@
   :mode ("\\.?emacs\\'" . emacs-lisp-mode)
   :init
   ;; Enable eldoc and check-parens
-  (add-hook 'emacs-lisp-mode-hook
-            (lambda ()
-              (eldoc-mode)
-              (add-hook 'after-save-hook 'check-parens nil t))))
+  (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+  (add-hook 'emacs-lisp-mode-hook 'indent-guide-mode)
+  (add-hook 'emacs-lisp-mode-hook (lambda () (add-hook 'after-save-hook 'check-parens nil t))))
 
 ;; Taken from https://github.com/magnars/.emacs.d/blob/master/defuns/lisp-defuns.el
 (defun eval-and-replace ()
