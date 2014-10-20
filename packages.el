@@ -73,6 +73,7 @@
                       macrostep
                       make-color
                       markdown-mode
+                      miniedit
                       minimap
                       multi-term
                       multiple-cursors
