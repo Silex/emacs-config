@@ -62,9 +62,6 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Disable VC
-;(setq vc-handled-backends nil)
-
 ;; Zone-mode
 (require 'zone)
 (zone-when-idle (* 15 60))

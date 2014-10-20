@@ -9,6 +9,12 @@
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
+(use-package vc-hooks
+  :defer t
+  :init
+  (remove-hook 'find-file-hook 'vc-find-file-hook)
+  (setq vc-handled-backends nil))
+
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
 ;; Fullscreen magit-status
