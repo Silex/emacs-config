@@ -9,7 +9,7 @@
 
 ;; C-v
 (global-set-key (kbd "C-v") 'yank)
-(global-set-key (kbd "C-S-v") 'yank-pop)
+(global-set-key (kbd "C-S-v") 'browse-kill-ring)
 
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
