@@ -2,8 +2,3 @@
   path = packages/emacs-powerline
   url = git@github.com:jonathanchu/emacs-powerline.git
   ignore = dirty
-
-[submodule "packages/irony-mode"]
-  path = packages/irony-mode
-  url = git@github.com:Sarcasm/irony-mode.git
-  ignore = dirty
