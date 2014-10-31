@@ -131,7 +131,8 @@
   (interactive "P")
   (when (member nil (mapcar 'package-installed-p user-packages))
     (unless no-fetch
-      (package-refresh-contents))
+      (with-timeout (5 (message "Timeout in package-refresh-contents"))
+        (package-refresh-contents)))
     (dolist (p user-packages)
       (unless (package-installed-p p)
         (package-install p)))))
