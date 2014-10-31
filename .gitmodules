@@ -7,8 +7,3 @@
   path = packages/irony-mode
   url = git@github.com:Sarcasm/irony-mode.git
   ignore = dirty
-
-[submodule "packages/org-impress-js"]
-  path = packages/org-impress-js
-  url = git://github.com/kinjo/org-impress-js.el.git
-  ignore = dirty

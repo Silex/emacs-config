@@ -15,5 +15,5 @@
     (org-babel-do-load-languages 'org-babel-load-languages (mapcar helper languages))))
 
 (use-package org-impress-js
-  :commands (org-export-as-impress-js
-             org-export-as-impress-js-and-open))
+  :defer t
+  :ensure org-impress-js)
