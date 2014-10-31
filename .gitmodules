@@ -12,8 +12,3 @@
   path = packages/org-impress-js
   url = git://github.com/kinjo/org-impress-js.el.git
   ignore = dirty
-
-[submodule "packages/rcodetools"]
-  path = packages/rcodetools
-  url = git://github.com/tnoda/rcodetools.git
-  ignore = dirty
