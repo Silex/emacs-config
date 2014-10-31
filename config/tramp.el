@@ -2,11 +2,17 @@
 
 ;; C-x C-f /ssh:you@remotehost|sudo:remotehost:/path/to/file
 
-;; Never expire passwords
-(setq password-cache-expiry nil)
+(use-package password-cache
+  :defer t
+  :init
+  ;; Never expire passwords
+  (setq password-cache-expiry nil))
 
-;; Use out-of-band method for big files
-(setq tramp-copy-size-limit (* 0.5 1024 1024))
+(use-package tramp-sh
+  :defer t
+  :init
+  ;; Use out-of-band method for big files
+  (setq tramp-copy-size-limit (* 0.5 1024 1024)))
 
 (use-package tramp-gvfs
   :defer t
