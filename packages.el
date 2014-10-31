@@ -9,6 +9,7 @@
 (setq user-packages '(ace-jump-mode
                       ace-jump-zap
                       ag
+                      aggressive-indent
                       async
                       backup-each-save
                       bm
