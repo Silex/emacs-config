@@ -15,3 +15,6 @@
 
   ;; Use the indentation style of "The C++ Programming Language"
   (setq c-default-style "silex"))
+
+(use-package irony
+  :defer t)
