@@ -41,7 +41,7 @@
                       fic-mode
                       fill-column-indicator
                       fiplr
-                      flx
+                      flx-ido
                       fullscreen-mode
                       gh
                       gist

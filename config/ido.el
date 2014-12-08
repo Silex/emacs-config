@@ -23,7 +23,12 @@
   (setq ido-max-directory-size 300000)
 
   ;; Always propose old buffers as well
-  (setq ido-use-virtual-buffers t))
+  (setq ido-use-virtual-buffers nil))
+
+(use-package flx-ido
+  :defer t
+  :init
+  (setq ido-use-faces nil))
 
 (use-package kill-ring-ido
   :commands kill-ring-ido)
@@ -43,3 +48,4 @@
 (ido-everywhere t)
 (ido-ubiquitous-mode)
 (ido-vertical-mode)
+(flx-ido-mode)
