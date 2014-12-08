@@ -45,3 +45,6 @@ of seeing_is_believing."
     (rvm-activate-corresponding-ruby))
   :config
   (push 'company-robe company-backends))
+
+(use-package rspec-mode
+  :defer t)
