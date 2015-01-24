@@ -2,7 +2,7 @@
   :mode (("\\.?emacs\\'" . emacs-lisp-mode)
          ("Cask\\'" . emacs-lisp-mode))
   :init
-  (setq edebug-trace t)
+  (setq edebug-trace nil)
   (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
   (add-hook 'emacs-lisp-mode-hook 'indent-guide-mode)
   (add-hook 'emacs-lisp-mode-hook (lambda () (add-hook 'after-save-hook 'check-parens nil t))))

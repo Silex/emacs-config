@@ -9,10 +9,10 @@
 
 ;; Scrolling
 (setq scroll-step 1)
-(setq scroll-conservatively 50)
+(setq scroll-conservatively 0)
 
-;; On the fly reindentation
-(electric-indent-mode)
+;; Disable on the fly reindentation
+(electric-indent-mode -1)
 
 ;; When something is selected, replace content when you type
 (pending-delete-mode t)
@@ -30,8 +30,7 @@
 (global-auto-revert-mode 1)
 
 ;; Don't stop on hyphen in foo-bar
-(when (fboundp 'superword-mode)
-  (superword-mode))
+(global-superword-mode)
 
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)
@@ -65,9 +64,3 @@
 ;; Zone-mode
 (require 'zone)
 (zone-when-idle (* 15 60))
-
-;; M-x shell is a nice shell interface to use, let's make it colorful.  If
-;; you need a terminal emulator rather than just a shell, consider M-x term
-;; instead.
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)

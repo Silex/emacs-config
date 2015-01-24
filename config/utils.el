@@ -23,6 +23,14 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun indent-region-html (beg end)
+  (interactive "r")
+  (sgml-pretty-print beg end))
+
+(defun indent-buffer-html ()
+  (interactive)
+  (indent-region-html (point-min) (point-max)))
+
 (defun cleanup-region (start end)
   "Untabify, reindent and delete trailing whitespace for the selected region."
   (interactive "r")
@@ -52,7 +60,7 @@
   (interactive "*")
   (uniquify-all-lines-region (point-min) (point-max)))
 
-(defun sort-lines-buffer (reverse)
+(defun sort-lines-buffer (&optional reverse)
   "Sort lines in buffer alphabetically; REVERSE means descending order.
 The variable `sort-fold-case' determines whether alphabetic case affects
 the sort order."
@@ -69,6 +77,19 @@ the sort order."
     (setq default-directory current-directory)
     (set-visited-file-name (file-name-nondirectory (buffer-file-name)))
     (setq buffer-read-only nil)))
+
+;; Taken from https://github.com/defunkt/emacs/blob/master/defunkt/defuns.el
+(defun url-fetch-into-buffer (url)
+  (interactive "sURL:")
+  (insert (concat "\n\n" ";; " url "\n"))
+  (insert (url-fetch-to-string url)))
+
+(defun url-fetch-to-string (url)
+  (with-current-buffer (url-retrieve-synchronously url)
+    (beginning-of-buffer)
+    (search-forward-regexp "\n\n")
+    (delete-region (point-min) (point))
+    (buffer-string)))
 
 (defun show-string-as-c (string)
   "Generate C program printing obfuscated string."
