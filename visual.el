@@ -20,6 +20,7 @@
 ;; Scrollbar
 (setq scroll-bar-mode-explicit t)
 (set-scroll-bar-mode 'right)
+(scroll-bar-mode)
 
 ;; Start maximized
 (maximize-frame)
