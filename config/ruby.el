@@ -1,5 +1,3 @@
-;; rvm rvmrc create ruby@gemset --ruby-version
-
 (defun seeing-is-believing ()
   "Replace the current region (or the whole buffer, if none) with the output
 of seeing_is_believing."
@@ -40,9 +38,6 @@ of seeing_is_believing."
 
 (use-package robe
   :defer t
-  :init
-  (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-    (rvm-activate-corresponding-ruby))
   :config
   (push 'company-robe company-backends))
 

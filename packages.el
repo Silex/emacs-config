@@ -103,7 +103,6 @@
                       region-bindings-mode
                       rtags
                       rubocop
-                      rvm
                       s
                       sass-mode
                       scss-mode
