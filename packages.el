@@ -29,6 +29,7 @@
                       edit-server
                       eimp
                       elmacro
+                      emr
                       evil
                       evil-leader
                       evil-numbers
