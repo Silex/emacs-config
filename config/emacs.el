@@ -11,6 +11,9 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 0)
 
+;; Don't warn when cutting large chunk of texts
+(add-to-list 'warning-suppress-types '(undo discard-info))
+
 ;; Disable on the fly reindentation
 (electric-indent-mode -1)
 
