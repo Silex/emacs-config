@@ -25,6 +25,7 @@
                       dired-ranger
                       dired-subtree
                       dirtree
+                      dockerfile-mode
                       edit-server
                       eimp
                       elmacro
