@@ -57,6 +57,7 @@
                       guide-key
                       haml-mode
                       helm
+                      helm-swoop
                       help-fns+
                       htmlize
                       hookify
