@@ -109,6 +109,7 @@
                       shell-pop
                       smex
                       sr-speedbar
+                      sunshine
                       switch-window
                       tabbar
                       tagedit
