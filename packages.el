@@ -109,6 +109,7 @@
                       sass-mode
                       scss-mode
                       shell-pop
+                      smartparens
                       smex
                       sr-speedbar
                       sunshine
