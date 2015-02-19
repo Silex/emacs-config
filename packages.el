@@ -108,6 +108,7 @@
                       s
                       sass-mode
                       scss-mode
+                      shackle
                       shell-pop
                       smartparens
                       smex
