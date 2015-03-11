@@ -66,6 +66,7 @@
                       ido-ubiquitous
                       ido-vertical-mode
                       idomenu
+                      impatient-mode
                       indent-guide
                       js2-mode
                       json-mode
