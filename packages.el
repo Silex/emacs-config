@@ -83,6 +83,8 @@
                       navorski
                       neotree
                       org
+                      ox-impress-js
+                      ox-ioslide
                       package
                       package+
                       package-utils
