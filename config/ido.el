@@ -30,9 +30,6 @@
   :init
   (setq ido-use-faces nil))
 
-(use-package kill-ring-ido
-  :commands kill-ring-ido)
-
 (use-package ido-vertical-mode
   :defer t
   :init
