@@ -11,6 +11,9 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 0)
 
+;; Increase undo limit
+(setq undo-limit (* 10 1024 1024))
+
 ;; Don't warn when cutting large chunk of texts
 (use-package warnings
   :defer t
