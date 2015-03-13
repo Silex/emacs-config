@@ -97,6 +97,7 @@
                       php-eldoc
                       php-mode
                       pkg-info
+                      powerline
                       pretty-symbols
                       projectile
                       projectile-rails
