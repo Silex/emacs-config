@@ -104,6 +104,7 @@
                       rainbow-mode
                       readline-complete
                       request
+                      restclient
                       robe
                       rails-log-mode
                       region-bindings-mode
