@@ -1,6 +1,5 @@
 (use-package lisp-mode
-  :mode (("\\.?emacs\\'" . emacs-lisp-mode)
-         ("Cask\\'" . emacs-lisp-mode))
+  :mode (("/Cask\\'" . emacs-lisp-mode))
   :init
   (setq edebug-trace nil)
   (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)

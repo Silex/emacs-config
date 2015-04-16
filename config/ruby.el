@@ -9,10 +9,10 @@ of seeing_is_believing."
 (use-package ruby-mode
   :mode (;; Rake
          ("\\.rake\\'" . ruby-mode)
-         ("Rakefile" . ruby-mode)
+         ("/Rakefile\\'" . ruby-mode)
 
          ;; Capistrano
-         ("Capfile" . ruby-mode)
+         ("/Capfile\\'" . ruby-mode)
 
          ;; Thor
          ("\\.thor\\'" . ruby-mode)
@@ -21,7 +21,7 @@ of seeing_is_believing."
          ("\\.erb\\'" . ruby-mode)
 
          ;; Gemfile
-         ("Gemfile" . ruby-mode)
+         ("/Gemfile\\'" . ruby-mode)
          ("\\.gemspec\\'" . ruby-mode))
 
   :init
