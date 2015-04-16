@@ -60,6 +60,7 @@
                       helm
                       helm-swoop
                       help-fns+
+                      howdoi
                       htmlize
                       hookify
                       ibuffer-tramp
