@@ -1,6 +1,8 @@
 ;; Remove trailing whitespace automatically
-(setq highlight-changes-invisible-string nil)
-(ws-butler-global-mode)
+(use-package whitespace-cleanup-mode
+  :defer 1
+  :config
+  (global-whitespace-cleanup-mode))
 
 ;; Show trailing whitespace
 (add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))

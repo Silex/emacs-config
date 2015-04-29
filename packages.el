@@ -129,7 +129,7 @@
                       visual-regexp-steroids
                       web-mode
                       weechat
-                      ws-butler
+                      whitespace-cleanup-mode
                       yaml-mode
                       yari
                       yasnippet
