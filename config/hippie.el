@@ -1,6 +1,6 @@
 (use-package hippie-exp
   :defer t
-  :config
+  :init
   (setq hippie-expand-try-functions-list
         '(try-expand-dabbrev
           try-expand-dabbrev-all-buffers

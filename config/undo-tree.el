@@ -1,11 +1,10 @@
 (use-package undo-tree
-  :defer t
   :init
   (setq undo-tree-mode-lighter "")
   (setq undo-tree-auto-save-history t)
-  (setq undo-tree-history-directory-alist `((".*" . ,temporary-file-directory))))
-
-(global-undo-tree-mode)
+  (setq undo-tree-history-directory-alist `((".*" . ,temporary-file-directory)))
+  :config
+  (global-undo-tree-mode))
 
 ;; Keep region when undoing in region
 (defadvice undo-tree-undo (around keep-region activate)

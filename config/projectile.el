@@ -1,13 +1,12 @@
 (use-package projectile
-  :defer t
   :init
-  (setq projectile-remember-window-configs nil)
+  (setq projectile-keymap-prefix (kbd "C-p"))
   (setq projectile-use-git-grep t)
   (setq projectile-switch-project-action 'projectile-dired)
   (setq projectile-enable-caching t)
   :config
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
   (defadvice projectile-switch-project (before require-tramp activate)
-    (require 'tramp)))
-
-(projectile-global-mode)
+    (require 'tramp)
+    (ignore-errors (ad-remove-advice 'projectile-switch-project 'before 'require-tramp)))
+  (projectile-global-mode))

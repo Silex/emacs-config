@@ -1,6 +1,6 @@
 (use-package company
-  :defer t
   :init
-  (setq company-minimum-prefix-length 2))
+  (setq company-minimum-prefix-length 2)
+  :config
+  (global-company-mode))
 
-(global-company-mode)
