@@ -10,6 +10,7 @@
                       ace-jump-zap
                       ag
                       aggressive-indent
+                      back-button
                       backup-each-save
                       bm
                       browse-kill-ring
