@@ -124,6 +124,11 @@ the sort order."
       (insert (file-relative-name filename))
     (insert (expand-file-name filename))))
 
+(defun insert-function-name (function)
+  "Insert name of FUNCTION into buffer after point."
+  (interactive (list (completing-read "Insert function: " obarray 'fboundp t)))
+  (insert function))
+
 (defun dos2unix ()
   (interactive)
   (set-buffer-file-coding-system 'undecided-unix))
