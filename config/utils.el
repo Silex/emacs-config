@@ -91,6 +91,16 @@ the sort order."
     (delete-region (point-min) (point))
     (buffer-string)))
 
+(defun html-table-to-csv ()
+  "Convert an HTML table to CSV."
+  (interactive)
+  (let* ((xml (xml-parse-region (point-min) (point-max) (current-buffer)))
+         (rows (cdr (cdr (car (cdr (cdr (car xml)))))))
+         (rows2 (--map (cddr it) rows))
+         (rows3 (--map (-map 'caddr it) rows2))
+         (rows4 (--map (s-join "|" it) rows3)))
+    (insert (s-join "|\n" rows4))))
+
 (defun show-string-as-c (string)
   "Generate C program printing obfuscated string."
   (interactive "sString? ")
