@@ -22,7 +22,6 @@
                       color-theme-monokai
                       css-eldoc
                       dash
-                      dired+
                       dired-filter
                       dired-ranger
                       dired-subtree

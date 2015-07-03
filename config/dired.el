@@ -63,9 +63,6 @@
 (use-package dired-x
   :commands dired-jump)
 
-(use-package dired-async
-  :commands dired-async-mode)
-
 (use-package dired
   :defer t
 
@@ -74,12 +71,11 @@
   (setq dired-recursive-deletes 'always)
 
   :config
-  (setq diredp-hide-details-initially-flag nil)
+  (put 'dired-find-alternate-file 'disabled nil)
 
-  (setq dired-filter-mark-prefix "*")
-  (use-package dired-filter)
+  (use-package dired-filter
+    :init (setq dired-filter-mark-prefix "*"))
 
-  (toggle-diredp-find-file-reuse-dir 1)
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
 
