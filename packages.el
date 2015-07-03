@@ -52,6 +52,7 @@
                       git-messenger
                       git-timemachine
                       github-clone
+                      go-mode
                       google-maps
                       google-this
                       google-translate
