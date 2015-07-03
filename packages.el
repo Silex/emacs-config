@@ -15,6 +15,7 @@
                       bm
                       browse-kill-ring
                       chess
+                      chronos
                       cmake-mode
                       coffee-mode
                       company
