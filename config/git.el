@@ -18,13 +18,7 @@
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
 ;; Fullscreen magit-status
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
-
-(defadvice magit-mode-quit-window (after magit-fullscreen activate)
-  (jump-to-register :magit-fullscreen))
+(add-hook 'magit-status-mode-hook 'delete-other-windows)
 
 ;; Fullscreen vc-annotate
 (defadvice vc-annotate (around fullscreen activate)
