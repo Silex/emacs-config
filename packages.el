@@ -27,6 +27,7 @@
                       dired-subtree
                       dirtree
                       dockerfile-mode
+                      docker-tramp
                       edit-server
                       eimp
                       elmacro
