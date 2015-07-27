@@ -3,6 +3,8 @@
 (use-package magit
   :commands magit-status
   :init
+  (add-hook 'magit-status-mode-hook 'delete-other-windows)
+  (setq magit-push-always-verify nil)
   (setq magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package gitconfig-mode
@@ -16,9 +18,6 @@
   (setq vc-handled-backends nil))
 
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
-
-;; Fullscreen magit-status
-(add-hook 'magit-status-mode-hook 'delete-other-windows)
 
 ;; Fullscreen vc-annotate
 (defadvice vc-annotate (around fullscreen activate)
