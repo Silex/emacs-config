@@ -19,6 +19,7 @@
                       cmake-mode
                       coffee-mode
                       company
+                      company-emoji
                       color-theme-monokai
                       css-eldoc
                       dash
