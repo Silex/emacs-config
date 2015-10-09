@@ -68,6 +68,7 @@
                       htmlize
                       hookify
                       ibuffer-tramp
+                      ido-occur
                       ido-ubiquitous
                       ido-vertical-mode
                       idomenu
