@@ -99,7 +99,7 @@
      (define-key git-rebase-mode-map (kbd "M-<down>") 'git-rebase-move-line-down)))
 
 (eval-after-load 'vc-annotate
-  '(progn (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
+  '(progn (define-key vc-annotate-mode-map (kbd "q") 'kill-this-buffer)))
 
 ;; evil
 (eval-after-load 'evil

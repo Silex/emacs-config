@@ -47,6 +47,7 @@
                       fill-column-indicator
                       fiplr
                       flx-ido
+                      fullframe
                       fullscreen-mode
                       gh
                       gist
