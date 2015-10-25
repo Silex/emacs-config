@@ -33,11 +33,16 @@
   :config
   (flx-ido-mode))
 
-(use-package ido-vertical-mode
+(use-package ido-grid-mode
   :init
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+  (setq ido-grid-mode-max-columns 1)
+  (setq ido-grid-mode-min-rows 12)
+  (setq ido-grid-mode-prefix-scrolls t)
+  (setq ido-grid-mode-order nil)
+  (setq ido-grid-mode-scroll-down #'ido-grid-mode-next-row)
+  (setq ido-grid-mode-scroll-up #'ido-grid-mode-previous-row)
   :config
-  (ido-vertical-mode))
+  (ido-grid-mode))
 
 (use-package ido-ubiquitous
   :config

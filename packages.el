@@ -70,9 +70,9 @@
                       htmlize
                       hookify
                       ibuffer-tramp
+                      ido-grid-mode
                       ido-occur
                       ido-ubiquitous
-                      ido-vertical-mode
                       idomenu
                       impatient-mode
                       indent-guide
