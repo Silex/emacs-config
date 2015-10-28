@@ -12,6 +12,7 @@
                       aggressive-indent
                       back-button
                       backup-each-save
+                      beacon
                       bm
                       browse-kill-ring
                       chess
