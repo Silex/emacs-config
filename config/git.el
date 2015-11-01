@@ -14,8 +14,7 @@
 (use-package vc-hooks
   :defer t
   :init
-  (remove-hook 'find-file-hook 'vc-find-file-hook)
-  (setq vc-handled-backends nil))
+  (remove-hook 'find-file-hook 'vc-find-file-hook))
 
 (use-package vc-annotate
   :defer t
