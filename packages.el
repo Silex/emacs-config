@@ -84,6 +84,7 @@
                       litable
                       magit
                       macrostep
+                      magit-rockstar
                       make-color
                       markdown-mode
                       miniedit
