@@ -67,9 +67,9 @@
                       helm
                       helm-swoop
                       help-fns+
+                      hookify
                       howdoi
                       htmlize
-                      hookify
                       ibuffer-tramp
                       ido-grid-mode
                       ido-occur
@@ -82,8 +82,8 @@
                       key-chord
                       less-css-mode
                       litable
-                      magit
                       macrostep
+                      magit
                       magit-rockstar
                       make-color
                       markdown-mode
