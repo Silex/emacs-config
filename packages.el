@@ -89,6 +89,7 @@
                       markdown-mode
                       miniedit
                       minimap
+                      move-dup
                       multi-term
                       multiple-cursors
                       navorski
