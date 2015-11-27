@@ -15,6 +15,7 @@
                       beacon
                       bm
                       browse-kill-ring
+                      camcorder
                       chess
                       chronos
                       cmake-mode
