@@ -55,6 +55,7 @@
                       gitconfig-mode
                       git-messenger
                       git-timemachine
+                      github-browse-file
                       github-clone
                       go-mode
                       google-maps
