@@ -19,9 +19,9 @@
                       chronos
                       cmake-mode
                       coffee-mode
+                      color-theme-monokai
                       company
                       company-emoji
-                      color-theme-monokai
                       css-eldoc
                       dash
                       dired-filter
@@ -52,9 +52,9 @@
                       fullscreen-mode
                       gh
                       gist
-                      gitconfig-mode
                       git-messenger
                       git-timemachine
+                      gitconfig-mode
                       github-browse-file
                       github-clone
                       go-mode
@@ -113,13 +113,13 @@
                       pretty-symbols
                       projectile
                       projectile-rails
+                      rails-log-mode
                       rainbow-mode
                       readline-complete
+                      region-bindings-mode
                       request
                       restclient
                       robe
-                      rails-log-mode
-                      region-bindings-mode
                       rtags
                       rubocop
                       s
