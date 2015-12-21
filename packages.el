@@ -47,6 +47,7 @@
                       fic-mode
                       fill-column-indicator
                       fiplr
+                      fireplace
                       flx-ido
                       fullframe
                       fullscreen-mode
