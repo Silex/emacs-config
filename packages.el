@@ -141,6 +141,8 @@
                       visual-regexp-steroids
                       web-mode
                       weechat
+                      wgrep
+                      wgrep-ag
                       whitespace-cleanup-mode
                       yaml-mode
                       yari
