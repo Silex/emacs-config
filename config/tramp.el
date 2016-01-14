@@ -12,7 +12,10 @@
   :defer t
   :init
   ;; Use out-of-band method for big files
-  (setq tramp-copy-size-limit (* 0.5 1024 1024)))
+  (setq tramp-copy-size-limit (* 0.5 1024 1024))
+  :config
+  ;; Use the PATH from the remote
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 (use-package tramp-gvfs
   :defer t
