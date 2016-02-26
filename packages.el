@@ -22,6 +22,7 @@
                       color-theme-monokai
                       company
                       company-emoji
+                      crontab-mode
                       css-eldoc
                       dash
                       dired-filter
