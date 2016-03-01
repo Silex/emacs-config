@@ -67,18 +67,13 @@
   :defer t
 
   :init
-  (setq dired-clean-up-buffers-too nil)
+  (setq dired-recursive-copies 'always)
   (setq dired-recursive-deletes 'always)
-
-  :config
-  (put 'dired-find-alternate-file 'disabled nil)
-
-  (use-package dired-filter
-    :init (setq dired-filter-mark-prefix "*"))
-
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
 
-  ;; Enable ido for dired
-  (put 'dired-do-rename 'ido 'find-file)
-  (put 'dired-do-copy 'ido 'find-file))
+  :config
+  (use-package dired-filter
+    :init (setq dired-filter-mark-prefix "*"))
+
+  (put 'dired-find-alternate-file 'disabled nil))
