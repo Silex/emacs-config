@@ -133,6 +133,7 @@
                       sr-speedbar
                       sunshine
                       switch-window
+                      symon
                       tabbar
                       tagedit
                       textile-mode
