@@ -132,6 +132,7 @@
                       smartparens
                       smex
                       sr-speedbar
+                      suggest
                       sunshine
                       switch-window
                       symon
