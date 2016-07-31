@@ -118,6 +118,7 @@
                       rails-log-mode
                       rainbow-mode
                       readline-complete
+                      refine
                       region-bindings-mode
                       request
                       restclient
