@@ -7,6 +7,7 @@
       (find-file file))))
 
 (use-package ido
+  :bind ("C-b" . ido-switch-buffer)
   :init
   (setq ido-enable-flex-matching t)
   (setq ido-create-new-buffer 'always)

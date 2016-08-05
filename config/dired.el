@@ -61,19 +61,20 @@
   (dired-do-async-shell-command "unzip" arg file-list))
 
 (use-package dired-x
-  :commands dired-jump)
+  :bind ("C-d" . dired-jump))
 
 (use-package dired
-  :defer t
-
+  :bind (:map dired-mode-map
+              ("C-c w" . wdired-change-to-wdired-mode)
+              ("<backspace>" . dired-jump)
+              ("E" . dired-do-eval)
+              ("F" . dired-do-find-marked-files-and-select-in-ibuffer))
   :init
   (setq dired-recursive-copies 'always)
   (setq dired-recursive-deletes 'always)
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
-
   :config
   (use-package dired-filter
     :init (setq dired-filter-mark-prefix "*"))
-
   (put 'dired-find-alternate-file 'disabled nil))

@@ -24,14 +24,4 @@
   (interactive)
   (load-directory (expand-file-name "config" config-directory)))
 
-(defun edit-key-bindings ()
-  "Edit the key bindings"
-  (interactive)
-  (find-file (expand-file-name "key-bindings.el" config-directory)))
-
-(defun load-key-bindings ()
-  "Sets the key bindings"
-  (interactive)
-  (load-file (expand-file-name "key-bindings.el" config-directory)))
-
 (provide 'config)

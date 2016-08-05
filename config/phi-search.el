@@ -1,5 +1,6 @@
 (use-package phi-search
-  :defer t
+  :bind (("C-f" . phi-search)
+         ("C-S-f" . phi-search-backward))
   :init
   (setq phi-search-case-sensitive t)
   :config

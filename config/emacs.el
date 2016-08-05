@@ -73,3 +73,13 @@
 ;; Zone-mode
 (require 'zone)
 (zone-when-idle (* 15 60))
+
+;; Grep/Occur/Compile
+(global-set-key (kbd "C-S-<up>") 'previous-error)
+(global-set-key (kbd "C-S-<down>") 'next-error)
+
+;; Save with one key
+(global-set-key (kbd "C-s") 'save-buffer)
+
+;; Kill buffer
+(global-set-key (kbd "C-S-k") 'kill-this-buffer)

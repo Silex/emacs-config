@@ -1,7 +1,7 @@
 ;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 
 (use-package magit
-  :commands magit-status
+  :bind ("C-c g" . magit-status)
   :init
   (fullframe magit-status magit-mode-quit-window)
   (setq magit-push-always-verify nil)
@@ -11,13 +11,18 @@
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
+(use-package git-rebase-mode
+  :bind (:map git-rebase-mode-map
+              ("M-<up>" . git-rebase-move-line-up)
+              ("M-<down>" . git-rebase-move-line-down)))
+
 (use-package vc-hooks
   :defer t
   :init
   (remove-hook 'find-file-hook 'vc-find-file-hook))
 
 (use-package vc-annotate
-  :defer t
+  :bind (:map vc-annotate-mode-map ("q" . kill-this-buffer))
   :init
   (fullframe vc-annotate kill-this-buffer))
 

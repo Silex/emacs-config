@@ -16,3 +16,6 @@
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
+
+;;(global-set-key (kbd "C-x C-e") 'eval-last-sexp)
+(global-set-key (kbd "C-x C-S-e") 'eval-and-replace)

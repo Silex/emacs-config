@@ -1,5 +1,6 @@
 (use-package recentf
-  :defer t
+  :bind (("C-S-t" . undo-kill-buffer)
+         ("S-C-r" . recentf-ido-find-file))
   :init
   (setq recentf-auto-cleanup 'never)
   (setq recentf-save-file "~/.emacs.d/recentf")

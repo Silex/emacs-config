@@ -9,6 +9,3 @@
 (setq use-package-idle-interval 0.5)
 (require 'use-package)
 (configure-packages)
-
-;; Load key bindings
-(load-key-bindings)
