@@ -78,3 +78,7 @@
   (use-package dired-filter
     :init (setq dired-filter-mark-prefix "*"))
   (put 'dired-find-alternate-file 'disabled nil))
+
+(use-package dired-quick-sort
+  :bind (:map dired-mode-map
+              ("s" . hydra-dired-quick-sort/body)))
