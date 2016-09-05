@@ -26,6 +26,7 @@
                       css-eldoc
                       dash
                       dired-filter
+                      dired-launch
                       dired-quick-sort
                       dired-ranger
                       dired-subtree
