@@ -4,11 +4,16 @@
   (ibuffer-mark-on-buffer #'(lambda (buf)
                               (string-match (concat extension "$") (buffer-name buf)))))
 
+(defun ibuffer-unmark-all-no-questions ()
+  "Call `ibuffer-unmark-all' and press RET directly."
+  (interactive)
+  (ibuffer-unmark-all ?\n))
+
 (add-hook 'ibuffer-hook 'ibuffer-tramp-set-filter-groups-by-tramp-connection)
 
 (use-package ibuffer
   :bind (("S-C-b" . ibuffer)
-         (:map ibuffer-mode-map
-               ("U" . (lambda()(interactive)(ibuffer-unmark-all ?\n)))
-               ("* ." . ibuffer-mark-by-extension)
-               ("* *" . ibuffer-mark-special-buffers))))
+         :map ibuffer-mode-map
+         ("U"   . ibuffer-unmark-all-no-questions)
+         ("* ." . ibuffer-mark-by-extension)
+         ("* *" . ibuffer-mark-special-buffers)))
