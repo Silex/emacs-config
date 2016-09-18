@@ -1,4 +1,5 @@
 (use-package move-dup
+  :ensure t
   :config
   (define-global-minor-mode silex/global-move-dup-mode move-dup-mode
     (lambda ()

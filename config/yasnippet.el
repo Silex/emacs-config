@@ -1,4 +1,5 @@
 (use-package yasnippet
+  :ensure t
   :mode ("\\.yasnippet\\'" . snippet-mode)
   :config
   (define-key yas-minor-mode-map (kbd "C-c") nil)

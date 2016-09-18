@@ -1,10 +1,15 @@
 ;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 
-(use-package magithub
-  :ensure t
-  :defer t)
+(use-package magithub :ensure t :defer t)
+(use-package gh :ensure t :defer t)
+(use-package gist :ensure t :defer t)
+(use-package git-messenger :ensure t :defer t)
+(use-package git-timemachine :ensure t :defer t)
+(use-package github-browse-file :ensure t :defer t)
+(use-package github-clone :ensure t :defer t)
 
 (use-package magit
+  :ensure t
   :bind ("C-c g" . magit-status)
   :init
   (fullframe magit-status magit-mode-quit-window)
@@ -12,6 +17,7 @@
   (setq magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package gitconfig-mode
+  :ensure t
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
@@ -19,6 +25,8 @@
   :bind (:map git-rebase-mode-map
               ("M-<up>" . git-rebase-move-line-up)
               ("M-<down>" . git-rebase-move-line-down)))
+
+(use-package fullframe :ensure t :defer t)
 
 (use-package vc-hooks
   :defer t

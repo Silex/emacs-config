@@ -1,4 +1,5 @@
 (use-package powerline
+  :ensure t
   :init
   (set-face-attribute 'mode-line nil
                       :background "OliveDrab3"

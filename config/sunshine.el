@@ -1,4 +1,5 @@
 (use-package sunshine
+  :ensure t
   :defer t
   :init
   (setq sunshine-location "Geneva, Switzerland")

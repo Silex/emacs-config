@@ -1,4 +1,5 @@
 (use-package org
+  :ensure t
   :mode ("\\.org\\'" . org-mode)
   :init
   ;;(setq org-log-done t)

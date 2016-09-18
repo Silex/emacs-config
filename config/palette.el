@@ -1,4 +1,5 @@
 (use-package palette
+  :ensure t
   :defer t
   :init
   (setq palette-hex-rgb-digits 2)

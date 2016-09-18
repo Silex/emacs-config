@@ -54,7 +54,7 @@
    (let ((files (dired-get-marked-files t current-prefix-arg)))
      (list
       ;; Want to give feedback whether this file or marked files are used:
-                                        ;(y-or-n-p (format "unzip on %s: " current-prefix-arg files))
+      ;;(y-or-n-p (format "unzip on %s: " current-prefix-arg files))
       (y-or-n-p "unzip files?") ;; FIXME
       current-prefix-arg
       files)))
@@ -62,6 +62,25 @@
 
 (use-package dired-x
   :bind ("C-d" . dired-jump))
+
+(use-package dired-filter
+  :ensure t
+  :defer t
+  :init (setq dired-filter-mark-prefix "*"))
+
+(use-package dired-quick-sort
+  :ensure t
+  :bind (:map dired-mode-map
+              ("s" . hydra-dired-quick-sort/body)))
+
+(use-package dired-launch
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'dired-mode-hook 'dired-launch-mode))
+
+(use-package dired-ranger :ensure t :defer t)
+(use-package dired-subtree :ensure t :defer t)
 
 (use-package dired
   :bind (:map dired-mode-map
@@ -75,15 +94,5 @@
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t)
   :config
-  (use-package dired-filter
-    :init (setq dired-filter-mark-prefix "*"))
+  (require 'dired-filter)
   (put 'dired-find-alternate-file 'disabled nil))
-
-(use-package dired-quick-sort
-  :bind (:map dired-mode-map
-              ("s" . hydra-dired-quick-sort/body)))
-
-(use-package dired-launch
-  :defer t
-  :init
-  (add-hook 'dired-mode-hook 'dired-launch-mode))

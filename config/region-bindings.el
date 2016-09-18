@@ -1,4 +1,5 @@
 (use-package region-bindings-mode
+  :ensure t
   :demand t
   :bind (:map region-bindings-mode-map
               ("C-p" . mc/mark-previous-like-this)

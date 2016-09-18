@@ -1,4 +1,5 @@
 (use-package rainbow-mode
+  :ensure t
   :defer t
   :init
   (setq rainbow-html-colors-major-mode-list '(css-mode

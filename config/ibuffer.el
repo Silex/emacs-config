@@ -9,7 +9,10 @@
   (interactive)
   (ibuffer-unmark-all ?\n))
 
-(add-hook 'ibuffer-hook 'ibuffer-tramp-set-filter-groups-by-tramp-connection)
+(use-package ibuffer-tramp
+  :ensure t
+  :defer t
+  :init (add-hook 'ibuffer-hook 'ibuffer-tramp-set-filter-groups-by-tramp-connection))
 
 (use-package ibuffer
   :bind (("S-C-b" . ibuffer)

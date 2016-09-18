@@ -1,4 +1,5 @@
 (use-package smartparens
+  :ensure t
   :config
   (require 'smartparens-config)
   (define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)

@@ -1,4 +1,5 @@
 (use-package weechat
+  :ensure t
   :defer t
   :init
   (setq weechat-auto-close-buffer t)

@@ -1,4 +1,7 @@
+(use-package projectile-rails :ensure t :defer t)
+
 (use-package projectile
+  :ensure t
   :init
   (setq projectile-keymap-prefix (kbd "C-p"))
   (setq projectile-use-git-grep t)

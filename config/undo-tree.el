@@ -1,4 +1,5 @@
 (use-package undo-tree
+  :ensure t
   :bind (("C-z" . undo-tree-undo)
          ("C-S-z" . undo-tree-redo))
   :init

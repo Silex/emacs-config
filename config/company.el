@@ -1,4 +1,5 @@
 (use-package company
+  :ensure t
   :init
   (setq company-minimum-prefix-length 2)
   :config

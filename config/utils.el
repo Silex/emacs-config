@@ -7,6 +7,18 @@
 ;; M-x phases-of-moon
 ;; M-x animate-birthday-present
 
+;; Inspired from https://github.com/magnars/.emacs.d/blob/master/appearance.el
+(defun maximize-frame ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen 'maximized))
+
+(defun restore-frame ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen nil))
+
+;; Start maximized
+(maximize-frame)
+
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
 (defun tabify-buffer ()
   "Tabify the whole buffer."

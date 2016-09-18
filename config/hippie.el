@@ -1,4 +1,5 @@
 (use-package hippie-exp
+  :ensure t
   :defer t
   :init
   (setq hippie-expand-try-functions-list

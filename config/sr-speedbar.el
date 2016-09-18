@@ -1,4 +1,5 @@
 (use-package sr-speedbar
+  :ensure t
   :defer t
   :init
   ;; Show tree on the left side

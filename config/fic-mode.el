@@ -1,4 +1,5 @@
 (use-package fic-mode
+  :ensure t
   :defer t
   :config
   (setq fic-background-color "Orange")

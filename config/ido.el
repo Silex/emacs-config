@@ -29,12 +29,14 @@
   (ido-everywhere t))
 
 (use-package flx-ido
+  :ensure t
   :init
   (setq ido-use-faces nil)
   :config
   (flx-ido-mode))
 
 (use-package ido-grid-mode
+  :ensure t
   :init
   (setq ido-grid-mode-max-columns 1)
   (setq ido-grid-mode-min-rows 12)
@@ -46,6 +48,7 @@
   (ido-grid-mode))
 
 (use-package ido-ubiquitous
+  :ensure t
   :config
   (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
   (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))
@@ -54,3 +57,7 @@
     :config
     (put 'dired-do-rename 'ido 'find-file)
     (put 'dired-do-copy 'ido 'find-file)))
+
+(use-package ido-occur :ensure t :defer t)
+
+(use-package idomenu :ensure t :defer t)
