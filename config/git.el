@@ -1,5 +1,9 @@
 ;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 
+(use-package magithub
+  :ensure t
+  :defer t)
+
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init
