@@ -52,11 +52,13 @@
   :config
   (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
   (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))
-  (ido-ubiquitous-mode)
-  (use-package dired-aux
-    :config
-    (put 'dired-do-rename 'ido 'find-file)
-    (put 'dired-do-copy 'ido 'find-file)))
+  (ido-ubiquitous-mode))
+
+(use-package dired-aux
+  :after ido-ubiquitous
+  :config
+  (put 'dired-do-rename 'ido 'find-file)
+  (put 'dired-do-copy 'ido 'find-file))
 
 (use-package ido-occur :ensure t :defer t)
 

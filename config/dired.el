@@ -36,13 +36,26 @@
   (setq dired-dwim-target (not dired-dwim-target))
   (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
 
+(use-package dired
+  :bind (:map dired-mode-map
+              ("C-c w" . wdired-change-to-wdired-mode)
+              ("<backspace>" . dired-jump)
+              ("E" . dired-do-eval)
+              ("F" . dired-do-find-marked-files-and-select-in-ibuffer))
+  :init
+  (setq dired-recursive-copies 'always)
+  (setq dired-recursive-deletes 'always)
+  (setq dired-listing-switches "-alh")
+  (setq dired-dwim-target t)
+  :config
+  (put 'dired-find-alternate-file 'disabled nil))
 
 (use-package dired-x
   :bind ("C-d" . dired-jump))
 
 (use-package dired-filter
   :ensure t
-  :defer t
+  :after dired
   :init (setq dired-filter-mark-prefix "*"))
 
 (use-package dired-quick-sort
@@ -58,18 +71,3 @@
 
 (use-package dired-ranger :ensure t :defer t)
 (use-package dired-subtree :ensure t :defer t)
-
-(use-package dired
-  :bind (:map dired-mode-map
-              ("C-c w" . wdired-change-to-wdired-mode)
-              ("<backspace>" . dired-jump)
-              ("E" . dired-do-eval)
-              ("F" . dired-do-find-marked-files-and-select-in-ibuffer))
-  :init
-  (setq dired-recursive-copies 'always)
-  (setq dired-recursive-deletes 'always)
-  (setq dired-listing-switches "-alh")
-  (setq dired-dwim-target t)
-  :config
-  (require 'dired-filter)
-  (put 'dired-find-alternate-file 'disabled nil))
