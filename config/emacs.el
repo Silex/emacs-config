@@ -70,10 +70,6 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Zone-mode
-(require 'zone)
-(zone-when-idle (* 15 60))
-
 ;; Grep/Occur/Compile
 (global-set-key (kbd "C-S-<up>") 'previous-error)
 (global-set-key (kbd "C-S-<down>") 'next-error)
