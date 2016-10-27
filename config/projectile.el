@@ -12,4 +12,4 @@
   (defadvice projectile-switch-project (before require-tramp activate)
     (require 'tramp)
     (ignore-errors (ad-remove-advice 'projectile-switch-project 'before 'require-tramp)))
-  (projectile-global-mode))
+  (projectile-mode))

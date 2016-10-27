@@ -27,19 +27,16 @@ of seeing_is_believing."
   :init
   ;; Don't automatically insert encoding
   (setq ruby-insert-encoding-magic-comment nil)
-  (setq ruby-use-encoding-map nil)
-
-  ;; robe-mode
-  (add-hook 'ruby-mode-hook 'robe-mode)
-
-  :config
-  (use-package ruby-compilation)
-  (use-package rcodetools))
+  (setq ruby-use-encoding-map nil))
 
 (use-package robe
-  :defer t
+  :ensure t
+  :after ruby-mode
+  :init
+  (add-hook 'ruby-mode-hook 'robe-mode)
   :config
-  (push 'company-robe company-backends))
+  (add-to-list 'company-backends 'company-robe))
 
 (use-package rspec-mode
-  :defer t)
+  :ensure t
+  :after ruby-mode)

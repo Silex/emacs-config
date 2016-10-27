@@ -18,7 +18,7 @@
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 (use-package tramp-gvfs
-  :defer t
+  :after tramp-ftp
   :config
   ;; Prefer gvfs for FTP
   (add-to-list 'tramp-gvfs-methods "ftp"))
