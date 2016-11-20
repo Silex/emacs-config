@@ -33,7 +33,7 @@ Frames: _f_rame new  _df_ delete
   ("r" winner-redo) ;;Fixme, not working?
   ("o" delete-other-windows :exit t)
   ("a" ace-window :exit t)
-  ("f" new-frame :exit t)
+  ("f" make-frame :exit t)
   ("s" ace-swap-window)
   ("da" ace-delete-window)
   ("dw" delete-window)

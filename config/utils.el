@@ -97,7 +97,7 @@ the sort order."
 
 (defun url-fetch-to-string (url)
   (with-current-buffer (url-retrieve-synchronously url)
-    (beginning-of-buffer)
+    (goto-char (point-min))
     (search-forward-regexp "\n\n")
     (delete-region (point-min) (point))
     (buffer-string)))
@@ -131,7 +131,7 @@ the sort order."
      (insert "puts(arr);\nreturn 0;\n}");
      (c-mode)
      (indent-region (point-min) (point-max))
-     (goto-line 1))))
+     (goto-char (point-min)))))
 
 ;; Simpler way to quit with M-x quit
 (defun quit ()

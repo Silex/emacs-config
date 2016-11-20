@@ -101,9 +101,6 @@
 (setq color-theme-is-global t)
 (setq truncate-partial-width-windows nil)
 
-;; Don't defer screen updates when performing operations
-(setq redisplay-dont-pause t)
-
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)

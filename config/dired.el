@@ -56,7 +56,9 @@
 (use-package dired-filter
   :ensure t
   :after dired
-  :init (setq dired-filter-mark-prefix "*"))
+  :init (setq dired-filter-mark-prefix "*")
+  :config
+  (dired-filter-mode))
 
 (use-package dired-quick-sort
   :ensure t

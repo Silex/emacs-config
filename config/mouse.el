@@ -5,4 +5,4 @@
 
 (setq mouse-drag-copy-region nil)
 (setq mouse-yank-at-point t)
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)

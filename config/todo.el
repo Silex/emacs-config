@@ -45,7 +45,6 @@
 (use-package markdown-mode :ensure t :defer t)
 (use-package miniedit :ensure t :defer t)
 (use-package minimap :ensure t :defer t)
-(use-package navorski :ensure t :defer t)
 (use-package neotree :ensure t :defer t)
 (use-package ox-impress-js :ensure t :defer t)
 (use-package ox-ioslide :ensure t :defer t)
