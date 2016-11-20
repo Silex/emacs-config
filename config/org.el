@@ -1,5 +1,6 @@
 (use-package org
   :ensure t
+  :defer t
   :init
   (setq org-completion-use-ido t)
   (setq org-confirm-babel-evaluate nil)

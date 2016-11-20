@@ -54,6 +54,9 @@
 ;; Allow find-file to open ftp/http/etc links
 (url-handler-mode)
 
+;; Save copied items from external programs in kill ring
+(setq save-interprogram-paste-before-kill t)
+
 ;; Right alt is not meta
 (setq ns-right-alternate-modifier nil)
 

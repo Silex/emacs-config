@@ -60,12 +60,13 @@
 
 (use-package dired-quick-sort
   :ensure t
+  :after dired
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
 
 (use-package dired-launch
   :ensure t
-  :defer t
+  :after dired
   :init
   (add-hook 'dired-mode-hook 'dired-launch-mode))
 

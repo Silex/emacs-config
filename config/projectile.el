@@ -1,5 +1,3 @@
-(use-package projectile-rails :ensure t :defer t)
-
 (use-package projectile
   :ensure t
   :init
@@ -8,8 +6,13 @@
   (setq projectile-switch-project-action 'projectile-dired)
   (setq projectile-enable-caching t)
   :config
-  (add-hook 'projectile-mode-hook 'projectile-rails-on)
   (defadvice projectile-switch-project (before require-tramp activate)
     (require 'tramp)
     (ignore-errors (ad-remove-advice 'projectile-switch-project 'before 'require-tramp)))
   (projectile-mode))
+
+(use-package projectile-rails
+  :ensure t
+  :after projectile
+  :config
+  (projectile-rails-global-mode))

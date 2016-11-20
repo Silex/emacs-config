@@ -24,6 +24,9 @@
 
   ;; Always propose old buffers as well
   (setq ido-use-virtual-buffers nil)
+
+  ;; Don't remember history
+  (setq ido-enable-last-directory-history nil)
   :config
   (ido-mode t)
   (ido-everywhere t))

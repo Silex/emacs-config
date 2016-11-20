@@ -1,7 +1,7 @@
 (defun load-directory (dir)
   "Loads every .el file in a directory in sorted order"
   (let* ((files (directory-files dir t "\\.el\\'"))
-         (names (mapcar 'file-name-sans-extension files)))
+         (names (mapcar #'file-name-sans-extension files)))
     (mapc (lambda (file)
             (with-demoted-errors (load file nil t)))
           names)))
