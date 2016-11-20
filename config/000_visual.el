@@ -1,3 +1,15 @@
+;; Inspired from https://github.com/magnars/.emacs.d/blob/master/appearance.el
+(defun maximize-frame ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen 'maximized))
+
+(defun restore-frame ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen nil))
+
+;; Start maximized
+(maximize-frame)
+
 (use-package monokai-theme
   :ensure t
   :defer t
@@ -48,4 +60,16 @@
      ;; Misc
      (yas/field-highlight-face ((t (:background "#383830")))))))
 
+;; Chosen colortheme
 (color-theme-monokai)
+
+;; Disable startup screen
+(setq inhibit-startup-screen t)
+
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Scrollbar
+(setq scroll-bar-mode-explicit t)
+(set-scroll-bar-mode 'right)
+(scroll-bar-mode)

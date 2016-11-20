@@ -80,19 +80,8 @@
 ;; Kill buffer
 (global-set-key (kbd "C-S-k") 'kill-this-buffer)
 
-;; Disable startup screen
-(setq inhibit-startup-screen t)
-
 ;; No *scratch* message
 (setq initial-scratch-message nil)
-
-;; Disable toolbar
-(tool-bar-mode -1)
-
-;; Scrollbar
-(setq scroll-bar-mode-explicit t)
-(set-scroll-bar-mode 'right)
-(scroll-bar-mode)
 
 ;; highlight matching parenthesis
 (show-paren-mode t)
