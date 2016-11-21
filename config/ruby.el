@@ -29,6 +29,10 @@ of seeing_is_believing."
   (setq ruby-insert-encoding-magic-comment nil)
   (setq ruby-use-encoding-map nil))
 
+(use-package enh-ruby-mode
+  :ensure t
+  :defer t)
+
 (use-package robe
   :ensure t
   :after ruby-mode
