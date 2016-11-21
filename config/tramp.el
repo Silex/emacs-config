@@ -2,6 +2,12 @@
 
 ;; C-x C-f /ssh:you@remotehost|sudo:remotehost:/path/to/file
 
+(defun url-clear-cookies ()
+  "Clear all cookies."
+  (interactive)
+  (setq url-cookie-storage nil)
+  (setq url-cookie-secure-storage nil))
+
 (use-package password-cache
   :defer t
   :init
