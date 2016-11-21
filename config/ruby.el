@@ -34,6 +34,7 @@ of seeing_is_believing."
   :defer t)
 
 (use-package robe
+  :disabled t
   :ensure t
   :after ruby-mode
   :init
@@ -42,5 +43,6 @@ of seeing_is_believing."
   (add-to-list 'company-backends 'company-robe))
 
 (use-package rspec-mode
+  :disabled t
   :ensure t
   :after ruby-mode)

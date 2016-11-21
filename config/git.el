@@ -16,6 +16,7 @@
   (setq magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package magithub :ensure t :after magit)
+(use-package magit-rockstar :ensure t :after magit)
 
 (use-package gitconfig-mode
   :ensure t

@@ -69,7 +69,7 @@ affects the sort order.
 
 See `sort-regexp-fields'."
   (interactive "*P\nr")
-  (sort-regexp-fields reverse "\\(\\sw\\|\\s_\\)+" "\\&" beg end))
+  (sort-regexp-fields reverse "\\([^ ]+\\)+" "\\&" beg end))
 
 (defun sort-lines-buffer (&optional reverse)
   "Sort lines in buffer alphabetically; REVERSE means descending order.
@@ -134,9 +134,7 @@ the sort order."
      (goto-char (point-min)))))
 
 ;; Simpler way to quit with M-x quit
-(defun quit ()
-  (interactive)
-  (save-buffers-kill-terminal))
+(defalias 'quit #'save-buffers-kill-terminal)
 
 (defun insert-file-name (filename &optional args)
   "Insert name of file FILENAME into buffer after point."

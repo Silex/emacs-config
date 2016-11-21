@@ -1,11 +1,3 @@
-;; Helper for recentf
-(defun recentf-ido-find-file ()
-  "Find a recent file using Ido."
-  (interactive)
-  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
-    (when file
-      (find-file file))))
-
 (use-package ido
   :bind ("C-b" . ido-switch-buffer)
   :init
