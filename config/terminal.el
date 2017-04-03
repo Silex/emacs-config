@@ -1,3 +1,13 @@
+(use-package multi-term
+  :ensure t
+  :defer t
+  :init
+  (setq multi-term-program-switches "--login"))
+
+(use-package terminal-here
+  :ensure t
+  :defer t)
+
 (use-package comint
   :bind (:map comint-mode-map
               ("C-<up>" . nil)
