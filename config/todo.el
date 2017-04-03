@@ -3,7 +3,6 @@
 (use-package aggressive-indent :ensure t :defer t)
 (use-package bm :ensure t :defer t)
 (use-package camcorder :ensure t :defer t)
-(use-package chess :ensure t :defer t)
 (use-package chronos :ensure t :defer t)
 (use-package company :ensure t :defer t)
 (use-package company-emoji :ensure t :defer t)
