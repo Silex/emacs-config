@@ -74,3 +74,4 @@
 
 (use-package dired-ranger :ensure t :defer t)
 (use-package dired-subtree :ensure t :defer t)
+(use-package dired-imenu :ensure t :defer t :after dired)
