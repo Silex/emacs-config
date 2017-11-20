@@ -6,3 +6,6 @@
 (setq mouse-drag-copy-region nil)
 (setq mouse-yank-at-point t)
 (setq select-enable-clipboard t)
+
+(global-set-key (kbd "<mouse-7>") #'scroll-left)
+(global-set-key (kbd "<mouse-6>") #'scroll-right)
