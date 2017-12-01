@@ -10,11 +10,12 @@
                                              (substatement-label . 0)
                                              (label . 0)
                                              (statement-cont . +)))))
+  :custom
   ;; Use the GDB visual debugging mode
-  (setq gdb-many-windows t)
+  (gdb-many-windows t)
 
   ;; Use the indentation style of "The C++ Programming Language"
-  (setq c-default-style "silex")
+  (c-default-style "silex")
   :config
   (define-key c-mode-map (kbd "C-d") nil)
   (define-key c++-mode-map (kbd "C-d") nil)

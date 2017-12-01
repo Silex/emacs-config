@@ -24,10 +24,10 @@ of seeing_is_believing."
          ("/Gemfile\\'" . ruby-mode)
          ("\\.gemspec\\'" . ruby-mode))
 
-  :init
+  :custom
   ;; Don't automatically insert encoding
-  (setq ruby-insert-encoding-magic-comment nil)
-  (setq ruby-use-encoding-map nil))
+  (ruby-insert-encoding-magic-comment nil)
+  (ruby-use-encoding-map nil))
 
 (use-package enh-ruby-mode
   :ensure t

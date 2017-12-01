@@ -1,6 +1,6 @@
 (use-package edit-server
   :defer t
-  :init
-  (setq edit-server-url-major-mode-alist '(("github\\.com" . markdown-mode)))
+  :custom
+  (edit-server-url-major-mode-alist '(("github\\.com" . gfm-mode)))
   :config
   (edit-server-start))

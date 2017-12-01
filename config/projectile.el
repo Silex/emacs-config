@@ -1,11 +1,11 @@
 (use-package projectile
   :ensure t
-  :init
-  (setq projectile-keymap-prefix (kbd "C-p"))
-  (setq projectile-use-git-grep t)
-  (setq projectile-switch-project-action 'projectile-dired)
-  (setq projectile-enable-caching t)
-  (setq projectile-mode-line '(:eval (format " Projectile[%s]" (projectile-project-name))))
+  :custom
+  (projectile-keymap-prefix (kbd "C-p"))
+  (projectile-use-git-grep t)
+  (projectile-switch-project-action 'projectile-dired)
+  (projectile-enable-caching t)
+  (projectile-mode-line '(:eval (format " Projectile[%s]" (projectile-project-name))))
   :config
   (defadvice projectile-switch-project (before require-tramp activate)
     (require 'tramp)

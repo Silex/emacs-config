@@ -42,11 +42,11 @@
               ("<backspace>" . dired-jump)
               ("E" . dired-do-eval)
               ("F" . dired-do-find-marked-files-and-select-in-ibuffer))
-  :init
-  (setq dired-recursive-copies 'always)
-  (setq dired-recursive-deletes 'always)
-  (setq dired-listing-switches "-alh")
-  (setq dired-dwim-target t)
+  :custom
+  (dired-recursive-copies 'always)
+  (dired-recursive-deletes 'always)
+  (dired-listing-switches "-alh")
+  (dired-dwim-target t)
   :config
   (put 'dired-find-alternate-file 'disabled nil))
 
@@ -56,7 +56,7 @@
 (use-package dired-filter
   :ensure t
   :after dired
-  :init (setq dired-filter-mark-prefix "*"))
+  :custom (dired-filter-mark-prefix "*"))
 
 (use-package dired-quick-sort
   :ensure t

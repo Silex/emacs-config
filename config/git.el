@@ -12,8 +12,9 @@
   :bind ("C-c g" . magit-status)
   :init
   (fullframe magit-status magit-mode-quit-window)
-  (setq magit-push-always-verify nil)
-  (setq magit-completing-read-function 'magit-ido-completing-read))
+  :custom
+  (magit-push-always-verify nil)
+  (magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package magithub :ensure t :after magit)
 (use-package magit-rockstar :ensure t :after magit)

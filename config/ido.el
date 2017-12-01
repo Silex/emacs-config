@@ -1,52 +1,49 @@
 (use-package ido
   :bind ("C-b" . ido-switch-buffer)
-  :init
-  (setq ido-enable-flex-matching t)
-  (setq ido-create-new-buffer 'always)
+  :custom
+  (ido-enable-flex-matching t)
+  (ido-create-new-buffer 'always)
 
-  ;(setq ido-show-dot-for-dired t)
-  (setq ido-use-url-at-point nil)
-  (setq ido-use-filename-at-point nil)
+  (ido-use-url-at-point nil)
+  (ido-use-filename-at-point nil)
 
   ;; Disable auto searching for files unless called explicitly
-  (setq ido-auto-merge-delay-time 99999)
+  (ido-auto-merge-delay-time 99999)
 
   ;; Avoid "size too big" errors
-  (setq ido-max-directory-size 300000)
+  (ido-max-directory-size 300000)
 
   ;; Always propose old buffers as well
-  (setq ido-use-virtual-buffers nil)
+  (ido-use-virtual-buffers nil)
 
   ;; Don't remember history
-  (setq ido-enable-last-directory-history nil)
+  (ido-enable-last-directory-history nil)
   :config
   (ido-mode t)
   (ido-everywhere t))
 
 (use-package flx-ido
   :ensure t
-  :init
-  (setq ido-use-faces nil)
+  :custom
+  (ido-use-faces nil)
   :config
   (flx-ido-mode))
 
 (use-package ido-grid-mode
   :ensure t
-  :init
-  (setq ido-grid-mode-max-columns 1)
-  (setq ido-grid-mode-min-rows 12)
-  (setq ido-grid-mode-prefix-scrolls t)
-  (setq ido-grid-mode-order nil)
-  (setq ido-grid-mode-scroll-down #'ido-grid-mode-next-row)
-  (setq ido-grid-mode-scroll-up #'ido-grid-mode-previous-row)
+  :custom
+  (ido-grid-mode-max-columns 1)
+  (ido-grid-mode-min-rows 12)
+  (ido-grid-mode-prefix-scrolls t)
+  (ido-grid-mode-order nil)
+  (ido-grid-mode-scroll-down #'ido-grid-mode-next-row)
+  (ido-grid-mode-scroll-up #'ido-grid-mode-previous-row)
   :config
   (ido-grid-mode))
 
-(use-package ido-ubiquitous
+(use-package ido-completing-read+
   :ensure t
   :config
-  (add-to-list 'ido-ubiquitous-function-overrides '(enable exact "find-tag-interactive"))
-  (add-to-list 'ido-ubiquitous-command-overrides '(enable exact "man"))
   (ido-ubiquitous-mode))
 
 (use-package dired-aux

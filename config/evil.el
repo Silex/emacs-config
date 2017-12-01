@@ -1,11 +1,11 @@
 (use-package evil
   :defer t
   :ensure t
-  :init
+  :custom
   ;; White cursor
-  (setq evil-default-cursor '(t "white"))
+  (evil-default-cursor '(t "white"))
   ;; Magic regexp
-  (setq evil-magic 'very-magic)
+  (evil-magic 'very-magic)
   ;;(setq evil-mc-cursor-default-face ((t (:inverse-video t :inherit (evil-default-cursor)))))
   :config
   ;; List of modes where evil should not be enabled

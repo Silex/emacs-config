@@ -1,12 +1,12 @@
 (use-package org
   :ensure t
   :defer t
-  :init
-  (setq org-completion-use-ido t)
-  (setq org-confirm-babel-evaluate nil)
-  (setq org-src-fontify-natively t)
-  (setq org-startup-folded nil)
-  (setq org-src-tab-acts-natively t)
+  :custom
+  (org-completion-use-ido t)
+  (org-confirm-babel-evaluate nil)
+  (org-src-fontify-natively t)
+  (org-startup-folded nil)
+  (org-src-tab-acts-natively t)
   :config
   (custom-set-faces
    '(org-level-3 ((t (:inherit (outline-4)))))

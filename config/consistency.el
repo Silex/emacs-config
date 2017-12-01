@@ -1,5 +1,8 @@
 ;; Make it so man pages have focus when I request them
-(setq Man-notify-method 'aggressive)
+(use-package man
+  :defer t
+  :custom
+  (Man-notify-method 'aggressive))
 
 ;; Make it so help windows have focus by default
 (mapc (lambda (function)

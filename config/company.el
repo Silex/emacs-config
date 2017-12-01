@@ -1,7 +1,7 @@
 (use-package company
   :ensure t
-  :init
-  (setq company-minimum-prefix-length 2)
+  :custom
+  (company-minimum-prefix-length 2)
   :config
   (add-to-list 'company-backends 'company-emoji)
   (global-company-mode))

@@ -10,15 +10,15 @@
 
 (use-package password-cache
   :defer t
-  :init
+  :custom
   ;; Never expire passwords
-  (setq password-cache-expiry nil))
+  (password-cache-expiry nil))
 
 (use-package tramp-sh
   :defer t
-  :init
+  :custom
   ;; Use out-of-band method for big files
-  (setq tramp-copy-size-limit (* 0.5 1024 1024))
+  (tramp-copy-size-limit (* 0.5 1024 1024))
   :config
   ;; Use the PATH from the remote
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))

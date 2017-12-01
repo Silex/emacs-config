@@ -1,8 +1,8 @@
 (use-package multi-term
   :ensure t
   :defer t
-  :init
-  (setq multi-term-program-switches "--login"))
+  :custom
+  (multi-term-program-switches "--login"))
 
 (use-package terminal-here
   :bind ("C-t" . terminal-here)
@@ -12,13 +12,13 @@
   :bind (:map comint-mode-map
               ("C-<up>" . nil)
               ("C-<down>" . nil))
-  :init
-  (setq comint-scroll-to-bottom-on-input t)  ; always insert at the bottom
-  (setq comint-scroll-to-bottom-on-output t) ; always add output at the bottom
-  (setq comint-scroll-show-maximum-output t) ; scroll to show max possible output
-  (setq comint-completion-autolist t)        ; show completion list when ambiguous
-  (setq comint-input-ignoredups t)           ; no duplicates in command history
-  (setq comint-completion-addsuffix t)       ; insert space/slash after file completion
+  :custom
+  (comint-scroll-to-bottom-on-input t)  ; always insert at the bottom
+  (comint-scroll-to-bottom-on-output t) ; always add output at the bottom
+  (comint-scroll-show-maximum-output t) ; scroll to show max possible output
+  (comint-completion-autolist t)        ; show completion list when ambiguous
+  (comint-input-ignoredups t)           ; no duplicates in command history
+  (comint-completion-addsuffix t)       ; insert space/slash after file completion
 
   ;; interpret and use ansi color codes in shell output windows
   (ansi-color-for-comint-mode-on))
@@ -39,10 +39,10 @@
 
 (use-package readline-complete
   :defer t
-  :init
-  (setq explicit-shell-file-name "bash")
-  (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-  (setq comint-process-echoes t)
+  :custom
+  (explicit-shell-file-name "bash")
+  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+  (comint-process-echoes t)
   :config
   (add-to-list 'company-backends 'company-readline)
   (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1))))

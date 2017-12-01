@@ -13,10 +13,10 @@
 (use-package monokai-theme
   :ensure t
   :defer t
-  :init
-  (setq monokai-yellow "orange")
-  (setq monokai-blue "#A6E22E")
-  (setq monokai-cyan "#A6E22E"))
+  :custom
+  (monokai-yellow "orange")
+  (monokai-blue "#A6E22E")
+  (monokai-cyan "#A6E22E"))
 
 (use-package zenburn-theme
   :ensure t
@@ -70,6 +70,9 @@
 (tool-bar-mode -1)
 
 ;; Scrollbar
-(setq scroll-bar-mode-explicit t)
-(set-scroll-bar-mode 'right)
-(scroll-bar-mode)
+(use-package scroll-bar
+  :custom
+  (scroll-bar-mode-explicit t)
+  (scroll-bar-mode 'right)
+  :config
+  (scroll-bar-mode))
