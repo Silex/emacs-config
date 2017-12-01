@@ -5,6 +5,7 @@
   (setq projectile-use-git-grep t)
   (setq projectile-switch-project-action 'projectile-dired)
   (setq projectile-enable-caching t)
+  (setq projectile-mode-line '(:eval (format " Projectile[%s]" (projectile-project-name))))
   :config
   (defadvice projectile-switch-project (before require-tramp activate)
     (require 'tramp)
