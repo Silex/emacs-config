@@ -5,8 +5,8 @@
   (setq multi-term-program-switches "--login"))
 
 (use-package terminal-here
-  :ensure t
-  :defer t)
+  :bind ("C-t" . terminal-here)
+  :ensure t)
 
 (use-package comint
   :bind (:map comint-mode-map
