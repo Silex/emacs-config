@@ -7,6 +7,7 @@
   (global-company-mode))
 
 (use-package company-flx
+  :ensure t
   :after company
   :config
   (company-flx-mode +1))
