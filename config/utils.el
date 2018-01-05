@@ -7,6 +7,11 @@
 ;; M-x phases-of-moon
 ;; M-x animate-birthday-present
 
+(use-package crux
+  :bind
+  ("C-x C-S-e" . crux-eval-and-replace)
+  :ensure t)
+
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
 (defun tabify-buffer ()
   "Tabify the whole buffer."
@@ -30,18 +35,6 @@
 (defun indent-buffer-html ()
   (interactive)
   (indent-region-html (point-min) (point-max)))
-
-(defun cleanup-region (start end)
-  "Untabify, reindent and delete trailing whitespace for the selected region."
-  (interactive "r")
-  (untabify start end)
-  (indent-region start end)
-  (delete-trailing-whitespace start end))
-
-(defun cleanup-buffer ()
-  "Untabify, reindent and delete trailing whitespace for the whole buffer."
-  (interactive)
-  (cleanup-region (point-min) (point-max)))
 
 ;; Makes all lines unique
 (defun uniquify-all-lines-region (start end)
@@ -77,30 +70,6 @@ The variable `sort-fold-case' determines whether alphabetic case affects
 the sort order."
   (interactive "*P")
   (sort-lines reverse (point-min) (point-max)))
-
-(defun open-url-in-buffer (url)
-  "Downloads and displays an url in a buffer"
-  (interactive "sUrl? ")
-  (unless url-handler-mode
-    (url-handler-mode))
-  (let ((current-directory default-directory))
-    (find-file url)
-    (setq default-directory current-directory)
-    (set-visited-file-name (file-name-nondirectory (buffer-file-name)))
-    (setq buffer-read-only nil)))
-
-;; Taken from https://github.com/defunkt/emacs/blob/master/defunkt/defuns.el
-(defun url-fetch-into-buffer (url)
-  (interactive "sURL:")
-  (insert (concat "\n\n" ";; " url "\n"))
-  (insert (url-fetch-to-string url)))
-
-(defun url-fetch-to-string (url)
-  (with-current-buffer (url-retrieve-synchronously url)
-    (goto-char (point-min))
-    (search-forward-regexp "\n\n")
-    (delete-region (point-min) (point))
-    (buffer-string)))
 
 (defun html-table-to-csv ()
   "Convert an HTML table to CSV."
