@@ -38,7 +38,6 @@
 
 (use-package dired
   :bind (:map dired-mode-map
-              ("C-c w" . wdired-change-to-wdired-mode)
               ("<backspace>" . dired-jump)
               ("E" . dired-do-eval)
               ("F" . dired-do-find-marked-files-and-select-in-ibuffer))
