@@ -13,7 +13,8 @@
   :init
   (fullframe magit-status magit-mode-quit-window)
   :custom
-  (magit-push-always-verify nil))
+  (magit-push-always-verify nil)
+  (magit-rebase-arguments '("--autosquash" "--autostash")))
 
 (use-package magithub :ensure t :after magit)
 (use-package magit-rockstar :ensure t :after magit)
