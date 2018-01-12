@@ -7,6 +7,8 @@
 (use-package ivy
   :ensure t
   :bind (("C-b" . ivy-switch-buffer)
+         ("C-c C-r" . ivy-resume)
+         ("C-S-r" . ivy-recentf)
          :map ivy-minibuffer-map
               ("C-j" . ivy-immediate-done)
               ("RET" . ivy-alt-done))
