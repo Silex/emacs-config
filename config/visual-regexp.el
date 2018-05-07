@@ -1,6 +1,6 @@
 (use-package visual-regexp
   :ensure t
-  :defer t)
+  :bind ("M-%" . vr/replace))
 
 (use-package visual-regexp-steroids
   :ensure t
