@@ -73,3 +73,7 @@
 (use-package dired-subtree :ensure t :defer t)
 (use-package dired-imenu :ensure t :defer t :after dired)
 (use-package dired-du :ensure t :defer t)
+
+(use-package tar-mode
+  :defer t
+  :custom (tar-mode-show-date t))
