@@ -5,7 +5,7 @@
   (multi-term-program-switches "--login"))
 
 (use-package terminal-here
-  :bind ("C-t" . terminal-here)
+  :bind ("C-c t" . terminal-here)
   :ensure t)
 
 (use-package comint
