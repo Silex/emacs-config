@@ -1,3 +1,6 @@
+;; Disable startup screen
+(setq inhibit-startup-screen t)
+
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/appearance.el
 (defun maximize-frame ()
   (interactive)
@@ -23,9 +26,6 @@
   :defer t)
 
 (load-theme 'silex-monokai t)
-
-;; Disable startup screen
-(setq inhibit-startup-screen t)
 
 ;; Disable toolbar
 (tool-bar-mode -1)
