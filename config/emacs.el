@@ -1,6 +1,9 @@
 ;; Default file encoding
 (prefer-coding-system 'utf-8-unix)
 
+;; Display as hex instead of octal
+(setq display-raw-bytes-as-hex t)
+
 ;; disable word wrap
 (setq-default truncate-lines t)
 
