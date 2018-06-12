@@ -1,6 +1,3 @@
-;; Disable startup screen
-(setq inhibit-startup-screen t)
-
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/appearance.el
 (defun maximize-frame ()
   (interactive)
@@ -9,9 +6,6 @@
 (defun restore-frame ()
   (interactive)
   (set-frame-parameter nil 'fullscreen nil))
-
-;; Start maximized
-(maximize-frame)
 
 (use-package monokai-theme
   :ensure t
@@ -25,11 +19,6 @@
   :ensure t
   :defer t)
 
-(load-theme 'silex-monokai t)
-
-;; Disable toolbar
-(tool-bar-mode -1)
-
 ;; Scrollbar
 (use-package scroll-bar
   :custom
@@ -37,3 +26,15 @@
   (scroll-bar-mode 'right)
   :config
   (scroll-bar-mode))
+
+;; Disable startup screen
+(setq inhibit-startup-screen t)
+
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Start maximized
+(maximize-frame)
+
+;; Load theme
+(load-theme 'silex-monokai t)
