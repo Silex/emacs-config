@@ -38,3 +38,9 @@
 
 ;; Load theme
 (load-theme 'silex-monokai t)
+
+;; Pretty modeline
+(use-package airline-themes
+  :ensure t
+  :config
+  (load-theme 'airline-cool t))

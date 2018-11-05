@@ -41,9 +41,6 @@
 ;; content to reflect what's on-disk.
 (global-auto-revert-mode 1)
 
-;; Don't stop on hyphen in foo-bar
-(global-superword-mode)
-
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)
 

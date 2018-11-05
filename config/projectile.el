@@ -1,7 +1,7 @@
 (use-package projectile
   :ensure t
   :custom
-  (projectile-keymap-prefix (kbd "C-p"))
+  (projectile-keymap-prefix (kbd "C-c p"))
   (projectile-use-git-grep t)
   (projectile-switch-project-action 'projectile-dired)
   (projectile-enable-caching t)
