@@ -6,9 +6,6 @@
             (with-demoted-errors (load file nil t)))
           names)))
 
-;; Initialize variables
-(setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
-
 ;; Setup package.el
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -27,4 +24,7 @@
   (setq use-package-verbose t))
 
 ;; Load configuration
+(setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
+(setq custom-theme-directory (concat config-directory "themes"))
+(setq custom-file "~/.emacs.d/custom.el")
 (load-directory (expand-file-name "config" config-directory))
