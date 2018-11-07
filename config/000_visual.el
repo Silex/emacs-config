@@ -7,18 +7,6 @@
   (interactive)
   (set-frame-parameter nil 'fullscreen nil))
 
-(use-package monokai-theme
-  :ensure t
-  :defer t
-  :custom
-  (monokai-yellow "orange")
-  (monokai-blue "#A6E22E")
-  (monokai-cyan "#A6E22E"))
-
-(use-package zenburn-theme
-  :ensure t
-  :defer t)
-
 ;; Scrollbar
 (use-package scroll-bar
   :custom
