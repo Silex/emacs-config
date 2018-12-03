@@ -61,6 +61,4 @@
 (use-package tabbar :ensure t :defer t)
 (use-package tagedit :ensure t :defer t)
 (use-package textile-mode :ensure t :defer t)
-(use-package wgrep :ensure t :defer t)
-(use-package wgrep-ag :ensure t :defer t)
 (use-package yari :ensure t :defer t)
