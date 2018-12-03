@@ -1,5 +1,5 @@
 (use-package projectile
-  :ensure t
+  :demand t
   :custom
   (projectile-keymap-prefix (kbd "C-c p"))
   (projectile-use-git-grep t)
@@ -15,12 +15,10 @@
 
 (use-package counsel-projectile
   :disabled t
-  :ensure t
   :after projectile
   :config (counsel-projectile-mode))
 
 (use-package projectile-rails
-  :ensure t
   :after projectile
   :config
   (projectile-rails-global-mode))

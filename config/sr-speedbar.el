@@ -1,6 +1,4 @@
 (use-package sr-speedbar
-  :ensure t
-  :defer t
   :custom
   ;; Show tree on the left side
   (sr-speedbar-right-side nil)

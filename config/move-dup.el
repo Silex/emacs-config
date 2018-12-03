@@ -1,5 +1,5 @@
 (use-package move-dup
-  :ensure t
+  :demand t
   :config
   (defun move-dup-on ()
     "Decides whether the function `move-dup-mode' should be called with t."

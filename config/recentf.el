@@ -1,6 +1,6 @@
 (use-package recentf
-  :bind ("C-S-t" . undo-kill-buffer)
   :demand t
+  :bind ("C-S-t" . undo-kill-buffer)
   :custom
   (recentf-auto-cleanup 'never)
   (recentf-save-file "~/.emacs.d/recentf")

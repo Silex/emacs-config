@@ -1,5 +1,4 @@
 (use-package phi-search
-  :ensure t
   :bind (("C-f" . phi-search)
          ("C-S-f" . phi-search-backward))
   :custom

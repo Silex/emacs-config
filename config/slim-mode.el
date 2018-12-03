@@ -1,1 +1,1 @@
-(use-package slim-mode :ensure t :defer t)
+(use-package slim-mode)

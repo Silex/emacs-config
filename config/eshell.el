@@ -1,5 +1,5 @@
 (use-package eshell
-  :defer t
+  :ensure nil
   :config
   (defun eshell/find-files (&rest args)
     "Open a file in emacs. Some habits die hard."

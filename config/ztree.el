@@ -1,1 +1,1 @@
-(use-package ztree :ensure t :defer t)
+(use-package ztree)

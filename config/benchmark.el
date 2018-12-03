@@ -1,1 +1,1 @@
-(use-package benchmark-init :ensure t :defer t)
+(use-package benchmark-init)

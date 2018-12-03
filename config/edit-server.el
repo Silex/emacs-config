@@ -1,5 +1,5 @@
 (use-package edit-server
-  :defer t
+  :ensure nil
   :custom
   (edit-server-url-major-mode-alist '(("github\\.com" . gfm-mode)))
   :config

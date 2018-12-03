@@ -22,7 +22,7 @@
 
 ;; Don't warn when cutting large chunk of texts
 (use-package warnings
-  :defer t
+  :ensure nil
   :config
   (add-to-list 'warning-suppress-types '(undo discard-info)))
 

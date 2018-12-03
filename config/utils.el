@@ -9,17 +9,13 @@
 
 (use-package crux
   :bind
-  ("C-x C-S-e" . crux-eval-and-replace)
-  :ensure t)
+  ("C-x C-S-e" . crux-eval-and-replace))
 
 (use-package hl-todo
-  :ensure t
   :config
   (global-hl-todo-mode))
 
-(use-package ialign
-  :ensure t
-  :defer t)
+(use-package ialign)
 
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
 (defun tabify-buffer ()

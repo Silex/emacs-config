@@ -9,6 +9,8 @@
 
 ;; Scrollbar
 (use-package scroll-bar
+  :ensure nil
+  :demand t
   :custom
   (scroll-bar-mode-explicit t)
   (scroll-bar-mode 'right)
@@ -29,7 +31,7 @@
 
 ;; Pretty modeline
 (use-package airline-themes
-  :ensure t
+  :demand t
   :custom
   (airline-cursor-colors nil)
   :config

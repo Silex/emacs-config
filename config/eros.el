@@ -1,1 +1,1 @@
-(use-package eros :ensure t :defer t)
+(use-package eros)

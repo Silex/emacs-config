@@ -1,5 +1,5 @@
 (use-package atomic-chrome
-  :ensure t
+  :demand t
   :custom
   (atomic-chrome-url-major-mode-alist '(("github\\.com" . gfm-mode)
                                         ("redmine" . textile-mode)))

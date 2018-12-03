@@ -20,8 +20,10 @@
 
 ;; Load use-package
 (use-package use-package
-  :init
-  (setq use-package-verbose t))
+ :custom
+ (use-package-verbose t)
+ (use-package-always-ensure t)
+ (use-package-always-defer t))
 
 ;; Load configuration
 (setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))

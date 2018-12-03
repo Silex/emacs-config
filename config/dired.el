@@ -37,6 +37,7 @@
   (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
 
 (use-package dired
+  :ensure nil
   :bind (:map dired-mode-map
               ("<backspace>" . dired-jump)
               ("E" . dired-do-eval)
@@ -50,30 +51,27 @@
   (put 'dired-find-alternate-file 'disabled nil))
 
 (use-package dired-x
+  :ensure nil
   :bind ("C-d" . dired-jump))
 
 (use-package dired-filter
-  :ensure t
   :after dired
   :custom (dired-filter-mark-prefix "*"))
 
 (use-package dired-quick-sort
-  :ensure t
   :after dired
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
 
 (use-package dired-launch
-  :ensure t
   :after dired
   :init
   (add-hook 'dired-mode-hook 'dired-launch-mode))
 
-(use-package dired-ranger :ensure t :defer t)
-(use-package dired-subtree :ensure t :defer t)
-(use-package dired-imenu :ensure t :defer t :after dired)
-(use-package dired-du :ensure t :defer t)
+(use-package dired-ranger)
+(use-package dired-subtree)
+(use-package dired-imenu :after dired)
+(use-package dired-du)
 
 (use-package tar-mode
-  :defer t
   :custom (tar-mode-show-date t))

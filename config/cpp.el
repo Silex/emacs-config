@@ -1,4 +1,5 @@
 (use-package cc-mode
+  :ensure nil
   :mode ("\\.h\\'" . c++-mode)
 
   :init
@@ -22,13 +23,9 @@
   (define-key c++-mode-map (kbd "C-c c") 'compile))
 
 (use-package qt-pro-mode
-  :ensure t
   :mode ("\\.pro\\'" "\\.pri\\'"))
 
 (use-package rtags
-  :ensure t
   :commands rtags-find-symbol-at-point)
 
-(use-package irony
-  :ensure t
-  :defer t)
+(use-package irony)

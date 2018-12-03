@@ -1,6 +1,5 @@
 ;; Make it so man pages have focus when I request them
 (use-package man
-  :defer t
   :custom
   (Man-notify-method 'aggressive))
 

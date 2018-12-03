@@ -1,14 +1,13 @@
 ;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 
-(use-package gh :ensure t :defer t)
-(use-package gist :ensure t :defer t)
-(use-package git-messenger :ensure t :defer t)
-(use-package git-timemachine :ensure t :defer t)
-(use-package github-browse-file :ensure t :defer t)
-(use-package github-clone :ensure t :defer t)
+(use-package gh)
+(use-package gist)
+(use-package git-messenger)
+(use-package git-timemachine)
+(use-package github-browse-file)
+(use-package github-clone)
 
 (use-package magit
-  :ensure t
   :bind ("C-c g" . magit-status)
   :init
   (fullframe magit-status magit-mode-quit-window)
@@ -17,28 +16,27 @@
   (magit-rebase-arguments '("--autosquash" "--autostash")))
 
 (use-package gitconfig-mode
-  :ensure t
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
 (use-package git-rebase-mode
+  :ensure nil
   :bind (:map git-rebase-mode-map
               ("M-<up>" . git-rebase-move-line-up)
               ("M-<down>" . git-rebase-move-line-down)))
 
 (use-package magithub
-  :after magit
-  :ensure t
-  :defer t)
+  :after magit)
 
-(use-package fullframe :ensure t :defer t)
+(use-package fullframe)
 
 (use-package vc-hooks
-  :defer t
+  :ensure nil
   :init
   (remove-hook 'find-file-hook 'vc-refresh-state))
 
 (use-package vc-annotate
+  :ensure nil
   :bind (:map vc-annotate-mode-map ("q" . kill-this-buffer))
   :init
   (fullframe vc-annotate kill-this-buffer))

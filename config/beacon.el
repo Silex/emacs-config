@@ -1,4 +1,4 @@
 (use-package beacon
-  :ensure t
+  :demand t
   :config
   (beacon-mode))

@@ -1,13 +1,12 @@
 (use-package flx
-  :ensure t)
+  :demand t)
 
 (use-package smex
-  :ensure t
+  :demand t
   :custom
   (smex-save-file "~/.emacs.d/smex-items"))
 
 (use-package ivy
-  :ensure t
   :demand t
   :bind (("C-b" . ivy-switch-buffer)
          :map ivy-minibuffer-map
@@ -25,7 +24,6 @@
   :config (ivy-mode))
 
 (use-package counsel
-  :ensure t
   :demand t
   :bind
   ("C-c k" . counsel-ag)

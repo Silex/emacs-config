@@ -1,5 +1,4 @@
 (use-package smartparens
-  :ensure t
   :config
   (require 'smartparens-config)
   (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)

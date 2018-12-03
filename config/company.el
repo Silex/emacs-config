@@ -1,5 +1,5 @@
 (use-package company
-  :ensure t
+  :demand t
   :custom
   (company-minimum-prefix-length 2)
   :config
@@ -7,7 +7,7 @@
   (global-company-mode))
 
 (use-package company-flx
-  :ensure t
+  :demand t
   :after company
   :config
   (company-flx-mode +1))

@@ -1,3 +1,1 @@
-(use-package treemacs
-  :ensure t
-  :defer t)
+(use-package treemacs)

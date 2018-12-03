@@ -1,4 +1,5 @@
 (use-package help
+  :ensure nil
   :bind (:map help-map
               ("c"   . describe-char)
               ("C-l" . find-library)

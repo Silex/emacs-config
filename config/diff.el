@@ -1,5 +1,5 @@
 (use-package diff-mode
-  :defer t
+  :ensure nil
   :init
   (custom-set-faces
    '(diff-added ((t (:foreground "Green"))) 'now)

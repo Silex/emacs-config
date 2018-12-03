@@ -1,1 +1,1 @@
-(use-package package-utils :ensure t)
+(use-package package-utils)

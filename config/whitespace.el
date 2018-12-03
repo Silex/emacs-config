@@ -1,6 +1,6 @@
 ;; Remove trailing whitespace automatically
 (use-package whitespace-cleanup-mode
-  :ensure t
+  :demand t
   :config
   (global-whitespace-cleanup-mode))
 

@@ -1,6 +1,4 @@
-(use-package hydra
-  :ensure t
-  :defer t)
+(use-package hydra)
 
 (defhydra hydra-window (:color red :hint nil)
   "

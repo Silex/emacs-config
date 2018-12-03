@@ -7,6 +7,7 @@ of seeing_is_believing."
     (shell-command-on-region beg end "seeing_is_believing" nil 'replace)))
 
 (use-package ruby-mode
+  :ensure nil
   :mode (;; Rake
          ("\\.rake\\'" . ruby-mode)
          ("/Rakefile\\'" . ruby-mode)
@@ -29,13 +30,10 @@ of seeing_is_believing."
   (ruby-insert-encoding-magic-comment nil)
   (ruby-use-encoding-map nil))
 
-(use-package enh-ruby-mode
-  :ensure t
-  :defer t)
+(use-package enh-ruby-mode)
 
 (use-package robe
   :disabled t
-  :ensure t
   :after ruby-mode
   :init
   (add-hook 'ruby-mode-hook 'robe-mode)
@@ -44,5 +42,4 @@ of seeing_is_believing."
 
 (use-package rspec-mode
   :disabled t
-  :ensure t
   :after ruby-mode)

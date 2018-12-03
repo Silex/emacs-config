@@ -1,6 +1,4 @@
 (use-package hippie-exp
-  :ensure t
-  :defer t
   :custom
   (hippie-expand-try-functions-list
    '(try-expand-dabbrev

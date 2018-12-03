@@ -1,6 +1,4 @@
 (use-package org
-  :ensure t
-  :defer t
   :custom
   (org-completion-use-ido t)
   (org-confirm-babel-evaluate nil)

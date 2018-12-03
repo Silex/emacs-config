@@ -1,1 +1,1 @@
-(use-package chess :ensure t :defer t)
+(use-package chess)

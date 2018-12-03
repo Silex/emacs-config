@@ -1,6 +1,4 @@
 (use-package rainbow-mode
-  :ensure t
-  :defer t
   :custom
   (rainbow-html-colors-major-mode-list '(css-mode
                                          html-mode

@@ -10,6 +10,7 @@
   (ibuffer-unmark-all ?\n))
 
 (use-package ibuffer
+  :ensure nil
   :bind (("S-C-b" . ibuffer)
          :map ibuffer-mode-map
          ("U"   . ibuffer-unmark-all-no-questions)
@@ -17,6 +18,5 @@
          ("* *" . ibuffer-mark-special-buffers)))
 
 (use-package ibuffer-tramp
-  :ensure t
   :after ibuffer
   :init (add-hook 'ibuffer-hook 'ibuffer-tramp-set-filter-groups-by-tramp-connection))

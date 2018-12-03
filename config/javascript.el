@@ -1,5 +1,4 @@
 (use-package js2-mode
-  :ensure t
   :mode ("\\.js\\'" . js2-mode))
 
 (defun js2-add-semi-colons ()

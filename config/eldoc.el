@@ -1,4 +1,4 @@
 (use-package eldoc
-  :defer t
+  :ensure nil
   :custom
   (eldoc-idle-delay 1))

@@ -1,4 +1,4 @@
 (use-package sh-script
-  :defer t
+  :ensure nil
   :custom
   (sh-mode-map (make-sparse-keymap)))
