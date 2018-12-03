@@ -16,9 +16,6 @@
   (magit-push-always-verify nil)
   (magit-rebase-arguments '("--autosquash" "--autostash")))
 
-(use-package magithub :ensure t :after magit)
-(use-package magit-rockstar :ensure t :after magit)
-
 (use-package gitconfig-mode
   :ensure t
   :mode (("\\.gitignore\\'" . gitconfig-mode)
@@ -29,17 +26,24 @@
               ("M-<up>" . git-rebase-move-line-up)
               ("M-<down>" . git-rebase-move-line-down)))
 
+(use-package magithub
+  :after magit
+  :ensure t
+  :defer t)
+
 (use-package fullframe :ensure t :defer t)
 
 (use-package vc-hooks
   :defer t
   :init
-  (remove-hook 'find-file-hook 'vc-find-file-hook))
+  (remove-hook 'find-file-hook 'vc-refresh-state))
 
 (use-package vc-annotate
   :bind (:map vc-annotate-mode-map ("q" . kill-this-buffer))
   :init
   (fullframe vc-annotate kill-this-buffer))
+
+(defun vc-after-save())
 
 ;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
 
