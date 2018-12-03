@@ -14,6 +14,7 @@
   (projectile-mode))
 
 (use-package counsel-projectile
+  :disabled t
   :ensure t
   :after projectile
   :config (counsel-projectile-mode))

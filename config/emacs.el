@@ -17,6 +17,9 @@
 ;; Increase undo limit
 (setq undo-limit (* 10 1024 1024))
 
+;; After how many columns should fill-paragraph break
+(setq-default fill-column 120)
+
 ;; Don't warn when cutting large chunk of texts
 (use-package warnings
   :defer t
@@ -51,9 +54,6 @@
 ;; make all "yes or no" prompts show "y or n" instead
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Allow find-file to open ftp/http/etc links
-(url-handler-mode)
-
 ;; Save copied items from external programs in kill ring
 (setq save-interprogram-paste-before-kill t)
 
@@ -61,7 +61,8 @@
 (setq ns-right-alternate-modifier nil)
 
 ;; Avoid running the GC all the time
-(setq gc-cons-threshold 20000000)
+(setq gc-cons-threshold 16777216
+      gc-cons-percentage 0.1)
 
 ;; Don't limit *Messages* to 1000 lines only
 (setq message-log-max 16384)

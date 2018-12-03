@@ -38,9 +38,9 @@
   ;;(add-hook 'shell-mode-hook 'kill-process-on-exit))
 
 (use-package readline-complete
+  :disabled t
   :defer t
   :custom
-  (explicit-shell-file-name "bash")
   (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
   (comint-process-echoes t)
   :config

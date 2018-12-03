@@ -30,5 +30,7 @@
 ;; Pretty modeline
 (use-package airline-themes
   :ensure t
+  :custom
+  (airline-cursor-colors nil)
   :config
   (load-theme 'airline-cool t))

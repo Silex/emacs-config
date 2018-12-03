@@ -14,6 +14,17 @@
   ;; Never expire passwords
   (password-cache-expiry nil))
 
+(use-package tramp
+  :defer t
+  :custom
+  (tramp-default-method "ssh"))
+
+(defun add-ssh-agent-to-tramp ()
+  (cl-pushnew '("-A")
+              (cadr (assoc 'tramp-login-args
+                           (assoc "ssh" tramp-methods)))
+              :test #'equal))
+
 (use-package tramp-sh
   :defer t
   :custom
