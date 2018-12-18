@@ -75,3 +75,7 @@
 
 (use-package tar-mode
   :custom (tar-mode-show-date t))
+
+(use-package wdired
+  :custom
+  (wdired-create-parent-directories t))
