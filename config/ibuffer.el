@@ -11,7 +11,7 @@
 
 (use-package ibuffer
   :ensure nil
-  :bind (("S-C-b" . ibuffer)
+  :bind (("C-c b" . ibuffer)
          :map ibuffer-mode-map
          ("U"   . ibuffer-unmark-all-no-questions)
          ("* ." . ibuffer-mark-by-extension)
