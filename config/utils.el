@@ -12,6 +12,7 @@
   ("C-x C-S-e" . crux-eval-and-replace))
 
 (use-package hl-todo
+  :demand t
   :config
   (global-hl-todo-mode))
 
