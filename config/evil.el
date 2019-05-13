@@ -54,3 +54,9 @@
   :after evil
   :config
   (global-evil-visualstar-mode))
+
+(use-package evil-exchange
+  :demand t
+  :after evil
+  :config
+  (evil-exchange-install))
