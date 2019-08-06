@@ -25,7 +25,8 @@
               ("M-<up>" . git-rebase-move-line-up)
               ("M-<down>" . git-rebase-move-line-down)))
 
-(use-package magithub
+(use-package forge
+  :demand t
   :after magit)
 
 (use-package fullframe)
