@@ -8,38 +8,27 @@ of seeing_is_believing."
 
 (use-package ruby-mode
   :ensure nil
-  :mode (;; Rake
-         ("\\.rake\\'" . ruby-mode)
-         ("/Rakefile\\'" . ruby-mode)
-
-         ;; Capistrano
-         ("/Capfile\\'" . ruby-mode)
-
-         ;; Thor
-         ("\\.thor\\'" . ruby-mode)
-
-         ;; ERB
-         ("\\.erb\\'" . ruby-mode)
-
-         ;; Gemfile
-         ("/Gemfile\\'" . ruby-mode)
-         ("\\.gemspec\\'" . ruby-mode))
 
   :custom
   ;; Don't automatically insert encoding
   (ruby-insert-encoding-magic-comment nil)
   (ruby-use-encoding-map nil))
 
-(use-package enh-ruby-mode)
+(use-package enh-ruby-mode
+  :mode ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)
+  :custom-face
+  (enh-ruby-op-face ((t (:inherit (font-lock-keyword-face)))))
+  :init
+  (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode)))
 
 (use-package robe
   :disabled t
-  :after ruby-mode
+  :after enh-ruby-mode
   :init
-  (add-hook 'ruby-mode-hook 'robe-mode)
+  (add-hook 'enh-ruby-mode-hook 'robe-mode)
   :config
   (add-to-list 'company-backends 'company-robe))
 
 (use-package rspec-mode
   :disabled t
-  :after ruby-mode)
+  :after enh-ruby-mode)
