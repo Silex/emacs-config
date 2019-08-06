@@ -61,3 +61,9 @@
   :after evil
   :config
   (evil-exchange-install))
+
+(use-package evil-goggles
+  :demand t
+  :after evil
+  :config
+  (evil-goggles-mode))
