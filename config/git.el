@@ -10,10 +10,7 @@
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init
-  (fullframe magit-status magit-mode-quit-window)
-  :custom
-  (magit-push-always-verify nil)
-  (magit-rebase-arguments '("--autosquash" "--autostash")))
+  (fullframe magit-status quit-window))
 
 (use-package gitconfig-mode
   :mode (("\\.gitignore\\'" . gitconfig-mode)
