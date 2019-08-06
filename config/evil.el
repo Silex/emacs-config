@@ -11,6 +11,7 @@
   (evil-want-fine-undo t)
   :config
   (evil-mode)
+  (defalias #'forward-evil-word #'forward-evil-symbol)
   (setq evil-emacs-state-modes (append evil-emacs-state-modes '(docker-container-mode docker-image-mode docker-volume-mode docker-network-mode docker-machine-mode))))
 
 (use-package evil-collection
