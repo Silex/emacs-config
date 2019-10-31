@@ -20,5 +20,6 @@
 
 (use-package projectile-rails
   :after projectile
+  :demand t
   :config
   (projectile-rails-global-mode))
