@@ -9,8 +9,8 @@
 ;; Setup package.el
 (setq package-enable-at-startup nil)
 (package-initialize)
-(add-to-list 'package-archives '("gnu"   . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org"   . "http://orgmode.org/elpa/") t)
 
 ;; Install use-package if needed
