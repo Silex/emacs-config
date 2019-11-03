@@ -9,6 +9,7 @@
   (evil-magic 'very-magic)
   (evil-shift-width 2)
   (evil-want-fine-undo t)
+  (evil-search-module 'evil-search)
   :config
   (evil-mode)
   (defalias #'forward-evil-word #'forward-evil-symbol))
