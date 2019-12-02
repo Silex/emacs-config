@@ -1,3 +1,6 @@
+;; sudo snap install cmake && sudo apt install libtool-bin
+(use-package vterm)
+
 (use-package multi-term
   :custom
   (multi-term-program-switches "--login"))
