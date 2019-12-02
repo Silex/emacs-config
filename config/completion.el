@@ -1,10 +1,12 @@
 (use-package flx
   :demand t)
 
-(use-package smex
+(use-package amx
   :demand t
   :custom
-  (smex-save-file "~/.emacs.d/smex-items"))
+  (amx-history-length 64)
+  :config
+  (amx-mode))
 
 (use-package ivy
   :demand t
