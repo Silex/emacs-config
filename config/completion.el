@@ -1,6 +1,3 @@
-(use-package flx
-  :demand t)
-
 (use-package amx
   :demand t
   :custom
@@ -15,13 +12,11 @@
               ("C-j" . ivy-immediate-done)
               ("RET" . ivy-alt-done))
   :custom
-  (ivy-re-builders-alist '((swiper . ivy--regex-plus)
-                           (t . ivy--regex-fuzzy)))
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
-  (ivy-flx-limit 5000)
   (ivy-magic-tilde nil)
   (ivy-magic-slash-non-match-action nil)
+  (ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (enable-recursive-minibuffers t)
   :config (ivy-mode))
 

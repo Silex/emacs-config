@@ -6,12 +6,6 @@
   (add-to-list 'company-backends 'company-emoji)
   (global-company-mode))
 
-(use-package company-flx
-  :demand t
-  :after company
-  :config
-  (company-flx-mode +1))
-
 ;;(set-face-attribute 'company-tooltip-selection nil
 ;;                    :background "#336655")
 ;;
