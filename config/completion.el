@@ -23,20 +23,23 @@
   (ivy-re-builders-alist '((swiper . ivy--regex-plus)
                            (t . ivy--regex-fuzzy)))
   (enable-recursive-minibuffers t)
-  :config (ivy-mode))
+  :config (ivy-mode)
+  :init
+  (setq ivy-re-builders-alist '((swiper . ivy--rege-plus)
+                           (t . ivy--regex-fuzzy))))
 
 ;; sudo apt install clang
-(use-package ivy-fuz
-  :disabled
-  :demand t
-  :after ivy
-  :custom
-  (ivy-sort-matches-functions-alist '((t . ivy-fuz-sort-fn)))
-  (ivy-re-builders-alist '((t . ivy-fuz-regex-fuzzy)))
-  :config
-  ;;(fuz-build-and-load-dymod)
-  (require 'ivy-fuz)
-  (add-to-list 'ivy-highlight-functions-alist '(ivy-fuz-regex-fuzzy . ivy-fuz-highlight-fn)))
+;; (use-package ivy-fuz
+;;   :disabled
+;;   :demand t
+;;   :after ivy
+;;   :custom
+;;   (ivy-sort-matches-functions-alist '((t . ivy-fuz-sort-fn)))
+;;   (ivy-re-builders-alist '((t . ivy-fuz-regex-fuzzy)))
+;;   :config
+;;   ;;(fuz-build-and-load-dymod)
+;;   (require 'ivy-fuz)
+;;   (add-to-list 'ivy-highlight-functions-alist '(ivy-fuz-regex-fuzzy . ivy-fuz-highlight-fn)))
 
 (use-package counsel
   :demand t
