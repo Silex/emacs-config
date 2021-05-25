@@ -13,6 +13,7 @@
   :ensure nil
   :bind (("C-c b" . ibuffer)
          :map ibuffer-mode-map
+         ("t"   . ibuffer-toggle-marks)
          ("U"   . ibuffer-unmark-all-no-questions)
          ("* ." . ibuffer-mark-by-extension)
          ("* *" . ibuffer-mark-special-buffers)))

@@ -11,8 +11,8 @@
 (setq require-final-newline t)
 
 ;; Scrolling
-(setq scroll-step 1)
-(setq scroll-conservatively 0)
+(setq scroll-step 0)
+(setq scroll-conservatively 5)
 
 ;; Increase undo limit
 (setq undo-limit (* 10 1024 1024))
@@ -48,8 +48,8 @@
 (setq disabled-command-function nil)
 
 ;; Stop prompting for local variables when opening files
-(setq enable-local-variables :safe)
-(setq enable-local-eval nil)
+;; (setq enable-local-variables :safe)
+;; (setq enable-local-eval nil)
 
 ;; make all "yes or no" prompts show "y or n" instead
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -70,7 +70,7 @@
 ;; Don't limit mark-ring to 16 places only
 (setq mark-ring-max 999)
 
-;; don't create silly foo~ files
+;; Don't create silly foo~ files
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
@@ -79,7 +79,7 @@
 (global-set-key (kbd "C-S-<down>") 'next-error)
 
 ;; Save with one key
-(global-set-key (kbd "C-s") 'save-buffer)
+;; (global-set-key (kbd "C-s") 'save-buffer)
 
 ;; Kill buffer
 (global-set-key (kbd "C-S-k") 'kill-this-buffer)
@@ -131,3 +131,5 @@
 (setq split-width-threshold nil)
 ;(setq split-height-threshold nil)
 ;(setq split-window-preferred-function 'split-window-sensibly)
+
+(setq-default major-mode 'text-mode)

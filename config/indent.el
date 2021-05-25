@@ -5,5 +5,5 @@
 (setq-default tab-width 2)
 
 ;; Configure other modes tab-width
-(--each '(css-indent-offset sh-basic-offset sh-indentation coffee-tab-width js-indent-level js2-basic-offset standard-indent)
+(--each '(css-indent-offset sh-basic-offset sh-indentation coffee-tab-width js-indent-level js2-basic-offset standard-indent nginx-indent-level)
   (set-default it tab-width))

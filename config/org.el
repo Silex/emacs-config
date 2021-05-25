@@ -1,6 +1,5 @@
 (use-package org
   :custom
-  (org-completion-use-ido t)
   (org-confirm-babel-evaluate nil)
   (org-src-fontify-natively t)
   (org-startup-folded nil)

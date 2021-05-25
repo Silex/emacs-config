@@ -36,6 +36,15 @@
   (setq dired-dwim-target (not dired-dwim-target))
   (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
 
+;; (use-package org
+;;   :general
+;;   (general-nmap "SPC c" 'org-capture))
+;; (general-nmap dired-mode-map
+;;   "P" 'pack-dired-dwim)
+
+(when (eq system-type 'windows-nt)
+  (setq find-program "C:/msys64/usr/bin/find.exe"))
+
 (use-package dired
   :ensure nil
   :bind (:map dired-mode-map
@@ -50,28 +59,23 @@
   :config
   (put 'dired-find-alternate-file 'disabled nil))
 
-(use-package dired-x
-  :ensure nil
-  :bind ("C-d" . dired-jump))
-
 (use-package dired-filter
-  :after dired
-  :custom (dired-filter-mark-prefix "*"))
+  :demand t
+  :after dired)
 
 (use-package dired-quick-sort
   :after dired
+  ;;:hook (evil-collection-setup . (lambda (&rest a) (evil-define-key 'normal 'dired-mode-map (kbd "P") 'pack-dired-dwim))))
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
 
-(use-package dired-launch
-  :after dired
-  :init
-  (add-hook 'dired-mode-hook 'dired-launch-mode))
+(use-package dired-subtree
+  :demand t
+  :after dired)
 
-(use-package dired-ranger)
-(use-package dired-subtree)
-(use-package dired-imenu :after dired)
-(use-package dired-du)
+(use-package dired-du
+  :after dired
+  :custom (dired-du-size-format t))
 
 (use-package tar-mode
   :custom (tar-mode-show-date t))
@@ -79,3 +83,13 @@
 (use-package wdired
   :custom
   (wdired-create-parent-directories t))
+
+;; (use-package pack
+;;   :demand t
+;;   :after dired
+;;   :hook (evil-collection-setup . (lambda (mode keymaps &rest rest) (general-nmap :keymaps 'dired-mode-map "P" 'pack-dired-dwim))))
+;;   ;;:hook (evil-collection-setup . (lambda (&rest a) (evil-define-key 'normal 'dired-mode-map (kbd "P") 'pack-dired-dwim))))
+
+(use-package dired-ranger :after dired)
+(use-package dired-imenu :after dired)
+(use-package dired-launch :after dired) ;; crux-open-with?
