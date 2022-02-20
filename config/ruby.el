@@ -8,7 +8,6 @@ of seeing_is_believing."
 
 (use-package ruby-mode
   :ensure nil
-
   :custom
   ;; Don't automatically insert encoding
   (ruby-insert-encoding-magic-comment nil)
@@ -32,3 +31,5 @@ of seeing_is_believing."
 (use-package rspec-mode
   :disabled t
   :after enh-ruby-mode)
+
+(use-package rubocop)
