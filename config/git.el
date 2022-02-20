@@ -4,8 +4,6 @@
 (use-package gist)
 (use-package git-messenger)
 (use-package git-timemachine)
-(use-package github-browse-file)
-(use-package github-clone)
 
 (use-package magit
   :bind ("C-c g" . magit-status)
@@ -16,17 +14,13 @@
   :mode (("\\.gitignore\\'" . gitconfig-mode)
          ("\\.gitmodules\\'" . gitconfig-mode)))
 
-(use-package git-rebase-mode
-  :ensure nil
-  :bind (:map git-rebase-mode-map
-              ("M-<up>" . git-rebase-move-line-up)
-              ("M-<down>" . git-rebase-move-line-down)))
-
 (use-package forge
   :demand t
   :after magit)
 
 (use-package fullframe)
+
+;; (use-package ssh-agency)
 
 (use-package vc-hooks
   :ensure nil
