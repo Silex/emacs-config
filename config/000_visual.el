@@ -20,8 +20,9 @@
 ;; Disable startup screen
 (setq inhibit-startup-screen t)
 
-;; Disable toolbar
+;; Disable bars
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Start maximized
 (maximize-frame)
