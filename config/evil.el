@@ -26,7 +26,18 @@
   :config
   (global-evil-surround-mode 1)
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-surround-region)
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-Surround-region))
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-Surround-region)
+  (defmacro define-and-bind-quoted-text-object (name key start-regex end-regex)
+    (let ((inner-name (make-symbol (concat "evil-inner-" name)))
+          (outer-name (make-symbol (concat "evil-a-" name))))
+      `(progn
+         (evil-define-text-object ,inner-name (count &optional beg end type)
+           (evil-select-paren ,start-regex ,end-regex beg end type count nil))
+         (evil-define-text-object ,outer-name (count &optional beg end type)
+           (evil-select-paren ,start-regex ,end-regex beg end type count t))
+         (define-key evil-inner-text-objects-map ,key #',inner-name)
+         (define-key evil-outer-text-objects-map ,key #',outer-name))))
+  (define-and-bind-quoted-text-object "pipe" "|" "|" "|"))
 
 (use-package evil-numbers
   :demand t
@@ -55,6 +66,8 @@
 (use-package evil-exchange
   :demand t
   :after evil
+  :custom
+  (evil-goggles-pulse nil)
   :config
   (evil-exchange-install))
 
