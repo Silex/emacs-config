@@ -3,10 +3,6 @@
   :custom
   (vterm-max-scrollback 100000))
 
-(use-package multi-term
-  :custom
-  (multi-term-program-switches "--login"))
-
 (use-package terminal-here
   :bind ("C-c t" . terminal-here))
 
