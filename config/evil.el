@@ -40,10 +40,6 @@
   :config
   (global-evil-mc-mode))
 
-(use-package evil-magit
-  :demand t
-  :after evil)
-
 (use-package evil-matchit
   :demand t
   :after evil
