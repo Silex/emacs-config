@@ -1,5 +1,7 @@
 ;; sudo snap install cmake && sudo apt install libtool-bin
-(use-package vterm)
+(use-package vterm
+  :custom
+  (vterm-max-scrollback 100000))
 
 (use-package multi-term
   :custom
