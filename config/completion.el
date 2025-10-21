@@ -32,3 +32,8 @@
   (counsel-mode-override-describe-bindings t)
   :config
   (counsel-mode))
+
+(use-package swiper
+  :bind ("C-s" . swiper))
+
+(use-package ivy-hydra)
