@@ -84,7 +84,7 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 
 ;; Kill buffer
-(global-set-key (kbd "C-S-k") 'kill-this-buffer)
+(global-set-key (kbd "C-S-k") 'kill-current-buffer)
 
 ;; No *scratch* message
 (setq initial-scratch-message nil)
