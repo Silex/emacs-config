@@ -55,10 +55,12 @@
   :bind ("C-d" . dired-jump))
 
 (use-package dired-filter
+  :demand t
   :after dired
   :custom (dired-filter-mark-prefix "*"))
 
 (use-package dired-quick-sort
+  :demand t
   :after dired
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
