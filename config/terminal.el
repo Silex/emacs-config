@@ -3,6 +3,11 @@
   :custom
   (vterm-max-scrollback 100000))
 
+(use-package term
+  :custom-face
+  (term-color-cyan  ((t (:foreground "#61d6d6"))))
+  (term-color-green ((t (:foreground "#16c60c"))))
+  (term-color-blue  ((t (:foreground "#3b78ff")))))
 (use-package terminal-here
   :bind ("C-c t" . terminal-here))
 
