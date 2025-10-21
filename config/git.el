@@ -8,19 +8,14 @@
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init
+  (add-hook 'magit-status-mode-hook (lambda () (evil-surround-mode -1)))
   (fullframe magit-status quit-window))
-
-(use-package gitconfig-mode
-  :mode (("\\.gitignore\\'" . gitconfig-mode)
-         ("\\.gitmodules\\'" . gitconfig-mode)))
 
 (use-package forge
   :demand t
   :after magit)
 
 (use-package fullframe)
-
-;; (use-package ssh-agency)
 
 (use-package vc-hooks
   :ensure nil
