@@ -4,3 +4,5 @@
   :config
   (add-to-list 'yas-snippet-dirs (concat config-directory "snippets"))
   (yas-global-mode))
+
+(use-package yasnippet-snippets)
