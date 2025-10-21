@@ -19,8 +19,7 @@
   (c-default-style "silex")
   :config
   (define-key c-mode-map (kbd "C-d") nil)
-  (define-key c++-mode-map (kbd "C-d") nil)
-  (define-key c++-mode-map (kbd "C-c c") 'compile))
+  (define-key c++-mode-map (kbd "C-d") nil))
 
 (use-package qt-pro-mode
   :mode ("\\.pro\\'" "\\.pri\\'"))
