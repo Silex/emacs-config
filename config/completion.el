@@ -5,6 +5,9 @@
   :config
   (amx-mode))
 
+(use-package flx
+  :demand t)
+
 (use-package ivy
   :demand t
   :bind (("C-b" . ivy-switch-buffer)
