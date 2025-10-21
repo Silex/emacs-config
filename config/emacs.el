@@ -61,8 +61,10 @@
 (setq ns-right-alternate-modifier nil)
 
 ;; Avoid running the GC all the time
-(setq gc-cons-threshold 16777216
-      gc-cons-percentage 0.1)
+(setq gc-cons-threshold 100000000)
+
+;; Increase the amount of data which Emacs reads from the process
+(setq read-process-output-max (* 1024 1024))
 
 ;; Don't limit *Messages* to 1000 lines only
 (setq message-log-max 16384)
