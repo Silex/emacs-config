@@ -12,7 +12,7 @@
   :bind ("C-c t" . terminal-here))
 
 (use-package comint
-  :ensure nil
+  :straight nil
   :bind (:map comint-mode-map
               ("C-<up>" . nil)
               ("C-<down>" . nil))
@@ -43,7 +43,7 @@
 
 (use-package readline-complete
   :disabled t
-  :ensure nil
+  :straight nil
   :custom
   (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
   (comint-process-echoes t)

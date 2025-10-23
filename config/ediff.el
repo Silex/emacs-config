@@ -1,5 +1,5 @@
 (use-package ediff
-  :ensure nil
+  :straight nil
   :custom
   ;; Split window horizontally by default
   (ediff-split-window-function 'split-window-horizontally)

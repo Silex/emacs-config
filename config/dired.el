@@ -37,7 +37,7 @@
   (message "Dired DWIM is %s" (if dired-dwim-target "ON" "OFF")))
 
 (use-package dired
-  :ensure nil
+  :straight nil
   :bind (:map dired-mode-map
               ("<backspace>" . dired-jump)
               ("E" . dired-do-eval)
@@ -51,7 +51,7 @@
   (put 'dired-find-alternate-file 'disabled nil))
 
 (use-package dired-x
-  :ensure nil
+  :straight nil
   :bind ("C-d" . dired-jump))
 
 (use-package dired-filter

@@ -10,7 +10,7 @@
   (ibuffer-unmark-all ?\n))
 
 (use-package ibuffer
-  :ensure nil
+  :straight nil
   :bind (("C-c b" . ibuffer)
          :map ibuffer-mode-map
          ("U"   . ibuffer-unmark-all-no-questions)

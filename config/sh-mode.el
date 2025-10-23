@@ -1,4 +1,4 @@
 (use-package sh-script
-  :ensure nil
+  :straight nil
   :custom
   (sh-mode-map (make-sparse-keymap)))

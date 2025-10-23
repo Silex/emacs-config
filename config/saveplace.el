@@ -1,6 +1,6 @@
 (use-package saveplace
   :demand t
-  :ensure nil
+  :straight nil
   :custom
   (save-place-forget-unreadable-files nil)
   :config

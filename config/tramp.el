@@ -9,13 +9,13 @@
   (setq url-cookie-secure-storage nil))
 
 (use-package password-cache
-  :ensure nil
+  :straight nil
   :custom
   ;; Never expire passwords
   (password-cache-expiry nil))
 
 (use-package tramp
-  :ensure nil
+  :straight nil
   :custom
   (tramp-default-method "ssh"))
 
@@ -26,7 +26,7 @@
               :test #'equal))
 
 (use-package tramp-sh
-  :ensure nil
+  :straight nil
   :custom
   ;; Use out-of-band method for big files
   (tramp-copy-size-limit (* 0.5 1024 1024))
@@ -35,7 +35,7 @@
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 (use-package tramp-gvfs
-  :ensure nil
+  :straight nil
   :after tramp-ftp
   :config
   ;; Prefer gvfs for FTP

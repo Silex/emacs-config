@@ -1,3 +1,3 @@
 (use-package htmlr
-  :ensure nil
+  :straight nil
   :commands htmlr-render)
