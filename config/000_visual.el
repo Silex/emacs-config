@@ -9,7 +9,7 @@
 
 ;; Scrollbar
 (use-package scroll-bar
-  :ensure nil
+  :straight nil
   :demand t
   :custom
   (scroll-bar-mode-explicit t)

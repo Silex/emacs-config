@@ -5,6 +5,8 @@
 (use-package git-messenger)
 (use-package git-timemachine)
 
+(use-package fullframe)
+
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init
@@ -15,15 +17,13 @@
   :demand t
   :after magit)
 
-(use-package fullframe)
-
 (use-package vc-hooks
-  :ensure nil
+  :straight nil
   :init
   (remove-hook 'find-file-hook 'vc-refresh-state))
 
 (use-package vc-annotate
-  :ensure nil
+  :straight nil
   :bind (:map vc-annotate-mode-map ("q" . kill-this-buffer))
   :init
   (fullframe vc-annotate kill-this-buffer))

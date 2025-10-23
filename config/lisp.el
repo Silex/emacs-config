@@ -1,5 +1,5 @@
 (use-package lisp-mode
-  :ensure nil
+  :straight nil
   :mode (("/Cask\\'" . emacs-lisp-mode))
   :custom
   (edebug-trace nil)

@@ -7,7 +7,7 @@ of seeing_is_believing."
     (shell-command-on-region beg end "seeing_is_believing" nil 'replace)))
 
 (use-package ruby-mode
-  :ensure nil
+  :straight nil
   :custom
   ;; Don't automatically insert encoding
   (ruby-insert-encoding-magic-comment nil)

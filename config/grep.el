@@ -1,5 +1,5 @@
 (use-package grep
-  :ensure nil
+  :straight nil
   :config
   (dolist (type '(jpg jpeg png gif           ; images
                   mpg mjpg avi               ; videos

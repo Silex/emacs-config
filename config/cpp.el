@@ -1,5 +1,5 @@
 (use-package cc-mode
-  :ensure nil
+  :straight nil
   :mode ("\\.h\\'" . c++-mode)
 
   :init

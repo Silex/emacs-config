@@ -263,6 +263,3 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
-
-(defadvice package-refresh-contents (after show-finished activate)
-  (message "Packages list refreshed."))
