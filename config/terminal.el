@@ -15,8 +15,6 @@
   (term-color-cyan  ((t (:foreground "#61d6d6"))))
   (term-color-green ((t (:foreground "#16c60c"))))
   (term-color-blue  ((t (:foreground "#3b78ff")))))
-(use-package terminal-here
-  :bind ("C-c t" . terminal-here))
 
 (use-package comint
   :straight nil
@@ -33,20 +31,6 @@
 
   ;; interpret and use ansi color codes in shell output windows
   (ansi-color-for-comint-mode-on))
-
-  ;; ;; make completion buffers disappear after 3 seconds.
-  ;; (add-hook 'completion-setup-hook
-  ;;   (lambda () (run-at-time 3 nil
-  ;;     (lambda () (delete-windows-on "*Completions*")))))
-
-  ;; (defun buffer-killer-sentinel (process event)
-  ;;   (when (equal event "finished\n")
-  ;;     (kill-buffer)))
-
-  ;; (defun kill-process-on-exit ()
-  ;;   (set-process-sentinel (get-buffer-process (current-buffer)) 'buffer-killer-sentinel))
-
-  ;;(add-hook 'shell-mode-hook 'kill-process-on-exit))
 
 (use-package readline-complete
   :disabled t
