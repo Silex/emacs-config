@@ -1,3 +1,10 @@
+(use-package exec-path-from-shell
+  :demand t
+  :config
+  (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  (exec-path-from-shell-initialize))
+
 ;; sudo snap install cmake && sudo apt install libtool-bin
 (use-package vterm
   :custom
@@ -50,3 +57,18 @@
   :config
   (add-to-list 'company-backends 'company-readline)
   (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1))))
+
+(use-package eshell
+  :straight nil
+  :config
+  (defun eshell/find-files (&rest args)
+    "Open a file in emacs. Some habits die hard."
+    ;; We have to expand the file names or else naming a directory in an
+    ;; argument causes later arguments to be looked for in that directory,
+    ;; not the starting directory
+    (mapc #'find-file (mapcar #'expand-file-name (eshell-flatten-list (reverse args)))))
+
+  (defun kill-eshell ()
+    (interactive)
+    "Kill eshell buffer when it says \"Text is read only\""
+    (let ((inhibit-read-only t)) (kill-this-buffer))))
