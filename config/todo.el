@@ -13,7 +13,6 @@
 (use-package eimp)
 (use-package elmacro)
 (use-package emr)
-(use-package exec-path-from-shell)
 (use-package f)
 (use-package feature-mode)
 (use-package fill-column-indicator)
