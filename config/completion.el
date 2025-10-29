@@ -18,8 +18,10 @@
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
   (ivy-magic-tilde nil)
+  (ivy-flx-limit 5000)
   (ivy-magic-slash-non-match-action nil)
-  (ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (ivy-re-builders-alist '((swiper . ivy--regex-plus)
+                           (t . ivy--regex-fuzzy)))
   (enable-recursive-minibuffers t)
   :config (ivy-mode))
 

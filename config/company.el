@@ -1,3 +1,5 @@
+(use-package company-emoji)
+
 (use-package company
   :demand t
   :custom

@@ -11,11 +11,7 @@
 
 (use-package ibuffer
   :straight nil
-  :bind (("C-c b" . ibuffer)
-         :map ibuffer-mode-map
-         ("U"   . ibuffer-unmark-all-no-questions)
-         ("* ." . ibuffer-mark-by-extension)
-         ("* *" . ibuffer-mark-special-buffers)))
+  :bind ("C-c b" . ibuffer))
 
 (use-package ibuffer-tramp
   :after ibuffer
