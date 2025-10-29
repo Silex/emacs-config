@@ -8,7 +8,4 @@
                                          sass-mode
                                          scss-mode
                                          web-mode
-                                         xml-mode))
-  :init
-  (dolist (mode rainbow-html-colors-major-mode-list)
-    (add-hook (intern (format "%s-hook" mode)) 'rainbow-mode)))
+                                         xml-mode)))
