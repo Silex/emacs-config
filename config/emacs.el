@@ -32,9 +32,6 @@
 ;; When something is selected, replace content when you type
 (pending-delete-mode t)
 
-;; Save history
-(savehist-mode 1)
-
 ;; Better buffer names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
