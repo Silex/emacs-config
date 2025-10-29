@@ -10,7 +10,7 @@
   (projectile-switch-project-action 'projectile-dired)
   (projectile-enable-caching t)
   (projectile-mode-line '(:eval (format " Projectile[%s]" (projectile-project-name))))
-  (projectile-completion-system 'ivy)
+  (projectile-completion-system 'default)
   :config
   (advice-add 'projectile-switch-project :before #'silex/projectile-require-tramp)
   (projectile-mode))

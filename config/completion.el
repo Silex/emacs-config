@@ -1,3 +1,5 @@
+(require 'cl-lib)
+
 (use-package amx
   :demand t
   :custom
@@ -5,37 +7,86 @@
   :config
   (amx-mode))
 
-(use-package flx
-  :demand t)
-
-(use-package ivy
+(use-package savehist
   :demand t
-  :bind (("C-b" . ivy-switch-buffer)
-         :map ivy-minibuffer-map
-              ("C-j" . ivy-immediate-done)
-              ("RET" . ivy-alt-done))
+  :straight nil
   :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-count-format "%d/%d ")
-  (ivy-magic-tilde nil)
-  (ivy-flx-limit 5000)
-  (ivy-magic-slash-non-match-action nil)
-  (ivy-re-builders-alist '((swiper . ivy--regex-plus)
-                           (t . ivy--regex-fuzzy)))
-  (enable-recursive-minibuffers t)
-  :config (ivy-mode))
+  (history-length 200)
+  (history-delete-duplicates t)
+  :config
+  (savehist-mode))
 
-(use-package counsel
+(use-package minibuffer
+  :straight nil
+  :custom
+  (completion-styles '(flex))
+  (completion-category-defaults nil)
+  (completion-category-overrides nil))
+
+(use-package vertico
+  :demand t
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
+  :bind (:map vertico-map
+          ("C-j" . vertico-exit-input)
+          ("<backspace>" . vertico-directory-delete-char))
+  :custom
+  (vertico-cycle t)
+  (enable-recursive-minibuffers t)
+  :config
+  (vertico-mode))
+
+(use-package consult
   :demand t
   :bind
-  ("C-c k" . counsel-ag)
-  ("C-S-r" . counsel-recentf)
+  ("C-S-r" . consult-recent-file)
   :custom
-  (counsel-mode-override-describe-bindings t)
+  (consult-project-root-function #'projectile-project-root)
   :config
-  (counsel-mode))
+  (consult-customize consult-recent-file :preview-key nil))
 
-(use-package swiper
-  :bind ("C-s" . swiper))
+(use-package consult-dir
+  :after consult)
 
-(use-package ivy-hydra)
+(use-package marginalia
+  :demand t
+  :custom
+  (marginalia-max-relative-age 0)
+  :config
+  (setf (alist-get 'file marginalia-annotators) '(none))
+  (setf (alist-get 'project-file marginalia-annotators) '(none))
+  (marginalia-mode))
+
+(use-package embark
+  :demand t
+  :bind
+  ("C-." . embark-act))
+
+(use-package embark-consult
+  :after (embark consult)
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
+(use-package corfu
+  :demand t
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  (corfu-quit-at-boundary t)
+  (corfu-quit-no-match 'separator)
+  (corfu-preselect-first nil)
+  (corfu-preview-current nil)
+  :config
+  (global-corfu-mode))
+
+(use-package cape
+  :demand t
+  :bind ("C-c ." . cape-prefix-map)
+  :custom
+  (tab-always-indent 'complete)
+  (completion-cycle-threshold 1)
+  (completion-ignore-case t)
+  (read-buffer-completion-ignore-case t)
+  (read-file-name-completion-ignore-case t)
+  :init
+  (add-hook 'completion-at-point-functions #'cape-keyword)
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file))
