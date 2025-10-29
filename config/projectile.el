@@ -1,3 +1,7 @@
+(defun silex/projectile-require-tramp (&rest _)
+  "Ensure TRAMP is loaded before switching projects."
+  (require 'tramp))
+
 (use-package projectile
   :demand t
   :custom
@@ -8,9 +12,7 @@
   (projectile-mode-line '(:eval (format " Projectile[%s]" (projectile-project-name))))
   (projectile-completion-system 'ivy)
   :config
-  (defadvice projectile-switch-project (before require-tramp activate)
-    (require 'tramp)
-    (ignore-errors (ad-remove-advice 'projectile-switch-project 'before 'require-tramp)))
+  (advice-add 'projectile-switch-project :before #'silex/projectile-require-tramp)
   (projectile-mode))
 
 (use-package counsel-projectile
