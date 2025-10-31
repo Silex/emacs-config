@@ -7,7 +7,7 @@
 
 (use-package ai-code-interface
   :straight (:host github :repo "tninja/ai-code-interface.el")
-  :init
-  (global-set-key (kbd "C-c a") #'ai-code-menu)
+  :bind
+  ("C-c a" . ai-code-menu)
   :config
   (ai-code-set-backend 'codex))

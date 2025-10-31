@@ -76,15 +76,17 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Grep/Occur/Compile
-(global-set-key (kbd "C-S-<up>") 'previous-error)
-(global-set-key (kbd "C-S-<down>") 'next-error)
+(use-package simple
+  :straight nil
+  :bind
+  ("C-S-<up>" . previous-error)
+  ("C-S-<down>" . next-error)
+  ("C-S-k" . kill-current-buffer))
 
-;; Save with one key
-(global-set-key (kbd "C-s") 'save-buffer)
-
-;; Kill buffer
-(global-set-key (kbd "C-S-k") 'kill-current-buffer)
+(use-package files
+  :straight nil
+  :bind
+  ("C-s" . save-buffer))
 
 ;; No *scratch* message
 (setq initial-scratch-message nil)
