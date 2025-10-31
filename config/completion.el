@@ -16,12 +16,20 @@
   :config
   (savehist-mode))
 
-(use-package minibuffer
-  :straight nil
+(use-package fuz
+  :demand t
+  :straight (fuz :type git :host github :repo "rustify-emacs/fuz.el")
+  :config
+  (unless (require 'fuz-core nil t)
+    (fuz-build-and-load-dymod)))
+
+(use-package fussy
+  :after fuz
+  :demand t
   :custom
-  (completion-styles '(flex))
-  (completion-category-defaults nil)
-  (completion-category-overrides nil))
+  (fussy-score-fn 'fussy-fuz-score)
+  :config
+  (fussy-setup))
 
 (use-package vertico
   :demand t
