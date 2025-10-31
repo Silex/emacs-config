@@ -7,5 +7,8 @@
 (setq mouse-yank-at-point t)
 (setq select-enable-clipboard t)
 
-(global-set-key (kbd "<mouse-7>") #'scroll-left)
-(global-set-key (kbd "<mouse-6>") #'scroll-right)
+(use-package emacs
+  :straight nil
+  :bind
+  ("<mouse-7>" . scroll-left)
+  ("<mouse-6>" . scroll-right))
