@@ -7,6 +7,9 @@
 ;; M-x phases-of-moon
 ;; M-x animate-birthday-present
 
+;; Screensaver
+(use-package zone)
+
 (use-package crux
   :bind
   ("C-x C-S-e" . crux-eval-and-replace))
