@@ -15,11 +15,6 @@
   (advice-add 'projectile-switch-project :before #'silex/projectile-require-tramp)
   (projectile-mode))
 
-(use-package counsel-projectile
-  :disabled t
-  :after projectile
-  :config (counsel-projectile-mode))
-
 (use-package projectile-rails
   :demand t
   :after projectile

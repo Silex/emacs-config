@@ -131,59 +131,6 @@ the sort order."
   (interactive)
   (set-buffer-file-coding-system 'undecided-dos))
 
-(defun explore-current-directory ()
-  "Open the current buffer's directory in nautilus/finder/explorer."
-  (interactive)
-  (browse-url (concat "file://" (file-name-directory (expand-file-name default-directory)))))
-
-(defun purge-obsolete-buffers ()
-  (interactive)
-  "Kill all buffers that are visiting a file, but whose file no longer exists."
-  (let (victims)
-    (mapc
-     (lambda (b)
-       (let ((description
-              (with-current-buffer b
-
-                ;; If we should kill this buffer, return a description
-                ;; of it.
-
-                (cond
-
-                 ;; an "ephemeral" buffer.  Don' keel me.  Who knows
-                 ;; what it's for.
-                 ((equal ?\s (elt (buffer-name) 0))
-                  nil)
-
-                 ;; an ordinary file-visiting buffer
-                 ((and buffer-file-name
-                       (not (file-exists-p buffer-file-name)))
-                  (format "buffer %S, which had been visiting %S" (buffer-name) buffer-file-name))
-
-                 ;; maybe a dired buffer
-                 ((not (file-exists-p default-directory))
-                  (format "buffer %S in directory %S" (buffer-name) default-directory))
-                 ))))
-
-         (when (and description (kill-buffer b))
-           (setq victims (cons description victims)))))
-
-     (buffer-list))
-    (if victims
-        (let ((tmp-buffer-name "*Purged Buffers*"))
-          (let ((temp-buffer-show-hook (cons 'shrink-window-if-larger-than-buffer temp-buffer-show-hook)))
-            (with-output-to-temp-buffer tmp-buffer-name
-              (dolist (v victims)
-                (princ (format "Killed %s\n" v))))))
-
-      (message "No obsolete buffers; did nothing."))))
-
-;; Hide emacs when we quit, that way it loads faster
-(defun quit-by-hiding()
-  (interactive)
-  (server-edit)
-  (make-frame-invisible nil t))
-
 ;; Helper to describe macros
 (autoload 'apropos-macrop "apropos"
   "Return t if SYMBOL is a Lisp macro.
@@ -236,27 +183,3 @@ Assumes that the frame is only split into two."
   (interactive)
   (setq truncate-lines t)
   (setq word-wrap nil))
-
-;; Taken from http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/
-(defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
-
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
-
-If ARG is not nil or 1, move forward ARG - 1 lines first.  If
-point reaches the beginning or end of the buffer, stop there."
-  (interactive "^p")
-  (setq arg (or arg 1))
-
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
-
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))

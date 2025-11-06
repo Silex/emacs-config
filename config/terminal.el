@@ -32,16 +32,6 @@
   ;; interpret and use ansi color codes in shell output windows
   (ansi-color-for-comint-mode-on))
 
-(use-package readline-complete
-  :disabled t
-  :straight nil
-  :custom
-  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-  (comint-process-echoes t)
-  :config
-  (add-to-list 'company-backends 'company-readline)
-  (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1))))
-
 (use-package eshell
   :straight nil
   :config

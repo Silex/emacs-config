@@ -20,16 +20,4 @@ of seeing_is_believing."
   :init
   (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode)))
 
-(use-package robe
-  :disabled t
-  :after enh-ruby-mode
-  :init
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  :config
-  (add-to-list 'company-backends 'company-robe))
-
-(use-package rspec-mode
-  :disabled t
-  :after enh-ruby-mode)
-
 (use-package rubocop)
