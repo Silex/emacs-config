@@ -1,3 +1,5 @@
+;; Completion stack (minibuffer + in-buffer)
+
 (require 'cl-lib)
 
 (use-package amx
@@ -34,13 +36,18 @@
   :demand t
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
   :bind (:map vertico-map
-          ("C-j" . vertico-exit-input)
-          ("<backspace>" . vertico-directory-delete-char))
+              ("C-j" . vertico-exit-input)
+              ("<backspace>" . vertico-directory-delete-char))
   :custom
   (vertico-cycle t)
   (enable-recursive-minibuffers t)
   :config
   (vertico-mode))
+
+(use-package embark
+  :demand t
+  :bind
+  ("C-." . embark-act))
 
 (use-package embark-consult
   :after (embark consult)
@@ -57,11 +64,6 @@
 
 (use-package consult-dir
   :after consult)
-
-(use-package embark
-  :demand t
-  :bind
-  ("C-." . embark-act))
 
 (use-package marginalia
   :demand t
@@ -97,3 +99,18 @@
   (add-hook 'completion-at-point-functions #'cape-keyword)
   (add-hook 'completion-at-point-functions #'cape-dabbrev)
   (add-hook 'completion-at-point-functions #'cape-file))
+
+(use-package recentf
+  :demand t
+  :bind ("C-S-t" . undo-kill-buffer)
+  :custom
+  (recentf-auto-cleanup 'never)
+  (recentf-save-file "~/.emacs.d/recentf")
+  (recentf-max-menu-items 10000)
+  (recentf-max-saved-items nil)
+  :config
+  (defun undo-kill-buffer (arg)
+    "Re-open the last buffer killed.  With ARG, re-open the nth buffer."
+    (interactive "p")
+    (find-file (nth (1- arg) recentf-list)))
+  (recentf-mode t))

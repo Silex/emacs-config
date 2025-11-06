@@ -29,13 +29,3 @@
   (fullframe vc-annotate kill-this-buffer))
 
 (defun vc-after-save())
-
-;; Largely stolen from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
-
-;; Helpers
-(defun delete-trailing-whitespace-and-commit ()
-  "Delete trailing whitespace and commit current file"
-  (interactive)
-  (delete-trailing-whitespace)
-  (shell-command (concat "git add " (buffer-file-name)))
-  (shell-command "git commit -m'Delete trailing whitespace'"))

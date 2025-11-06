@@ -1,9 +1,19 @@
+(defun ansi-color-buffer ()
+  (interactive)
+  (ansi-color-region (point-min) (point-max)))
+
+(defun ansi-color-region (begin end)
+  (interactive "r")
+  (ansi-color-apply-on-region begin end))
+
 (use-package exec-path-from-shell
   :demand t
   :config
   (exec-path-from-shell-copy-env "SSH_AGENT_PID")
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
   (exec-path-from-shell-initialize))
+
+(use-package eat)
 
 ;; sudo snap install cmake && sudo apt install libtool-bin
 (use-package vterm

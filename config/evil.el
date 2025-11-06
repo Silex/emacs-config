@@ -1,3 +1,5 @@
+;; Evil mode and extensions
+
 (use-package evil
   :demand t
   :custom

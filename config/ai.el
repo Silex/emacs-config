@@ -1,5 +1,3 @@
-(use-package eat)
-
 (use-package claude-code
   :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*")))
   :custom
