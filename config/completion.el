@@ -16,18 +16,17 @@
   :config
   (savehist-mode))
 
-(use-package fuz
+(use-package fuz-bin
   :demand t
-  :straight (fuz :type git :host github :repo "rustify-emacs/fuz.el")
+  :straight (fuz-bin :repo "jcs-elpa/fuz-bin" :fetcher github :files (:defaults "bin"))
   :config
-  (unless (require 'fuz-core nil t)
-    (fuz-build-and-load-dymod)))
+  (fuz-bin-load-dyn))
 
 (use-package fussy
   :demand t
-  :after fuz
+  :after fuz-bin
   :custom
-  (fussy-score-fn 'fussy-fuz-score)
+  (fussy-score-fn 'fussy-fuz-bin-score)
   :config
   (fussy-setup))
 
