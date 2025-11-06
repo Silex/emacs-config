@@ -43,6 +43,10 @@
   :config
   (vertico-mode))
 
+(use-package embark-consult
+  :after (embark consult)
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
 (use-package consult
   :demand t
   :bind
@@ -55,6 +59,11 @@
 (use-package consult-dir
   :after consult)
 
+(use-package embark
+  :demand t
+  :bind
+  ("C-." . embark-act))
+
 (use-package marginalia
   :demand t
   :custom
@@ -63,15 +72,6 @@
   (setf (alist-get 'file marginalia-annotators) '(none))
   (setf (alist-get 'project-file marginalia-annotators) '(none))
   (marginalia-mode))
-
-(use-package embark
-  :demand t
-  :bind
-  ("C-." . embark-act))
-
-(use-package embark-consult
-  :after (embark consult)
-  :hook (embark-collect-mode . consult-preview-at-point-mode))
 
 (use-package corfu
   :demand t
