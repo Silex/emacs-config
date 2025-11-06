@@ -21,8 +21,8 @@
   :config (counsel-projectile-mode))
 
 (use-package projectile-rails
-  :after projectile
   :demand t
+  :after projectile
   :config
   (projectile-rails-global-mode)
   (define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map))

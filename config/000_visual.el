@@ -9,8 +9,8 @@
 
 ;; Scrollbar
 (use-package scroll-bar
-  :straight nil
   :demand t
+  :straight nil
   :custom
   (scroll-bar-mode-explicit t)
   (scroll-bar-mode 'right)

@@ -24,8 +24,8 @@
     (fuz-build-and-load-dymod)))
 
 (use-package fussy
-  :after fuz
   :demand t
+  :after fuz
   :custom
   (fussy-score-fn 'fussy-fuz-score)
   :config

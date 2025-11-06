@@ -3,6 +3,6 @@
   (vlf-application 'dont-ask))
 
 (use-package vlf-setup
-  :straight nil
   :demand t
+  :straight nil
   :after dired)
