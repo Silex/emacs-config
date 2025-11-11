@@ -44,11 +44,6 @@
 (use-package qt-pro-mode
   :mode ("\\.pro\\'" "\\.pri\\'"))
 
-(use-package rtags
-  :commands rtags-find-symbol-at-point)
-
-(use-package irony)
-
 (use-package go-mode)
 
 (use-package haml-mode
