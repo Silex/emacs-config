@@ -134,3 +134,13 @@
 ;(setq split-window-preferred-function 'split-window-sensibly)
 
 (setq-default major-mode 'text-mode)
+
+(defun split-window-and-focus (split-fn)
+  (funcall split-fn)
+  (other-window 1))
+
+(use-package emacs
+  :straight nil
+  :bind
+  ("C-x 2" . (lambda () (interactive) (split-window-and-focus #'split-window-below)))
+  ("C-x 3" . (lambda () (interactive) (split-window-and-focus #'split-window-right))))
