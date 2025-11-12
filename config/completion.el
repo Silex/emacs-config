@@ -36,6 +36,7 @@
   :demand t
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)
   :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
               ("C-j" . vertico-exit-input)
               ("<backspace>" . vertico-directory-delete-char))
   :custom
