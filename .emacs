@@ -1,10 +1,8 @@
 (defun load-directory (dir)
-  "Loads every .el file in a directory in sorted order"
-  (let* ((files (directory-files dir t "\\.el\\'"))
-         (names (mapcar #'file-name-sans-extension files)))
-    (mapc (lambda (file)
-            (with-demoted-errors (load file nil t)))
-          names)))
+  "Load every .el file in DIR in sorted order."
+  (dolist (file (directory-files dir t "\\.el\\'"))
+    (with-demoted-errors "Error loading %S: %S" file
+      (load (file-name-sans-extension file) nil t))))
 
 ;; Bootstrap straight.el
 (setq package-enable-at-startup nil)
@@ -24,16 +22,17 @@
 (straight-use-package 'use-package)
 (require 'use-package)
 
-;; Load use-package
+(use-package emacs
+  :init
+  (setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
+  (setq custom-theme-directory (expand-file-name "themes" config-directory))
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (load custom-file 'noerror 'nomessage))
+
 (use-package use-package
   :custom
   (use-package-verbose t)
   (use-package-always-ensure nil)
   (use-package-always-defer t))
 
-;; Load configuration
-(setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
-(setq custom-theme-directory (concat config-directory "themes"))
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror 'nomessage)
 (load-directory (expand-file-name "config" config-directory))
