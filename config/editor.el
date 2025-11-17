@@ -30,6 +30,7 @@
 
 (use-package editorconfig
   :demand t
+  :straight nil
   :config
   (editorconfig-mode 1))
 
