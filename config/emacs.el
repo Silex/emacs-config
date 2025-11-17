@@ -44,10 +44,6 @@
 ;; Enable disabled commands (narrow-to-region, erase-buffer, etc)
 (setq disabled-command-function nil)
 
-;; Stop prompting for local variables when opening files
-(setq enable-local-variables :safe)
-(setq enable-local-eval nil)
-
 ;; make all "yes or no" prompts show "y or n" instead
 (fset 'yes-or-no-p 'y-or-n-p)
 

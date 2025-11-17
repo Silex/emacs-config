@@ -35,4 +35,5 @@
 (setq config-directory (file-name-directory (file-truename (or (buffer-file-name) load-file-name))))
 (setq custom-theme-directory (concat config-directory "themes"))
 (setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror 'nomessage)
 (load-directory (expand-file-name "config" config-directory))
