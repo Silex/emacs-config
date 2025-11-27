@@ -9,8 +9,7 @@
 (use-package exec-path-from-shell
   :demand t
   :config
-  (exec-path-from-shell-copy-env "SSH_AGENT_PID")
-  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "SSH_AGENT_PID" "SSH_AUTH_SOCK"))
   (exec-path-from-shell-initialize))
 
 (use-package eat)
