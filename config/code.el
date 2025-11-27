@@ -178,3 +178,7 @@ of seeing_is_believing."
 
 (use-package yaml-mode
   :mode ("\\.ya?ml\\'" . yaml-mode))
+
+(use-package xml-mode
+  :straight nil
+  :mode ("\\.csproj\\'" . xml-mode))
