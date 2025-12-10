@@ -181,4 +181,5 @@ of seeing_is_believing."
 
 (use-package xml-mode
   :straight nil
-  :mode ("\\.csproj\\'" . xml-mode))
+  :mode (("\\.csproj\\'" . xml-mode)
+         ("\\.xaml\\'" . xml-mode)))
