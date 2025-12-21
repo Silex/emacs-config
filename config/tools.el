@@ -2,6 +2,7 @@
 
 (use-package atomic-chrome
   :demand t
+  :straight (atomic-chrome :repo "KarimAziev/atomic-chrome" :type git :flavor nil :host github)
   :custom
   (atomic-chrome-url-major-mode-alist '(("github\\.com" . gfm-mode)
                                         ("redmine" . textile-mode)))
