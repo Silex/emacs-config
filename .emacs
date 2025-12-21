@@ -1,8 +1,10 @@
 (defun load-directory (dir)
   "Load every .el file in DIR in sorted order."
   (dolist (file (directory-files dir t "\\.el\\'"))
-    (with-demoted-errors "Error loading %S: %S" file
-      (load (file-name-sans-extension file) nil t))))
+    (condition-case err
+        (load (file-name-sans-extension file) nil t)
+      (error
+       (message "Error loading %s: %S" file err)))))
 
 ;; Bootstrap straight.el
 (setq package-enable-at-startup nil)
