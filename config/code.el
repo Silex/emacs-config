@@ -1,5 +1,13 @@
 ;; Language modes and tooling
 
+(use-package treesit-auto
+  :demand t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
 (use-package arc-mode
   :mode ("\\.u?deb\\'" . archive-mode))
 
@@ -57,21 +65,6 @@
   :mode "\\.nix\\'")
 
 (use-package nsis-mode)
-
-(use-package js2-mode
-  :mode ("\\.js\\'" . js2-mode))
-
-(defun js2-add-semi-colons ()
-  "Add missing semi-colons."
-  (interactive)
-  (--each (--select (string-equal (caar it) "msg.missing.semi") (js2-warnings))
-    (let ((pos (nth 1 it))
-          (length (nth 2 it)))
-      (goto-char (+ pos length))
-      (insert ";"))))
-
-(use-package json-mode
-  :mode ("\\.json\\'" . json-mode))
 
 (use-package less-css-mode
   :mode ("\\.less\\'" . less-css-mode))
@@ -137,13 +130,6 @@ of seeing_is_believing."
   (ruby-insert-encoding-magic-comment nil)
   (ruby-use-encoding-map nil))
 
-(use-package enh-ruby-mode
-  :mode ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)
-  :custom-face
-  (enh-ruby-op-face ((t (:inherit (font-lock-keyword-face)))))
-  :init
-  (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode)))
-
 (use-package rubocop)
 
 (use-package rails-log-mode)
@@ -173,11 +159,7 @@ of seeing_is_believing."
   (setf (cdr (assoc "erb" web-mode-engine-file-regexps))
     "\\.\\(erb\\|rhtml\\|erb\\.html\\|ecr\\|erb\\.deface\\)\\'")
   :mode (("\\.erb\\'" . web-mode)
-         ("\\.deface\\'" . web-mode)
-         ("\\.php\\'" . web-mode)))
-
-(use-package yaml-mode
-  :mode ("\\.ya?ml\\'" . yaml-mode))
+         ("\\.deface\\'" . web-mode)))
 
 (use-package xml-mode
   :straight nil
