@@ -1,3 +1,6 @@
+;; To support emoji
+;; sudo apt install fonts-noto-color-emoji
+
 ;; Inspired from https://github.com/magnars/.emacs.d/blob/master/appearance.el
 (defun maximize-frame ()
   (interactive)
