@@ -1,7 +1,5 @@
 (use-package claude-code
-  :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*")))
-  :custom
-  (claude-code-terminal-backend 'vterm))
+  :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*"))))
 
 (use-package ai-code-interface
   :straight (:host github :repo "tninja/ai-code-interface.el")
