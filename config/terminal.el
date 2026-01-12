@@ -30,7 +30,9 @@
   (ansi-color-bright-cyan ((t (:foreground "#7de1e1"))))
   (ansi-color-bright-white ((t (:foreground "#ffffff")))))
 
-(use-package eat)
+(use-package eat
+  :custom
+  (eat-kill-buffer-on-exit t))
 
 ;; sudo snap install cmake && sudo apt install libtool-bin
 (use-package vterm
