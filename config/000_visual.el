@@ -41,6 +41,15 @@
   :config
   (load-theme 'airline-cool t))
 
+;; Use standard sort direction indicators in tabulated lists
+(use-package tabulated-list
+  :straight nil
+  :custom
+  (tabulated-list-tty-sort-indicator-asc ?^)
+  (tabulated-list-tty-sort-indicator-desc ?v)
+  (tabulated-list-gui-sort-indicator-asc ?▲)
+  (tabulated-list-gui-sort-indicator-desc ?▼))
+
 ;; Never lose your cursor again
 (use-package beacon
   :demand t
