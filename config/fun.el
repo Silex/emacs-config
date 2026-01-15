@@ -21,6 +21,9 @@
 
 (use-package chess)
 
+(use-package lichess
+  :straight (:host github :repo "tmythicator/lichess.el"))
+
 ;; Screensaver
 (use-package zone)
 
