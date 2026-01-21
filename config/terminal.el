@@ -6,6 +6,17 @@
   (interactive "r")
   (ansi-color-apply-on-region begin end))
 
+(defun terminal-send-line-feed ()
+  "Send a literal line feed to the running terminal."
+  (interactive)
+  (cond
+   ((bound-and-true-p vterm--term)
+    (vterm-send-string "\C-j"))
+   ((bound-and-true-p eat-terminal)
+    (eat-self-input 1 ?\C-j))
+   (t
+    (newline))))
+
 (use-package exec-path-from-shell
   :demand t
   :config
@@ -32,12 +43,25 @@
 
 (use-package eat
   :custom
-  (eat-kill-buffer-on-exit t))
+  (eat-kill-buffer-on-exit t)
+  :config
+  (define-key eat-semi-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  (define-key eat-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  (define-key eat-semi-char-mode-map (kbd "C-<left>") #'eat-self-input)
+  (define-key eat-semi-char-mode-map (kbd "C-<right>") #'eat-self-input)
+  (define-key eat-semi-char-mode-map (kbd "C-<up>") #'eat-self-input)
+  (define-key eat-semi-char-mode-map (kbd "C-<down>") #'eat-self-input)
+  (define-key eat-char-mode-map (kbd "C-<left>") #'eat-self-input)
+  (define-key eat-char-mode-map (kbd "C-<right>") #'eat-self-input)
+  (define-key eat-char-mode-map (kbd "C-<up>") #'eat-self-input)
+  (define-key eat-char-mode-map (kbd "C-<down>") #'eat-self-input))
 
 ;; sudo snap install cmake && sudo apt install libtool-bin
 (use-package vterm
   :custom
-  (vterm-max-scrollback 100000))
+  (vterm-max-scrollback 100000)
+  :config
+  (define-key vterm-mode-map (kbd "S-<return>") #'terminal-send-line-feed))
 
 (use-package term
   :custom-face
