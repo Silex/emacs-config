@@ -8,6 +8,11 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
+(when (boundp 'major-mode-remap-alist)
+  ;; Keep cc-mode indentation for C/C++ instead of tree-sitter defaults.
+  (add-to-list 'major-mode-remap-alist '(c-ts-mode . c-mode))
+  (add-to-list 'major-mode-remap-alist '(c++-ts-mode . c++-mode)))
+
 (use-package arc-mode
   :mode ("\\.u?deb\\'" . archive-mode))
 
