@@ -9,5 +9,8 @@
   (ai-code-backends-infra-terminal-backend 'eat)
   (ai-code-backends-infra-use-side-window nil)
   (ai-code-backends-infra-window-side 'bottom)
+  (ai-code-backends-infra-idle-delay 2.0)
+  (ai-code-notifications-enabled t)
+  (ai-code-notifications-show-on-response t)
   :config
   (ai-code-set-backend 'codex))
