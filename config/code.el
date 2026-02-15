@@ -64,6 +64,10 @@
 
 (use-package ini-mode)
 
+(use-package jinja2-mode
+  :mode (("\\.j2\\'" . jinja2-mode)
+         ("\\.jinja2?\\'" . jinja2-mode)))
+
 (use-package nginx-mode)
 
 (use-package nix-mode
