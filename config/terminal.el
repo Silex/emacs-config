@@ -96,7 +96,12 @@
   (comint-completion-addsuffix t)       ; insert space/slash after file completion
 
   ;; interpret and use ansi color codes in shell output windows
-  (ansi-color-for-comint-mode-on))
+  (ansi-color-for-comint-mode-on)
+  :config
+  (with-eval-after-load 'evil-collection-comint
+    (evil-define-key 'insert comint-mode-map
+      (kbd "<up>") nil
+      (kbd "<down>") nil)))
 
 (use-package eshell
   :straight nil
