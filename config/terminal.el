@@ -70,7 +70,8 @@
   :custom
   (vterm-max-scrollback 100000)
   :config
-  (define-key vterm-mode-map (kbd "S-<return>") #'terminal-send-line-feed))
+  (define-key vterm-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  (define-key vterm-mode-map (kbd "C-q") #'vterm-send-next-key))
 
 (use-package term
   :custom-face
