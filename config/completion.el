@@ -84,6 +84,7 @@
   (corfu-quit-no-match 'separator)
   (corfu-preselect-first nil)
   (corfu-preview-current nil)
+  (global-corfu-minibuffer nil)
   :config
   (global-corfu-mode))
 
