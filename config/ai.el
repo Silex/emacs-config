@@ -1,5 +1,10 @@
 (use-package claude-code
-  :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*"))))
+  :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*")))
+  :bind
+  ("C-c c" . claude-code-transient)
+  :custom
+  (claude-code-toggle-auto-select t)
+  (claude-code-terminal-backend 'vterm))
 
 (use-package ai-code
   :straight (:host github :repo "tninja/ai-code-interface.el")
