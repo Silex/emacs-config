@@ -109,6 +109,15 @@ the sort order."
       (insert (file-relative-name filename))
     (insert (expand-file-name filename))))
 
+(defun copy-file-name ()
+  "Copy current buffer file name to the kill ring."
+  (interactive)
+  (if buffer-file-name
+      (progn
+        (kill-new (expand-file-name buffer-file-name))
+        (message "Copied %s" buffer-file-name))
+    (user-error "Current buffer is not visiting a file")))
+
 (defun insert-function-name (function)
   "Insert name of FUNCTION into buffer after point."
   (interactive (list (completing-read "Insert function: " obarray 'fboundp t)))
