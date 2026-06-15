@@ -14,8 +14,28 @@
     (vterm-send-string "\C-j"))
    ((bound-and-true-p eat-terminal)
     (eat-self-input 1 ?\C-j))
+   ((derived-mode-p 'ghostel-mode)
+    (ghostel-send-string "\C-j"))
    (t
     (newline))))
+
+(defun silex/evil-collection-terminal-keys (mode _keymaps)
+  "Keep Emacs keys out of MODE's terminal in insert state.
+evil-collection sends most insert-state control keys to the terminal,
+so override the ones that belong to Emacs."
+  (pcase mode
+    ('eat (evil-collection-define-key 'insert 'eat-mode-map
+            (kbd "C-w") 'evil-window-map
+            (kbd "C-z") #'evil-emacs-state
+            (kbd "C-q") #'eat-quoted-input
+            (kbd "C-s") #'ignore))
+    ('vterm (evil-collection-define-key 'insert 'vterm-mode-map
+              (kbd "C-w") 'evil-window-map
+              (kbd "C-z") #'evil-emacs-state
+              (kbd "C-q") #'vterm-send-next-key
+              (kbd "C-s") #'ignore))))
+
+(add-hook 'evil-collection-setup-hook #'silex/evil-collection-terminal-keys)
 
 (use-package exec-path-from-shell
   :demand t
@@ -63,7 +83,8 @@
   (define-key eat-char-mode-map (kbd "C-<left>") #'eat-self-input)
   (define-key eat-char-mode-map (kbd "C-<right>") #'eat-self-input)
   (define-key eat-char-mode-map (kbd "C-<up>") #'eat-self-input)
-  (define-key eat-char-mode-map (kbd "C-<down>") #'eat-self-input))
+  (define-key eat-char-mode-map (kbd "C-<down>") #'eat-self-input)
+  (define-key eat-semi-char-mode-map (kbd "C-s") #'ignore))
 
 ;; sudo snap install cmake && sudo apt install libtool-bin
 (use-package vterm
@@ -71,7 +92,38 @@
   (vterm-max-scrollback 100000)
   :config
   (define-key vterm-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
-  (define-key vterm-mode-map (kbd "C-q") #'vterm-send-next-key))
+  (define-key vterm-mode-map (kbd "C-q") #'vterm-send-next-key)
+  (define-key vterm-mode-map (kbd "C-s") #'ignore)
+  (define-key vterm-mode-map (kbd "M-:") #'eval-expression))
+
+(use-package ghostel
+  :config
+  (define-key ghostel-semi-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  (define-key ghostel-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  ;; Never send the XON/XOFF flow-control keys: with `stty ixon', C-s
+  ;; freezes output until C-q.
+  ;; C-q sends the next key literally, C-q C-s included.
+  (define-key ghostel-semi-char-mode-map (kbd "C-q") #'ghostel-send-next-key)
+  (define-key ghostel-semi-char-mode-map (kbd "C-s") #'ignore)
+  (define-key ghostel-semi-char-mode-map (kbd "C-SPC")
+              (lambda () (interactive) (ghostel-send-string "\x00"))))
+
+(use-package evil-ghostel
+  :straight (evil-ghostel
+             :type git
+             :host github
+             :repo "dakra/ghostel"
+             :files ("extensions/evil-ghostel/evil-ghostel.el"))
+  :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode)
+  :custom
+  (evil-ghostel-escape 'evil) ; make ESC always switches to evil normal state
+  :config
+  (evil-define-key 'insert evil-ghostel-mode-map
+    ;; Make C-q the literal-key escape hatch in insert state.
+    (kbd "C-q") #'ghostel-send-next-key
+    (kbd "C-s") #'ignore
+    (kbd "C-w") 'evil-window-map))
 
 (use-package term
   :custom-face

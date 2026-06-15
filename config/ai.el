@@ -4,14 +4,14 @@
   ("C-c c" . claude-code-transient)
   :custom
   (claude-code-toggle-auto-select t)
-  (claude-code-terminal-backend 'vterm))
+  (claude-code-terminal-backend 'ghostel))
 
 (use-package ai-code
   :straight (:host github :repo "tninja/ai-code-interface.el")
   :bind
   ("C-c a" . ai-code-menu)
   :custom
-  (ai-code-backends-infra-terminal-backend 'eat)
+  (ai-code-backends-infra-terminal-backend 'ghostel)
   (ai-code-backends-infra-use-side-window nil)
   (ai-code-backends-infra-window-side 'bottom)
   (ai-code-backends-infra-idle-delay 2.0)

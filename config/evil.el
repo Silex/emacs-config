@@ -7,6 +7,7 @@
   (evil-want-C-d-scroll nil)
   (evil-want-C-i-scroll nil)
   (evil-want-Y-yank-to-eol t)
+  (evil-want-C-w-delete nil)
   (evil-default-cursor '(t "white"))
   (evil-magic 'very-magic)
   (evil-shift-width 2)
