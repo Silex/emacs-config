@@ -20,7 +20,7 @@
   (ai-code-mcp-debug-tools-enabled nil)
   (ai-code-mcp-agent-enabled-backends '())
   :config
-  (ai-code-set-backend 'codex))
+  (ai-code-set-backend 'claude-code))
 
 (defun silex/agent-shell-toggle-project ()
   "Toggle the current project's agent shell without DWIM context capture."
