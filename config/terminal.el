@@ -14,6 +14,8 @@
     (vterm-send-string "\C-j"))
    ((bound-and-true-p eat-terminal)
     (eat-self-input 1 ?\C-j))
+   ((derived-mode-p 'ghostel-mode)
+    (ghostel-send-string "\C-j"))
    (t
     (newline))))
 
@@ -72,6 +74,20 @@
   :config
   (define-key vterm-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
   (define-key vterm-mode-map (kbd "C-q") #'vterm-send-next-key))
+
+(use-package ghostel
+  :config
+  (define-key ghostel-semi-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
+  (define-key ghostel-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed))
+
+(use-package evil-ghostel
+  :straight (evil-ghostel
+             :type git
+             :host github
+             :repo "dakra/ghostel"
+             :files ("extensions/evil-ghostel/evil-ghostel.el"))
+  :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode))
 
 (use-package term
   :custom-face
