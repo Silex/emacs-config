@@ -17,8 +17,12 @@
   (ai-code-backends-infra-idle-delay 2.0)
   (ai-code-notifications-enabled t)
   (ai-code-notifications-show-on-response t)
+  (ai-code-mcp-debug-tools-enabled nil)
+  (ai-code-mcp-agent-enabled-backends '())
+  (ai-code-onboarding-auto-show nil)
   :config
-  (ai-code-set-backend 'codex))
+  (ai-code-set-backend 'claude-code)
+  (ai-code-prompt-filepath-completion-mode -1))
 
 (defun silex/agent-shell-toggle-project ()
   "Toggle the current project's agent shell without DWIM context capture."
