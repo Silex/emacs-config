@@ -87,7 +87,13 @@
              :repo "dakra/ghostel"
              :files ("extensions/evil-ghostel/evil-ghostel.el"))
   :after (ghostel evil)
-  :hook (ghostel-mode . evil-ghostel-mode))
+  :hook (ghostel-mode . evil-ghostel-mode)
+  :custom
+  (evil-ghostel-escape 'evil) ; make ESC always switches to evil normal state
+  :config
+  ;; Make C-q the literal-key escape hatch in insert state.
+  (evil-define-key 'insert evil-ghostel-mode-map
+    (kbd "C-q") #'ghostel-send-next-key))
 
 (use-package term
   :custom-face
