@@ -19,6 +19,7 @@
   (ai-code-notifications-show-on-response t)
   (ai-code-mcp-debug-tools-enabled nil)
   (ai-code-mcp-agent-enabled-backends '())
+  (ai-code-onboarding-auto-show nil)
   :config
   (ai-code-set-backend 'claude-code)
   (ai-code-prompt-filepath-completion-mode -1))
