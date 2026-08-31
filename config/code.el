@@ -1,4 +1,4 @@
-;; Language modes and tooling
+;;; code.el --- Language modes and tooling  -*- lexical-binding: t; -*-
 
 (use-package treesit-auto
   :demand t

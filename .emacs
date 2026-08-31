@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun load-directory (dir)
   "Load every .el file in DIR in sorted order."
   (dolist (file (directory-files dir t "\\.el\\'"))
@@ -23,6 +25,8 @@
 
 (straight-use-package 'use-package)
 (require 'use-package)
+
+(defvar config-directory nil)
 
 (use-package emacs
   :init

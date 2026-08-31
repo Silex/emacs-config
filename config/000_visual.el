@@ -1,3 +1,5 @@
+;;; 000_visual.el --- Frame geometry, themes, and visual appearance  -*- lexical-binding: t; -*-
+
 ;; To support emoji
 ;; sudo apt install fonts-noto-color-emoji
 

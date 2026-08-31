@@ -1,3 +1,5 @@
+;;; emacs.el --- Core editor defaults and built-in behaviour  -*- lexical-binding: t; -*-
+
 ;; Default file encoding
 (prefer-coding-system 'utf-8-unix)
 

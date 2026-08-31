@@ -1,3 +1,5 @@
+;;; silex-monokai-theme.el --- Monokai-based colour theme  -*- lexical-binding: t; -*-
+
 (deftheme silex-monokai)
 
 (custom-theme-set-faces

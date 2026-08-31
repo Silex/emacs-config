@@ -1,4 +1,4 @@
-;; Fun, relaxing, and non-essential extras
+;;; fun.el --- Fun, relaxing, and non-essential extras  -*- lexical-binding: t; -*-
 
 ;; M-x snake
 ;; M-x tetris

@@ -1,3 +1,5 @@
+;;; ai.el --- AI coding assistants and agent shells  -*- lexical-binding: t; -*-
+
 (use-package claude-code
   :straight (:type git :host github :repo "stevemolitor/claude-code.el" :branch "main" :depth 1 :files ("*.el" (:exclude "images/*")))
   :bind

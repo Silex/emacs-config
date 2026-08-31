@@ -1,4 +1,4 @@
-;; Tools, services, and integrations
+;;; tools.el --- Tools, services, and integrations  -*- lexical-binding: t; -*-
 
 (use-package atomic-chrome
   :demand t

@@ -1,3 +1,5 @@
+;;; utils.el --- Text-munging and buffer utility commands  -*- lexical-binding: t; -*-
+
 (use-package crux
   :bind
   ("C-x C-S-e" . crux-eval-and-replace))
