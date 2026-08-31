@@ -1,3 +1,5 @@
+;;; terminal.el --- Terminal emulators and shell buffers  -*- lexical-binding: t; -*-
+
 (defun ansi-color-buffer ()
   (interactive)
   (ansi-color-region (point-min) (point-max)))

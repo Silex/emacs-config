@@ -1,4 +1,4 @@
-;; Completion stack (minibuffer + in-buffer)
+;;; completion.el --- Completion stack (minibuffer + in-buffer)  -*- lexical-binding: t; -*-
 
 (require 'cl-lib)
 

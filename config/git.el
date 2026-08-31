@@ -1,3 +1,5 @@
+;;; git.el --- Git, Magit, and forge integration  -*- lexical-binding: t; -*-
+
 ;; recover lost stash: gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 
 (use-package gh)

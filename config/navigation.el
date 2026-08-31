@@ -1,4 +1,4 @@
-;; Navigation, search, and buffers
+;;; navigation.el --- Navigation, search, and buffers  -*- lexical-binding: t; -*-
 
 (use-package ace-jump-mode)
 

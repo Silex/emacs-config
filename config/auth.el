@@ -1,3 +1,5 @@
+;;; auth.el --- Credential lookup and outgoing mail  -*- lexical-binding: t; -*-
+
 (use-package auth-source
   :straight nil
   :custom

@@ -1,4 +1,4 @@
-;; Editing behaviour and helpers
+;;; editor.el --- Editing behaviour and helpers  -*- lexical-binding: t; -*-
 
 (use-package backup-each-save
   :unless (eq system-type 'windows-nt)

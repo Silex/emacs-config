@@ -1,4 +1,4 @@
-;; Evil mode and extensions
+;;; evil.el --- Evil mode and extensions  -*- lexical-binding: t; -*-
 
 (use-package evil
   :demand t
