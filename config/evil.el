@@ -6,13 +6,15 @@
   (evil-want-keybinding nil)
   (evil-want-C-d-scroll nil)
   (evil-want-C-i-scroll nil)
-  (evil-want-Y-yank-to-eol t)
   (evil-default-cursor '(t "white"))
   (evil-magic 'very-magic)
   (evil-shift-width 2)
   (evil-want-fine-undo t)
   (evil-search-module 'evil-search)
   :config
+  ;; Set after loading: evil's deferred custom initialization discards
+  ;; values given through :custom, so Y would keep yanking the whole line.
+  (setopt evil-want-Y-yank-to-eol t)
   (evil-mode)
   (defalias #'forward-evil-word #'forward-evil-symbol))
 
