@@ -186,15 +186,6 @@
   :custom
   (tramp-default-method "ssh"))
 
-(use-package tramp-sh
-  :straight nil
-  :custom
-  ;; Use out-of-band method for big files
-  (tramp-copy-size-limit (* 0.5 1024 1024))
-  :config
-  ;; Use the PATH from the remote
-  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
-
 (defun local-file-name-as-sudo (file-name)
   "Transforms /foo/bar.ext into /sudo::/foo/bar.ext"
   (concat "/sudo::" file-name))
