@@ -186,35 +186,34 @@
   :custom
   (tramp-default-method "ssh"))
 
-(defun local-file-name-as-sudo (file-name)
-  "Transforms /foo/bar.ext into /sudo::/foo/bar.ext"
-  (concat "/sudo::" file-name))
+(defun silex/file-name-as-sudo (file-name)
+  "Return FILE-NAME rewritten so it is visited with root privileges.
+A remote FILE-NAME gains a sudo hop rather than being reopened as root
+over the original method, so the existing connection is reused and hosts
+refusing a root login still work."
+  (if (not (tramp-tramp-file-p file-name))
+      (concat "/sudo::" file-name)
+    (let ((parts (tramp-dissect-file-name file-name)))
+      (if (member (tramp-file-name-method parts) '("sudo" "su" "doas" "ksu"))
+          file-name
+        ;; Built by hand because tramp-make-tramp-file-name only renders the
+        ;; hop when tramp-show-ad-hoc-proxies is set, and otherwise records it
+        ;; in tramp-default-proxies-alist as a side effect.
+        (concat "/" (tramp-make-tramp-hop-name parts)
+                "sudo:" (tramp-file-name-host parts)
+                ":" (tramp-file-name-localname parts))))))
 
-(defun tramp-file-name-as-sudo (file-name)
-  "Transforms /scp:user@host:/foo/bar.ext into /ssh:user@host|sudo:host:/foo/bar.ext"
-  (let* ((parts (tramp-dissect-file-name file-name))
-         (host (tramp-file-name-host parts)))
-
-    ;; replace "host:" by "host|sudo:host:"
-    (setq file-name (replace-regexp-in-string (regexp-quote (concat host ":"))
-                                              (concat host "|sudo:" host ":")
-                                              file-name t t))
-
-    ;; replace scp by ssh otherwise sudo doens't work
-    (setq file-name (replace-regexp-in-string "^/scp" "/ssh" file-name))))
-
-(defun buffer-file-name-as-sudo (&optional buffer)
-  "Return BUFFER filename as sudo"
+(defun silex/buffer-file-name-as-sudo (&optional buffer)
+  "Return the file name BUFFER visits, rewritten for root access."
   (require 'tramp)
-  (let* ((buffer (or buffer (current-buffer)))
-         (file-name (expand-file-name (or (buffer-file-name buffer) dired-directory))))
-    (if (tramp-tramp-file-p file-name)
-        (tramp-file-name-as-sudo file-name)
-      (local-file-name-as-sudo file-name))))
+  (let ((buffer (or buffer (current-buffer))))
+    (silex/file-name-as-sudo
+     (expand-file-name (or (buffer-file-name buffer) dired-directory)))))
 
-(defun find-alternative-file-with-sudo ()
+(defun silex/find-alternate-file-as-sudo ()
+  "Revisit the current file with root privileges."
   (interactive)
-  (find-alternate-file (buffer-file-name-as-sudo)))
+  (find-alternate-file (silex/buffer-file-name-as-sudo)))
 
 (use-package windmove
   :config
