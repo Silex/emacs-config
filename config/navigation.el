@@ -167,8 +167,6 @@
 
 (use-package treemacs)
 
-;; For TRAMP to work with ssh-key, install the programm ssh-askpass (https://github.com/markcarver/mac-ssh-askpass)
-
 ;; C-x C-f /ssh:you@remotehost|sudo:remotehost:/path/to/file
 
 (defun url-clear-cookies ()
@@ -188,12 +186,6 @@
   :custom
   (tramp-default-method "ssh"))
 
-(defun add-ssh-agent-to-tramp ()
-  (cl-pushnew '("-A")
-              (cadr (assoc 'tramp-login-args
-                           (assoc "ssh" tramp-methods)))
-              :test #'equal))
-
 (use-package tramp-sh
   :straight nil
   :custom
@@ -202,13 +194,6 @@
   :config
   ;; Use the PATH from the remote
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
-
-(use-package tramp-gvfs
-  :straight nil
-  :after tramp-ftp
-  :config
-  ;; Prefer gvfs for FTP
-  (add-to-list 'tramp-gvfs-methods "ftp"))
 
 (defun local-file-name-as-sudo (file-name)
   "Transforms /foo/bar.ext into /sudo::/foo/bar.ext"
