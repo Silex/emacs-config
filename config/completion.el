@@ -18,19 +18,17 @@
   :config
   (savehist-mode))
 
-(use-package fuz-bin
+(use-package fzf-native
   :demand t
-  :straight (fuz-bin :repo "jcs-elpa/fuz-bin" :fetcher github :files (:defaults "bin"))
+  :straight (fzf-native :repo "dangduc/fzf-native" :host github :files (:defaults "bin"))
   :config
-  (fuz-bin-load-dyn))
+  (fzf-native-load-dyn))
 
 (use-package fussy
   :demand t
-  :after fuz-bin
-  :custom
-  (fussy-score-fn 'fussy-fuz-bin-score)
+  :after fzf-native
   :config
-  (fussy-setup))
+  (fussy-setup-fzf))
 
 (use-package vertico
   :demand t
