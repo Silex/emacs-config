@@ -65,6 +65,10 @@
     "Decides whether the function `move-dup-mode' should be called with t."
     (unless (or (minibufferp) (memq major-mode '(org-mode git-rebase-mode)))
       (move-dup-mode 1)))
+  ;; C-M-<up>/<down> belong to windmove; which minor mode map wins would
+  ;; otherwise depend on load order.
+  (define-key move-dup-mode-map [C-M-up] nil)
+  (define-key move-dup-mode-map [C-M-down] nil)
   (global-move-dup-mode))
 
 (use-package pretty-symbols

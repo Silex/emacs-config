@@ -126,10 +126,15 @@
 (setq display-time-24hr-format t)
 (display-time)
 
-;; Where to split
-(setq split-width-threshold nil)
-;(setq split-height-threshold nil)
-;(setq split-window-preferred-function 'split-window-sensibly)
+;; Where to split: the new buffer goes on top, the current one stays at the
+;; bottom.  This bypasses `split-window-sensibly', so `split-width-threshold'
+;; and friends no longer apply; override the direction per command with
+;; `C-x 4 <arrow>'.
+(defun silex/split-window-above (window)
+  "Split WINDOW into two stacked windows and return the new one, on top."
+  (split-window window nil 'above))
+
+(setq split-window-preferred-function #'silex/split-window-above)
 
 (setq-default major-mode 'text-mode)
 
