@@ -216,8 +216,20 @@ refusing a root login still work."
   (find-alternate-file (silex/buffer-file-name-as-sudo)))
 
 (use-package windmove
+  :straight nil
+  :demand t
   :config
-  ;; Switch windows using Super + Arrow
-  (windmove-default-keybindings 'super))
+  ;; Switch windows using Control + Meta + Arrow.  Super is the Windows key,
+  ;; which the WSL host consumes before Emacs ever sees it.
+  (windmove-default-keybindings '(control meta))
+  ;; Add Shift to send the next command's buffer to the window in the given
+  ;; direction, splitting there if no window exists yet.  Installed by hand
+  ;; because windmove-display-default-keybindings also binds 0, f and t.
+  (windmove-install-defaults
+   nil '(control meta shift)
+   '((windmove-display-left left)
+     (windmove-display-right right)
+     (windmove-display-up up)
+     (windmove-display-down down))))
 
 (use-package ztree)
