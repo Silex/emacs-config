@@ -59,10 +59,6 @@
   :config
   (put 'dired-find-alternate-file 'disabled nil))
 
-(use-package dired-x
-  :straight nil
-  :bind ("C-d" . dired-jump))
-
 (use-package dired-filter
   :demand t
   :after dired

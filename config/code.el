@@ -49,10 +49,7 @@
   (gdb-many-windows t)
 
   ;; Use the indentation style of "The C++ Programming Language"
-  (c-default-style "silex")
-  :config
-  (define-key c-mode-map (kbd "C-d") nil)
-  (define-key c++-mode-map (kbd "C-d") nil))
+  (c-default-style "silex"))
 
 (use-package qt-pro-mode
   :mode ("\\.pro\\'" "\\.pri\\'"))
