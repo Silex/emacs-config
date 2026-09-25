@@ -71,11 +71,24 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+(defun silex/last-error ()
+  "Visit the last error or match of the current `next-error' buffer."
+  (interactive)
+  (with-current-buffer (next-error-find-buffer)
+    ;; Compilation buffers (compile, grep, ag) step from this marker rather
+    ;; than from point.
+    (when (derived-mode-p 'compilation-mode)
+      (setq compilation-current-error (point-max-marker)))
+    (goto-char (point-max)))
+  (next-error -1))
+
 (use-package simple
   :straight nil
   :bind
   ("C-S-<up>" . previous-error)
   ("C-S-<down>" . next-error)
+  ("C-S-<left>" . first-error)
+  ("C-S-<right>" . silex/last-error)
   ("C-S-k" . kill-current-buffer))
 
 (use-package files
