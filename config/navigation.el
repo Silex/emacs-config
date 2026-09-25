@@ -1,6 +1,33 @@
 ;;; navigation.el --- Navigation, search, and buffers  -*- lexical-binding: t; -*-
 
-(use-package ace-jump-mode)
+(defun silex/avy-action-embark (pt)
+  "Run `embark-act' at PT, then return to the window avy started from."
+  (unwind-protect
+      (save-excursion
+        (goto-char pt)
+        (embark-act))
+    (select-window (cdr (ring-ref avy-ring 0))))
+  t)
+
+(use-package avy
+  :demand t
+  :bind
+  ("C-c j j" . avy-goto-char-timer)
+  ("C-c j l" . avy-goto-line)
+  :custom
+  (avy-timeout-seconds 0.3)
+  (avy-background t)
+  ;; avy's defaults, plus . to run embark on the target.
+  (avy-dispatch-alist '((?x . avy-action-kill-move)
+                        (?X . avy-action-kill-stay)
+                        (?t . avy-action-teleport)
+                        (?m . avy-action-mark)
+                        (?n . avy-action-copy)
+                        (?y . avy-action-yank)
+                        (?Y . avy-action-yank-line)
+                        (?i . avy-action-ispell)
+                        (?z . avy-action-zap-to-char)
+                        (?. . silex/avy-action-embark))))
 
 (use-package ag
   :custom
