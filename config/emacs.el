@@ -141,8 +141,7 @@
 
 ;; Where to split: the new buffer goes on top, the current one stays at the
 ;; bottom.  This bypasses `split-window-sensibly', so `split-width-threshold'
-;; and friends no longer apply; override the direction per command with
-;; `C-x 4 <arrow>'.
+;; and friends no longer apply.
 (defun silex/split-window-above (window)
   "Split WINDOW into two stacked windows and return the new one, on top."
   (split-window window nil 'above))
@@ -150,13 +149,3 @@
 (setq split-window-preferred-function #'silex/split-window-above)
 
 (setq-default major-mode 'text-mode)
-
-(defun split-window-and-focus (split-fn)
-  (funcall split-fn)
-  (other-window 1))
-
-(use-package emacs
-  :straight nil
-  :bind
-  ("C-x 2" . (lambda () (interactive) (split-window-and-focus #'split-window-below)))
-  ("C-x 3" . (lambda () (interactive) (split-window-and-focus #'split-window-right))))
