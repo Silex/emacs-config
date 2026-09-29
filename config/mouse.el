@@ -14,3 +14,9 @@
   :bind
   ("<mouse-7>" . scroll-left)
   ("<mouse-6>" . scroll-right))
+
+(use-package pixel-scroll
+  :demand t
+  :straight nil
+  :config
+  (pixel-scroll-precision-mode 1))

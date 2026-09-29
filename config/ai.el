@@ -26,6 +26,12 @@
   (ai-code-set-backend 'claude-code)
   (ai-code-prompt-filepath-completion-mode -1))
 
+;; ai-code scrolls tall Ghostel image previews with ultra-scroll by remapping
+;; `pixel-scroll-precision', so it needs `pixel-scroll-precision-mode' (mouse.el)
+;; and not `ultra-scroll-mode'.
+(use-package ultra-scroll
+  :straight (:host github :repo "jdtsmith/ultra-scroll"))
+
 (defun silex/agent-shell-toggle-project ()
   "Toggle the current project's agent shell without DWIM context capture."
   (interactive)
