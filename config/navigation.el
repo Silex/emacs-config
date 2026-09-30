@@ -148,9 +148,19 @@
   :straight nil
   :bind ("C-c b" . ibuffer))
 
+(defun silex/ibuffer-set-filter-groups ()
+  "Group local buffers by projectile project and remote ones by TRAMP connection."
+  (setq ibuffer-filter-groups
+        (append (ibuffer-projectile-generate-filter-groups)
+                (ibuffer-tramp-generate-filter-groups-by-tramp-connection)))
+  (ibuffer-update nil t))
+
 (use-package ibuffer-tramp
+  :after ibuffer)
+
+(use-package ibuffer-projectile
   :after ibuffer
-  :init (add-hook 'ibuffer-hook 'ibuffer-tramp-set-filter-groups-by-tramp-connection))
+  :init (add-hook 'ibuffer-hook #'silex/ibuffer-set-filter-groups))
 
 (defun silex/projectile-require-tramp (&rest _)
   "Ensure TRAMP is loaded before switching projects."
