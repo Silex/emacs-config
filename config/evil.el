@@ -24,6 +24,11 @@
 (use-package evil-collection
   :demand t
   :after evil
+  :custom
+  ;; RET sends the input in insert state in comint, eshell and other REPL
+  ;; buffers; evil-collection defaults to sending it only in normal state.
+  (evil-collection-binding-overrides '((repl-submit  :state insert)
+                                       (repl-newline :state normal)))
   :config
   (evil-collection-init))
 
