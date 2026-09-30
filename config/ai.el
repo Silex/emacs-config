@@ -47,7 +47,7 @@
                 :no-focus t
                 :new-session t
                 :session-strategy agent-shell-session-strategy))))
-    (if-let ((window (get-buffer-window shell-buffer)))
+    (if-let* ((window (get-buffer-window shell-buffer)))
       (if (and (> (count-windows) 1)
             (not (bound-and-true-p transient--prefix)))
         (delete-window window)
