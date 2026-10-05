@@ -6,8 +6,19 @@
 ;; Display as hex instead of octal
 (setq display-raw-bytes-as-hex t)
 
-;; disable word wrap
+;; Truncate long lines; C-c w wraps the current buffer instead
 (setq-default truncate-lines t)
+
+(use-package emacs
+  :straight nil
+  :bind
+  ("C-c w" . visual-line-mode))
+
+(defun silex/toggle-word-wrap-hint (&rest _)
+  "Point at `visual-line-mode' when `toggle-word-wrap' cannot have an effect."
+  (when truncate-lines
+    (user-error "Lines are truncated here, so word wrap has no effect: use M-x visual-line-mode (C-c w)")))
+(advice-add 'toggle-word-wrap :before #'silex/toggle-word-wrap-hint)
 
 ;; Always require a newline at end of files
 (setq require-final-newline t)
