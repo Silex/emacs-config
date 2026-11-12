@@ -194,9 +194,6 @@
   ;; Bigger size (default is 24)
   (sr-speedbar-width 35))
 
-(use-package switch-window
-  :bind ("C-x o" . switch-window))
-
 (use-package treemacs)
 
 ;; C-x C-f /ssh:you@remotehost|sudo:remotehost:/path/to/file
