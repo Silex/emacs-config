@@ -19,7 +19,17 @@
   (evil-mode)
   (defalias #'forward-evil-word #'forward-evil-symbol)
   ;; Let C-. reach embark-act, not evil-repeat-pop.
-  (define-key evil-normal-state-map (kbd "C-.") nil))
+  (define-key evil-normal-state-map (kbd "C-.") nil)
+  ;; Break the C-x window habit: each key only names its evil window-map equivalent.
+  (pcase-dolist (`(,key . ,hint) '(("C-x 0" . "C-w c")
+                                   ("C-x 1" . "C-w o")
+                                   ("C-x 2" . "C-w s")
+                                   ("C-x 3" . "C-w v")
+                                   ("C-x o" . "C-w w or C-w <arrow>")))
+    (keymap-global-set key (lambda ()
+                             "Name the evil window key to use instead."
+                             (interactive)
+                             (user-error "Use %s" hint)))))
 
 (use-package evil-collection
   :demand t
