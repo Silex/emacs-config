@@ -21,6 +21,7 @@
   (evil-want-C-d-scroll nil)
   (evil-want-C-i-scroll nil)
   (evil-want-C-w-delete nil)
+  (evil-want-C-w-in-emacs-state t)
   (evil-default-cursor '(t "white"))
   (evil-magic 'very-magic)
   (evil-shift-width 2)
@@ -41,6 +42,9 @@
   (evil-define-key '(normal insert visual motion emacs) 'global
     (kbd "C-,") #'silex/leader)
   (evil-declare-ignore-repeat #'silex/leader)
+  ;; C-w is the window map in every state; the minibuffer gets it too, so the
+  ;; same key leaves a prompt for another window.
+  (keymap-set minibuffer-local-map "C-w" 'evil-window-map)
   ;; Break the C-x window habit: each key only names its evil window-map equivalent.
   (pcase-dolist (`(,key . ,hint) '(("C-x 0" . "C-w c")
                                    ("C-x 1" . "C-w o")
