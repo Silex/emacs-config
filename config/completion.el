@@ -61,6 +61,16 @@
   ("C-S-r" . consult-recent-file)
   :custom
   (consult-project-root-function #'projectile-project-root)
+  (consult-buffer-sources '(consult-source-buffer
+                            consult-source-hidden-buffer
+                            consult-source-modified-buffer
+                            consult-source-other-buffer
+                            consult-source-buffer-register
+                            consult-source-file-register
+                            consult-source-bookmark
+                            consult-source-project-buffer-hidden
+                            consult-source-project-recent-file-hidden
+                            consult-source-project-root-hidden))
   :config
   (consult-customize consult-recent-file :preview-key nil))
 
