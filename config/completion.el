@@ -72,7 +72,14 @@
                             consult-source-project-recent-file-hidden
                             consult-source-project-root-hidden))
   :config
-  (consult-customize consult-recent-file :preview-key nil))
+  (consult-customize consult-recent-file :preview-key nil)
+  (consult-customize
+   consult-source-buffer
+   :items (lambda ()
+            (consult--buffer-query :sort 'visibility
+                                   :as #'consult--buffer-pair
+                                   :predicate (lambda (buffer)
+                                                (not (eq buffer (current-buffer))))))))
 
 (use-package consult-dir
   :after consult)
