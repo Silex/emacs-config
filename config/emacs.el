@@ -105,7 +105,8 @@
 (use-package files
   :straight nil
   :bind
-  ("C-s" . save-buffer))
+  ("C-s" . save-buffer)
+  ("C-c f" . find-file))
 
 ;; No *scratch* message
 (setq initial-scratch-message nil)

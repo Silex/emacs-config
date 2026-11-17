@@ -55,6 +55,9 @@
 (use-package consult
   :demand t
   :bind
+  ("C-c b" . consult-buffer)
+  ("C-c r" . consult-recent-file)
+  ("C-c /" . consult-ripgrep)
   ("C-S-r" . consult-recent-file)
   :custom
   (consult-project-root-function #'projectile-project-root)

@@ -1,5 +1,19 @@
 ;;; evil.el --- Evil mode and extensions  -*- lexical-binding: t; -*-
 
+(defun silex/leader ()
+  "Act as the C-c prefix, so every C-c key is also reachable from `,'."
+  (interactive)
+  (setq prefix-arg current-prefix-arg)
+  ;; no-record keeps the C-c out of a recorded macro, which already holds the ,
+  (push '(no-record . ?\C-c) unread-command-events))
+
+(defun silex/key-hint (hint)
+  "Return a command that only names HINT, the key to use instead."
+  (lambda ()
+    "Name the key to use instead."
+    (interactive)
+    (user-error "Use %s" hint)))
+
 (use-package evil
   :demand t
   :custom
@@ -20,16 +34,25 @@
   (defalias #'forward-evil-word #'forward-evil-symbol)
   ;; Let C-. reach embark-act, not evil-repeat-pop.
   (define-key evil-normal-state-map (kbd "C-.") nil)
+  ;; C-, is the leader in every state: it stands for C-c, so C-, f runs C-c f
+  ;; and C-, p f runs C-c p f. The evil state maps let it win over the C-, of
+  ;; org-mode and of ai-code session buffers.
+  (keymap-global-set "C-," #'silex/leader)
+  (evil-define-key '(normal insert visual motion emacs) 'global
+    (kbd "C-,") #'silex/leader)
+  (evil-declare-ignore-repeat #'silex/leader)
   ;; Break the C-x window habit: each key only names its evil window-map equivalent.
   (pcase-dolist (`(,key . ,hint) '(("C-x 0" . "C-w c")
                                    ("C-x 1" . "C-w o")
                                    ("C-x 2" . "C-w s")
                                    ("C-x 3" . "C-w v")
                                    ("C-x o" . "C-w w or C-w <arrow>")))
-    (keymap-global-set key (lambda ()
-                             "Name the evil window key to use instead."
-                             (interactive)
-                             (user-error "Use %s" hint)))))
+    (keymap-global-set key (silex/key-hint hint)))
+  ;; Same for files and buffers, now that the leader exists in every state.
+  (pcase-dolist (`(,key . ,hint) '(("C-x C-f" . "C-, f")
+                                   ("C-x b" . "C-, b")
+                                   ("C-x C-b" . "C-, B")))
+    (keymap-global-set key (silex/key-hint hint))))
 
 (use-package evil-collection
   :demand t

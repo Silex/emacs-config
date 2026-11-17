@@ -145,7 +145,7 @@
 
 (use-package ibuffer
   :straight nil
-  :bind ("C-c b" . ibuffer))
+  :bind ("C-c B" . ibuffer))
 
 (defun silex/ibuffer-set-filter-groups ()
   "Group local buffers by projectile project and remote ones by TRAMP connection."
@@ -183,7 +183,7 @@
   :after projectile
   :config
   (projectile-rails-global-mode)
-  (define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map))
+  (define-key projectile-rails-mode-map (kbd "C-c R") 'projectile-rails-command-map))
 
 (use-package sr-speedbar
   :custom
