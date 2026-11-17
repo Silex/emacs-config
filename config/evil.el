@@ -52,6 +52,10 @@
                                    ("C-x 3" . "C-w v")
                                    ("C-x o" . "C-w w or C-w <arrow>")))
     (keymap-global-set key (silex/key-hint hint)))
+  ;; evil-window-exchange swaps through window-swap-states, which keeps each
+  ;; window's point and scroll.
+  (defalias 'swap-windows (silex/key-hint "C-w x")
+    "Name C-w x, the key that swaps the window with the next one.")
   ;; Same for files and buffers, now that the leader exists in every state.
   (pcase-dolist (`(,key . ,hint) '(("C-x C-f" . "C-, f")
                                    ("C-x b" . "C-, b")
