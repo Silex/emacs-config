@@ -1,10 +1,10 @@
 ;;; evil.el --- Evil mode and extensions  -*- lexical-binding: t; -*-
 
 (defun silex/leader ()
-  "Act as the C-c prefix, so every C-c key is also reachable from `,'."
+  "Act as the C-c prefix, so every C-c key is also reachable from `C-,'."
   (interactive)
   (setq prefix-arg current-prefix-arg)
-  ;; no-record keeps the C-c out of a recorded macro, which already holds the ,
+  ;; no-record keeps the C-c out of a recorded macro, which already holds the C-,
   (push '(no-record . ?\C-c) unread-command-events))
 
 (defun silex/key-hint (hint)
