@@ -8,6 +8,54 @@
   (claude-code-toggle-auto-select t)
   (claude-code-terminal-backend 'ghostel))
 
+(defun silex/ai-code-attention (buffer)
+  "Return the attention state of the AI session in BUFFER: `waiting', `done' or nil."
+  (when-let* ((session (ai-code-session-get buffer)))
+    (plist-get (ai-code-session-metadata session) :attention)))
+
+(defun silex/ai-code-next-session (sessions)
+  "Return the session after the current buffer in SESSIONS, sorted by name.
+The order wraps around.  Outside a session, return the most recently
+used one, the first of SESSIONS."
+  (let* ((sorted (sort (copy-sequence sessions)
+                       (lambda (a b) (string< (buffer-name a) (buffer-name b)))))
+         (current (memq (current-buffer) sorted)))
+    (if current
+        (or (cadr current) (car sorted))
+      (car sessions))))
+
+(defun silex/ai-code-jump-to-session ()
+  "Go to the AI session that needs me, else to the next one by name.
+A session waiting for input comes first, then one that finished while
+hidden.  Otherwise rotate through the sessions in name order; outside a
+session, go to the most recently used one."
+  (interactive)
+  (let* ((sessions (and (fboundp 'ai-code-backends-infra-session-buffers)
+                        ;; buffer-list order, so the most recently used first
+                        (ai-code-backends-infra-session-buffers)))
+         (others (remq (current-buffer) sessions))
+         (target (or (seq-find (lambda (buffer) (eq (silex/ai-code-attention buffer) 'waiting))
+                               others)
+                     (seq-find (lambda (buffer) (eq (silex/ai-code-attention buffer) 'done))
+                               others)
+                     ;; nil when the current session is the only one
+                     (let ((next (silex/ai-code-next-session sessions)))
+                       (unless (eq next (current-buffer)) next)))))
+    (unless target
+      (user-error "No other AI session"))
+    (let ((state (silex/ai-code-attention target)))
+      (message "→ %s%s" (buffer-name target) (if state (format " (%s)" state) "")))
+    (if-let* ((window (get-buffer-window target)))
+        (select-window window)
+      (switch-to-buffer target))))
+
+;; C-, C-, through the leader. Bound in the evil state maps too, so it wins
+;; over org-insert-structure-template, which org binds to C-c C-,.
+(keymap-global-set "C-c C-," #'silex/ai-code-jump-to-session)
+(with-eval-after-load 'evil
+  (evil-define-key '(normal insert visual motion emacs) 'global
+    (kbd "C-c C-,") #'silex/ai-code-jump-to-session))
+
 (use-package ai-code
   :straight (:host github :repo "tninja/ai-code-interface.el")
   :bind
@@ -23,6 +71,9 @@
   (ai-code-onboarding-auto-show nil)
   :config
   (ai-code-set-backend 'claude-code)
+  ;; Clears a session's waiting or done mark once it is shown, so
+  ;; silex/ai-code-jump-to-session does not return to a session already read.
+  (ai-code-session-attention-mode 1)
   (ai-code-prompt-filepath-completion-mode -1))
 
 ;; ai-code scrolls tall Ghostel image previews with ultra-scroll by remapping
