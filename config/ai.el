@@ -18,7 +18,6 @@
   (ai-code-backends-infra-window-side 'bottom)
   (ai-code-backends-infra-idle-delay 2.0)
   (ai-code-notifications-enabled t)
-  (ai-code-notifications-show-on-response t)
   (ai-code-mcp-debug-tools-enabled nil)
   (ai-code-mcp-agent-enabled-backends '())
   (ai-code-onboarding-auto-show nil)
