@@ -99,6 +99,10 @@ so override the ones that belong to Emacs."
   (define-key vterm-mode-map (kbd "M-:") #'eval-expression))
 
 (use-package ghostel
+  :custom
+  ;; ai-code notifies for its own sessions; without `alert' Ghostel's
+  ;; default handler only echoes the notification in the minibuffer.
+  (ghostel-notification-functions nil)
   :config
   (define-key ghostel-semi-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
   (define-key ghostel-char-mode-map (kbd "S-<return>") #'terminal-send-line-feed)
